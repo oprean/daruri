@@ -45,10 +45,11 @@ require([
   'backbone.marionette',
   'modules/Router',
   'modules/Utils',
+  'modules/Constants',
   'views/HeaderView',
   'views/FooterView',
   'jquery.bootstrap',
-    ], function ($, _, Backbone, Marionette, Router, Utils, HeaderView, FooterView) {    
+    ], function ($, _, Backbone, Marionette, Router, Utils, Constants, HeaderView, FooterView) {    
         window.app = new Backbone.Marionette.Application();
 		app.addRegions({
 			headerRegion : "#header-container",
@@ -59,6 +60,8 @@ require([
 		app.addInitializer(function(){
 			app.env = Utils.bootstrapEnv();
 			app.router = new Router();
+			$.ajaxSetup({cache: false});
+			Utils.loadQuiz(Constants.DEFAULT_QUIZ);
 			if( ! Backbone.History.started) Backbone.history.start();
 			app.headerRegion.show(new HeaderView());
 			app.footerRegion.show(new FooterView());

@@ -8,7 +8,14 @@ define([
 	    return this.charAt(0).toUpperCase() + this.slice(1);
 	};
 	
-	var Utils = {				
+	var Utils = {
+		
+		loadQuiz : function(name) {
+			$.getJSON('js/quizzes/' + name + '.json', function(data) {
+
+			});
+		},
+						
 		bootstrapEnv: function() {
 		    var envs = ['xs', 'sm', 'md', 'lg'];
 		
@@ -21,7 +28,7 @@ define([
 		        $el.addClass('hidden-'+env);
 		        if ($el.is(':hidden')) {
 		            $el.remove();
-		            return env
+		            return env;
 		        }
 		    };
 		}

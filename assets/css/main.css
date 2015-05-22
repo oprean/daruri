@@ -4,14 +4,17 @@ html {
 }
 
 body {
-	font-family: 'Roboto';
+	/*font-family: 'Roboto';*/
 	font-weight: 100; 
 	margin-bottom: 60px;
 }
 
 /******************* containers *********************/
-#main-container {
+#header-container {
+	padding-top: 15px;
+}
 
+#main-container {
 }
 
 #footer-container {
@@ -33,4 +36,9 @@ body {
 	font-size: 136px;
 	color: #312D3A;
 	text-shadow: 0px 0px 10px #000;
+}
+
+.question {
+	font-size: 20px;
+	font-weight: 300;
 }
