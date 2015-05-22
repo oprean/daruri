@@ -12,7 +12,7 @@ define([
 	    '': 'home',
 	    'home': 'home',
 	  	'about': 'about',
-	  	'question(/:id)': 'question',
+	  	'question/:id': 'question',
 	    'result': 'result',
 	  }
 	});

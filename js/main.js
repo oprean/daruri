@@ -62,6 +62,7 @@ require([
 			app.router = new Router();
 			$.ajaxSetup({cache: false});
 			Utils.loadQuiz(Constants.DEFAULT_QUIZ);
+			app.quiz = 'quiz';
 			if( ! Backbone.History.started) Backbone.history.start();
 			app.headerRegion.show(new HeaderView());
 			app.footerRegion.show(new FooterView());
