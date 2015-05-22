@@ -13,9 +13,9 @@ define([
 	  initialize: function() {
 	  },
 	  
-	  home: function() {
-	  	console.log('home');
-		app.mainRegion.show(new HomeView());
+	  home: function(quizId) {
+	  	console.log('home' + quizId);
+		app.mainRegion.show(new HomeView({quizId: quizId}));
 	  },
 	  
 	  about: function() {
@@ -23,15 +23,28 @@ define([
 		app.mainRegion.show(new AboutView());
 	  },
 	  
-	  question: function(id) {
+	  quiz: function(quizId, questionId) {
 	  	console.log('question');
-		app.mainRegion.show(new QuestionView());
-		
+	  	var view;
+	  	switch(questionId) {
+	  		case 'home':
+	  			view = new HomeView({quizId: quizId});
+	  			break;
+	  		case 'result':
+	  			view = new ResultView({quizId: quizId});
+	  			break;
+	  		default:
+	  			view = new QuestionView({
+					quizId: quizId, 
+					questionId: questionId
+				})
+	  	}
+		app.mainRegion.show(view);
 	  },
 	  
 	  result: function() {
 	  	console.log('result');
-		app.mainRegion.show(new ResultView());
+		app.mainRegion.show();
 		
 	  },
 	});

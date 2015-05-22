@@ -1,4 +1,5 @@
 {
+	"id" : "gifts",
 	"name" : "Darurile Spirituale",
 	"description" : "Description goes here",
 	
@@ -33,8 +34,8 @@
 	],
 	
 	"questions" : [
-		{"id": 1, "quesion": "Îmi place să organizez oameni, sarcini şi evenimente.",  "gift_id": "A"},
-		{"id": 2, "quesion": "Mi-ar place să plantez biserici în locuri în care nu există în prezent.",  "gift_id": "B"},
-		{"id": 3, "quesion": "Îmi place să lucrez creativ în lemn, cu materiale textile, culori, metal, sticlă sau alte materiale.",  "gift_id": "C"}
+		{"id": 1, "text": "Îmi place să organizez oameni, sarcini şi evenimente.",  "group_id": "A"},
+		{"id": 2, "text": "Mi-ar place să plantez biserici în locuri în care nu există în prezent.",  "group_id": "B"},
+		{"id": 3, "text": "Îmi place să lucrez creativ în lemn, cu materiale textile, culori, metal, sticlă sau alte materiale.",  "group_id": "C"}
 	] 
 }

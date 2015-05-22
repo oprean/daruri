@@ -10,10 +10,9 @@ define([
 	  controller: controller,
 	  appRoutes: {
 	    '': 'home',
-	    'home': 'home',
 	  	'about': 'about',
-	  	'question/:id': 'question',
-	    'result': 'result',
+	    'home': 'home',
+	  	'quiz/:name/:q': 'quiz',
 	  }
 	});
   return Router;

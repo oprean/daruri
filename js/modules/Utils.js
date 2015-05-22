@@ -11,9 +11,17 @@ define([
 	var Utils = {
 		
 		loadQuiz : function(name) {
-			$.getJSON('js/quizzes/' + name + '.json', function(data) {
-
+			var quiz;
+			$.ajax({
+				url : 'js/quizzes/' + name + '.json',
+				dataType: 'json',
+				async: false, 
+				success : function(data) {
+					quiz = data;
+				}
 			});
+			
+			return quiz;
 		},
 						
 		bootstrapEnv: function() {

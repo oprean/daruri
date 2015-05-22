@@ -1,17 +1,16 @@
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="<%= progress %>" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
+    <%= progress %>%
+  </div>
+</div>
 <div class="question">
-	<p class="text-center">Ajut oamenii să se înţeleagă pe ei înşişi, relaţiile lor şi pe Dumnezeu prin intermediul exprimării artistice.</p>
+	<p class="text-center"><%= text %></p>
 	<form class="text-center">
+		<% _.each(options, function(option) { %>
 		<label class="radio-inline">
-		  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Întotdeauna
-		</label>
-		<label class="radio-inline">
-		  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> De cele mai multe ori
-		</label>
-		<label class="radio-inline">
-		  <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Uneori
-		</label>
-		<label class="radio-inline">
-		  <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Niciodată
-		</label>
+		  <input type="radio" class="answer" name="options" value="<%= option.val %>"> <%= option.text%>
+		</label>			
+		<% }) %>
+	<p><a class="btn btn-primary btn-lg" href="#quiz/<%= quizId %>/<%= id+1 %>" role="button">Next</a></p>
 	</form>	
 </div>
