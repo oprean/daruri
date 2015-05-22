@@ -13,10 +13,6 @@ require.config({
 		"moment":"lib/moment.min",
 
 		"text":"lib/text",
-		"i18n":"lib/i18n",
-		"polyglot":"lib/polyglot.min",
-		
-		"parse" : "lib/parse-1.4.0.min",
 	},
 	
 	"shim":{
@@ -52,8 +48,6 @@ require([
   'views/HeaderView',
   'views/FooterView',
   'jquery.bootstrap',
-  'polyglot',
-  'parse',
     ], function ($, _, Backbone, Marionette, Router, Utils, HeaderView, FooterView) {    
         window.app = new Backbone.Marionette.Application();
 		app.addRegions({
@@ -63,11 +57,7 @@ require([
 		});
 			
 		app.addInitializer(function(){
-			app.locale = window.navigator.userLanguage || window.navigator.language;
 			app.env = Utils.bootstrapEnv();
-			console.log('lang: ' + app.locale + 'env: ' + app.env);
-			Parse.initialize(Constants.parse.AppID, Constants.parse.JsKey);
-			window.polyglot = new Polyglot({phrases: translations});
 			app.router = new Router();
 			if( ! Backbone.History.started) Backbone.history.start();
 			app.headerRegion.show(new HeaderView());

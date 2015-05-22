@@ -6,8 +6,7 @@ define([
   'text!templates/header.html',
 ], function($, _, Backbone, Marionette, headerTpl){
 	var HeaderView = Backbone.Marionette.ItemView.extend({
-		template : _.template(HeaderTpl),
-		
+		template : _.template(headerTpl),
 	});
 	 
 	return HeaderView;

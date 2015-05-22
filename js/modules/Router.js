@@ -12,19 +12,8 @@ define([
 	    '': 'home',
 	    'home': 'home',
 	  	'about': 'about',
-	  	'contact': 'contact',
-	  	
-	  	'order' : 'order',
-	  	'cart' : 'cart',
-	  	
-	  	'editor': 'editor',
-	  	'editor(/:id)': 'editor',
-	  		  		    
-	    'shop': 'shop',
-	    'shop(/product/:id)': 'shopProduct',
-	  	
-	  	'gallery': 'gallery',
-	  	'gallery(/item:id)': 'galleryItem',
+	  	'question(/:id)': 'question',
+	    'result': 'result',
 	  }
 	});
   return Router;
