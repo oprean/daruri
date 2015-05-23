@@ -2,7 +2,7 @@ define([
   'underscore',
   'backbone',
   'backbone.localStorage',
-  'models/quiz'
+  'models/Quiz'
 ], function(_, Backbone, LocalStorage, Quiz){
 	var Quizzes = Backbone.Collection.extend({
 	  model: Quiz,

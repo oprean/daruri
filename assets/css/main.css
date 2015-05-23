@@ -28,6 +28,11 @@ body {
   border-top: 1px solid #ccc;
 }
 
+.navbar-brand {
+	font-family: 'Tangerine';
+	font-size: 40px;
+}
+
 .jumbotron-home h1 {
 	font-family: 'Tangerine';
 	font-style: normal;

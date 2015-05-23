@@ -14,7 +14,7 @@ define([
 	  },
 	  
 	  home: function(quizId) {
-	  	console.log('home' + quizId);
+	  	console.log('home ' + quizId);
 		app.mainRegion.show(new HomeView({quizId: quizId}));
 	  },
 	  

@@ -3,14 +3,13 @@ define([
   'underscore',
   'backbone',
 ], function($, _, Backbone){
-	var Question = Backbone.Model.extend({
+	var Answer = Backbone.Model.extend({
 		defaults : {
-			quiz_id: null,
-			text: null,
-			options: null,
+			id: null,
+			value: null,
 			group_id: null
 		}
 	});
 
-	return Question;
+	return Answer;
 });

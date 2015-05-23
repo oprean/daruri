@@ -1,16 +1,19 @@
 <div class="progress">
-  <div class="progress-bar" role="progressbar" aria-valuenow="<%= progress %>" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
+  <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="<%= progress %>" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <%= progress %>%">
     <%= progress %>%
   </div>
 </div>
-<div class="question">
-	<p class="text-center"><%= text %></p>
-	<form class="text-center">
+<div class="question text-center">
+	<p><%= text %></p>
+	<div class="text-left">
 		<% _.each(options, function(option) { %>
-		<label class="radio-inline">
-		  <input type="radio" class="answer" name="options" value="<%= option.val %>"> <%= option.text%>
-		</label>			
+		<div class="radio">
+			<label>
+			  <input type="radio" class="answer" name="options" value="<%= option.val %>"> 
+			  <%= option.text%>
+			</label>
+		</div>
 		<% }) %>
-	<p><a class="btn btn-primary btn-lg" href="#quiz/<%= quizId %>/<%= id+1 %>" role="button">Next</a></p>
-	</form>	
+	</div>
+	<p><a class="btn btn-primary btn-lg btn-next-question" style="display: none;" href="#quiz/<%= quiz_id %>/<%= next %>" role="button"><%= (progress==100)?'Results':'Next' %></a></p>
 </div>

@@ -1,6 +1,10 @@
 <div class="jumbotron-home text-center center-block">
   <h1 class="center-block"><%= name %></h1>
   <p><%= description %></p>
-  <p><a class="btn btn-primary btn-lg" href="#quiz/<%= id %>/1" role="button">Start</a></p>
+  <p>
+  	<a class="btn btn-primary btn-lg" href="#quiz/<%= id %>/1" role="button">Start</a>
+  	<a style="display:none" class="btn btn-primary btn-lg btn-resume" href="#quiz/<%= id + '/' + status.data %>" role="button">Resume</a>
+  	<a style="display:none" class="btn btn-primary btn-lg btn-result" href="#quiz/<%= id %>/result" role="button">Result</a>
+  </p>
 </div>
  

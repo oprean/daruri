@@ -49,6 +49,7 @@ require([
   'views/HeaderView',
   'views/FooterView',
   'jquery.bootstrap',
+  'moment',
     ], function ($, _, Backbone, Marionette, Router, Utils, Constants, HeaderView, FooterView) {    
         window.app = new Backbone.Marionette.Application();
 		app.addRegions({

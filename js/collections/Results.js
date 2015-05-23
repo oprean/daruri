@@ -2,8 +2,8 @@ define([
   'underscore',
   'backbone',
   'backbone.localStorage',
-  'models/quiz'
-], function(_, Backbone, LocalStorage, Quiz){
+  'models/Result'
+], function(_, Backbone, LocalStorage, Result){
 	var Quizzes = Backbone.Collection.extend({
 	  model: Result,
 	  localStorage: new LocalStorage("results"), 

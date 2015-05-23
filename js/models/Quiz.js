@@ -5,7 +5,7 @@ define([
 ], function($, _, Backbone){
 	var Quiz = Backbone.Model.extend({
 		defaults : {
-			name: 'anonymous',
+			name: null,
 			options: [],
 			questions: null,
 			results: null,
