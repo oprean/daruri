@@ -48,6 +48,11 @@ body {
 	font-weight: 300;
 }
 
+.label-option {
+	text-align: left;
+	width: 200px;
+}
+
 ul.score {
 	list-style-type: none;
 	padding: 0px;

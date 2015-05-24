@@ -1,7 +1,7 @@
 {
 	"id" : "test",
 	"name" : "Test quiz",
-	"description" : "For testing only",
+	"description" : "Biblia învaţă că fiecare creştin are cel puţin un dar spiritual care poate fi folosit spre zidirea trupului lui Cristos. Darurile spirituale sunt împărţite de Duhul Sfânt iar apoi dezvoltate de fiecare creștin.",
 	
 	"options" : [
 		{"val": 3, "text": "Întotdeauna"},
