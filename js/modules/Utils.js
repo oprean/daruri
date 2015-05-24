@@ -153,7 +153,7 @@ define([
 					score.set({value: parseInt(score.get('value')) + parseInt(answer.value)})
 				}
 			})				
-
+			statistics.sort();
 			var top = _.findWhere(groups, {id: statistics.at(0).get('group_id')});
 					
 			result.set({
