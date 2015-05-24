@@ -12,17 +12,22 @@ define([
 		initialize : function(options) {
 			Utils.generateResultStatistics(options.quizId);
 			this.model = Utils.getResult(options.quizId);
-			console.log(this.model);
+			this.quiz = Utils.getQuiz(options.quizId);
 		},
 		events : {
-			'click .btn-download' : 'download'
+			'click .btn-download' : 'download',
+			'click .score-item' : 'toggleDescription'
+		},
+		
+		toggleDescription : function(e) {			
+			this.$('.score-description').toggle();
 		},
 		
 		download : function() {
 			console.log(jsPDF);
 			var doc = new jsPDF();
-			//doc.text(20, 20, 'Hello world.');
-			doc.fromHTML($('.result-container').get(0), 15, 15, {'width': 170});			
+			//doc.fromHTML($('.result-container').get(0), 15, 15, {'width': 170});
+			doc.text(20, 30, 'Darul iscusin&abreve;ei lucrului manual');						
 			doc.save('gifts.pdf');
 		}
 	});

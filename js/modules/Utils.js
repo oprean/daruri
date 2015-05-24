@@ -143,9 +143,12 @@ define([
 			_.each(result.get('answers'), function(answer){
 				score = statistics.findWhere({group_id: answer.group_id})
 				if (!score) {
+					var group = _.findWhere(groups, {id: answer.group_id});
+					console.log(group);
 					score = new Score({ 
 						group_id: answer.group_id,
-						name: 'Darul ' + _.findWhere(groups, {id: answer.group_id}).name,  
+						name: 'Darul ' + group.name,
+						description: group.description,  
 						value: parseInt(answer.value)
 					});
 					statistics.add(score);
@@ -158,8 +161,9 @@ define([
 					
 			result.set({
 				result: {
-					name: 'Darul ' + top.name,
-					description: top.description,
+					name: statistics.at(0).get('name'),
+					description: statistics.at(0).get('description'),
+					value: statistics.at(0).get('value'),
 					statistics: statistics
 				}
 			})

@@ -4,15 +4,16 @@
 	<div class="text-center">
 		<ul class="score">
 			<% _.each(result.statistics, function(item) { %>
-			<li>
+			<li class="score-item" data-group-id="<%= item.group_id %>">
 				<span class="score-name"><%= item.name %></span>
-				<span class="score-value"><%= item.value %></span>
+				<span class="badge"><%= item.value %></span><br />
+				<span style="display: none" class="score-description"><%= item.description %></span>
 			</li>	
 			<% }) %>
 		</ul>
 	</div>
 </div>
 <hr />
-<p class="text-center">
+<!--p class="text-center">
 	<button class="btn btn-primary btn-download" type="button">Descarcă PDF</button>
-</p>
+</p-->

@@ -72,4 +72,14 @@ ul.score li:nth-child(-n+3) {
 	text-align: left;
 	display: inline-block;
 	width: 200px;
+	cursor: help;
+	border-bottom: 1px dotted #CCCCCC;
+}
+
+.score-description {
+	width: 200px;
+	text-align: justify;
+	display: inline-block;
+	font-size: 0.9em;
+	font-weight: normal;
 }
