@@ -59,7 +59,7 @@ require([
 		});
 			
 		app.addInitializer(function(){
-			app.env = Utils.bootstrapEnv();
+			//app.env = Utils.bootstrapEnv();
 			app.router = new Router();
 			$.ajaxSetup({cache: false});
 			if( ! Backbone.History.started) Backbone.history.start();

@@ -1,7 +1,12 @@
-<div><%= result.name %></div>
-<div><%= result.description %></div>
-<ul>
-	<% _.each(result.top, function(item) { %>
-	<li><%= item.name %> | <%= item.score %></li>	
-	<% }) %>
-</ul>
+<h1><%= result.name %></h1>
+<p><%= result.description %></p>
+<div class="text-center">
+	<ul class="score">
+		<% _.each(result.statistics, function(item) { %>
+		<li>
+			<span class="score-name"><%= item.name %></span>
+			<span class="score-value"><%= item.value %></span>
+		</li>	
+		<% }) %>
+	</ul>
+</div>

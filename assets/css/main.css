@@ -5,6 +5,7 @@ html {
 
 body {
 	/*font-family: 'Roboto';*/
+	background: url('../img/geometry.png');
 	font-weight: 100; 
 	margin-bottom: 60px;
 }
@@ -39,10 +40,26 @@ body {
 	font-weight: 100;
 	font-size: 136px;
 	color: #312D3A;
-	text-shadow: 0px 0px 10px #000;
+	/*text-shadow: 0px 0px 10px #000;*/
 }
 
 .question {
 	font-size: 20px;
 	font-weight: 300;
+}
+
+ul.score {
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+ul.score li:nth-child(-n+3) {
+	font-weight: bold;
+}
+
+.score-name {
+	text-align: left;
+	display: inline-block;
+	width: 200px;
 }

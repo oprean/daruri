@@ -24,7 +24,7 @@ define([
 		getQuizJson : function(name) {
 			var quiz;
 			$.ajax({
-				url : 'js/quizzes/' + name + '.json',
+				url : 'assets/data/' + name + '.json',
 				dataType: 'json',
 				async: false, 
 				success : function(data) {
@@ -60,7 +60,7 @@ define([
 			return quiz;
 		},
 		
-		getQuizStatus(quizId) {
+		getQuizStatus : function(quizId) {
 			var result = this.getResult(quizId);
 			if (!result) throw quizId + 'results does not exist!';
 			var status = null;
@@ -143,7 +143,11 @@ define([
 			_.each(result.get('answers'), function(answer){
 				score = statistics.findWhere({group_id: answer.group_id})
 				if (!score) {
-					score = new Score({ group_id: answer.group_id, value: parseInt(answer.value)});
+					score = new Score({ 
+						group_id: answer.group_id,
+						name: 'Darul ' + _.findWhere(groups, {id: answer.group_id}).name,  
+						value: parseInt(answer.value)
+					});
 					statistics.add(score);
 				} else {
 					score.set({value: parseInt(score.get('value')) + parseInt(answer.value)})
@@ -154,7 +158,7 @@ define([
 					
 			result.set({
 				result: {
-					name: top.name,
+					name: 'Darul ' + top.name,
 					description: top.description,
 					statistics: statistics
 				}
