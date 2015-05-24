@@ -11,6 +11,7 @@ require.config({
 		"backbone.validation":"lib/backbone-validation-min",		
 		
 		"moment":"lib/moment.min",
+		"jspdf":"lib/jspdf.min",
 
 		"text":"lib/text",
 	},

@@ -1,12 +1,18 @@
-<h1><%= result.name %></h1>
-<p><%= result.description %></p>
-<div class="text-center">
-	<ul class="score">
-		<% _.each(result.statistics, function(item) { %>
-		<li>
-			<span class="score-name"><%= item.name %></span>
-			<span class="score-value"><%= item.value %></span>
-		</li>	
-		<% }) %>
-	</ul>
+<div class="result-container">
+	<h1><%= result.name %></h1>
+	<p><%= result.description %></p>
+	<div class="text-center">
+		<ul class="score">
+			<% _.each(result.statistics, function(item) { %>
+			<li>
+				<span class="score-name"><%= item.name %></span>
+				<span class="score-value"><%= item.value %></span>
+			</li>	
+			<% }) %>
+		</ul>
+	</div>
 </div>
+<hr />
+<p class="text-center">
+	<button class="btn btn-primary btn-download" type="button">Descarcă PDF</button>
+</p>
