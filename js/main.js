@@ -48,9 +48,9 @@ require([
   'modules/Constants',
   'views/HeaderView',
   'views/FooterView',
-  'jquery.bootstrap',
   'moment',
-    ], function ($, _, Backbone, Marionette, Router, Utils, Constants, HeaderView, FooterView) {    
+  'jquery.bootstrap',
+    ], function ($, _, Backbone, Marionette, Router, Utils, Constants, HeaderView, FooterView, moment) {    
         window.app = new Backbone.Marionette.Application();
 		app.addRegions({
 			headerRegion : "#header-container",
@@ -60,6 +60,7 @@ require([
 			
 		app.addInitializer(function(){
 			//app.env = Utils.bootstrapEnv();
+			moment.locale('ro');
 			app.router = new Router();
 			$.ajaxSetup({cache: false});
 			if( ! Backbone.History.started) Backbone.history.start();

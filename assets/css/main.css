@@ -53,6 +53,11 @@ body {
 	width: 200px;
 }
 
+.label-started-on {
+	font-size: 0.8em;
+	color: #AAAAAA;
+}
+
 ul.score {
 	list-style-type: none;
 	padding: 0px;

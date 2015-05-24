@@ -12,9 +12,17 @@ define([
 		initialize : function(options) {
 			var self = this;
 			var quizId = options.quizId?options.quizId:Constants.DEFAULT_QUIZ
-			var result = Utils.getResult(quizId);
+			this.result = Utils.getResult(quizId);
 			this.status = Utils.getQuizStatus(quizId);
 			this.model = Utils.getQuiz(quizId);
+		},
+		
+		events : {
+			'click .btn-start' : 'startQuiz'
+		},
+		
+		startQuiz : function() {
+			this.result.destroy( {wait: true})
 		},
 		
 		templateHelpers : function() {
@@ -27,10 +35,15 @@ define([
 			switch(this.status.id) {
 				case 'done':
 					this.$('.btn-result').css('display', 'inline-block');
+					this.$('.label-started-on').css('display', 'inline-block');
 					break;
 				case 'progress':
 					this.$('.btn-resume').css('display', 'inline-block');
+					this.$('.label-started-on').css('display', 'inline-block');
 					break;
+				case 'new':
+					this.$('.description-container').css('display', 'inline-block');
+				
 			}
 		}
 	});

@@ -6,7 +6,7 @@ define([
 ], function(_, Backbone, LocalStorage, Quiz){
 	var Quizzes = Backbone.Collection.extend({
 	  model: Quiz,
-	  localStorage: new LocalStorage("quizzes"), 
+	  localStorage: new LocalStorage("quiz-data"), 
 	});
 	
 	return Quizzes;

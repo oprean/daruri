@@ -65,11 +65,11 @@ define([
 			if (!result) throw quizId + 'results does not exist!';
 			var status = null;
 			if (result.get('result')) {
-				status = { id: 'done', data: result.get('result')};
+				status = { id: 'done', data: result.get('result'), start_date: result.get('date')};
 			} else if (result.get('answers').length) {
-				status = { id: 'progress', data: result.get('answers').length};
+				status = { id: 'progress', data: result.get('answers').length+1, start_date: result.get('date')};
 			} else {
-				status = { id: 'new', data: null};
+				status = { id: 'new', data: null, start_date: null};
 			}
 			
 			return status;
@@ -105,7 +105,7 @@ define([
 				success: function(collection) {
 					result = collection.findWhere({quiz_id:quizId});
 					if (!result) {
-						result = new Result({quiz_id: quizId, date: moment()});
+						result = new Result({quiz_id: quizId, date: moment().format("dddd, Do MMMM YYYY, h:mm:ss a")});
 						collection.add(result);
 						result.save();
 					}					
