@@ -4,11 +4,12 @@ define([
   'backbone',
   'backbone.marionette',
   'views/HomeView',
-  'views/AboutView',
+  'views/StaticView',
   'views/QuestionView',
   'views/ResultView',
+  'views/GroupsView',
 ], function($, _, Backbone, Marionette, 
-	HomeView, AboutView, QuestionView, ResultView){
+	HomeView, StaticView, QuestionView, ResultView, GroupsView){
 	var Controller = Marionette.Controller.extend({
 	  initialize: function() {
 	  },
@@ -18,11 +19,10 @@ define([
 		app.mainRegion.show(new HomeView({quizId: quizId}));
 	  },
 	  
-	  about: function() {
-	  	console.log('about');
-		app.mainRegion.show(new AboutView());
+	  static: function(file) {
+		app.mainRegion.show(new StaticView({tpl:file}));
 	  },
-	  
+	   
 	  quiz: function(quizId, questionId) {
 	  	console.log('question');
 	  	var view;
@@ -33,6 +33,9 @@ define([
 	  		case 'result':
 	  			view = new ResultView({quizId: quizId});
 	  			break;
+	  		case 'groups':
+	  			view = new GroupsView({quizId: quizId});
+	  			break;
 	  		default:
 	  			view = new QuestionView({
 					quizId: quizId, 
@@ -40,12 +43,6 @@ define([
 				})
 	  	}
 		app.mainRegion.show(view);
-	  },
-	  
-	  result: function() {
-	  	console.log('result');
-		app.mainRegion.show();
-		
 	  },
 	});
 	

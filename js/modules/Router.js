@@ -10,8 +10,8 @@ define([
 	  controller: controller,
 	  appRoutes: {
 	    '': 'home',
-	  	'about': 'about',
 	    'home': 'home',
+	    'static/:template': 'static',
 	  	'quiz/:name/:q': 'quiz',
 	  }
 	});

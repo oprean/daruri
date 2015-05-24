@@ -31,7 +31,6 @@ body {
 
 .navbar-brand {
 	font-family: 'Tangerine';
-	font-size: 40px;
 }
 
 .jumbotron-home h1 {
@@ -39,6 +38,7 @@ body {
 	font-style: normal;
 	font-weight: 100;
 	font-size: 100px;
+	line-height: 75px;
 	color: #312D3A;
 	/*text-shadow: 0px 0px 10px #000;*/
 }
@@ -58,7 +58,7 @@ body {
 	color: #AAAAAA;
 }
 
-ul.score {
+ul.score, ul.groups {
 	list-style-type: none;
 	padding: 0px;
 	margin: 0px;
