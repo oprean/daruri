@@ -20,6 +20,18 @@
 			"type" : 2,
 			"name" : "Limbaje iubirii",
 			"description" : "Acest chestionar a fost conceput pentru a vă ajuta să identificaţi limbajul dvs. de dragoste."
+		},
+		{
+			"id" : "type1",
+			"type" : 1,
+			"name" : "Quiz type 1",
+			"description" : "Quiz type 1 for testing only."
+		},
+		{
+			"id" : "type2",
+			"type" : 2,
+			"name" : "Quiz type 2",
+			"description" : "Quiz type 2 for testing only."
 		}
 	]
 }

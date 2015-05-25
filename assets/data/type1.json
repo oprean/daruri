@@ -1,0 +1,34 @@
+{
+	"id" : "type1",
+	"type" : 1,
+	"name" : "Test quiz type 1",
+	"description" : "Description test quiz type 1",
+	
+	"options" : [
+		{"val": 2, "text": "val 2"},
+		{"val": 1, "text": "val 1"},
+		{"val": 0, "text": "val 0"}
+	],
+	
+	"groups" : [
+		{"id": "A", "name": "group_A", "description": "Description group A."},
+		{"id": "B", "name": "group_B", "description": "Description group B."},
+		{"id": "C", "name": "group_C", "description": "Description group C."}
+		
+	],
+	
+	"questions" : [
+		{"id": 1, "text": "Q.(A)",  "group_id": "A"},
+		{"id": 2, "text": "Q.(B)",  "group_id": "B"},
+		{"id": 3, "text": "Q.(C)",  "group_id": "C"},
+		{"id": 4, "text": "Q.(A)",  "group_id": "A"},
+		{"id": 5, "text": "Q.(B)",  "group_id": "B"},
+		{"id": 6, "text": "Q.(C)",  "group_id": "C"},
+		{"id": 7, "text": "Q.(A)",  "group_id": "A"},
+		{"id": 8, "text": "Q.(B)",  "group_id": "B"},
+		{"id": 9, "text": "Q.(C)",  "group_id": "C"},
+		{"id": 10, "text": "Q.(A)",  "group_id": "A"},
+		{"id": 11, "text": "Q.(B)",  "group_id": "B"},
+		{"id": 12, "text": "Q.(C)",  "group_id": "C"}
+	] 
+}

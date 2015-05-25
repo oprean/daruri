@@ -1,0 +1,54 @@
+{
+	"id" : "type2",
+	"type" : 2,
+	"name" : "Test quiz type 2",
+	"description" : "Description test quiz type 2",
+
+	"options" : [],
+	
+	"groups" : [
+		{"id": "A", "name": "group_A", "description": "Description group A."},
+		{"id": "B", "name": "group_B", "description": "Description group B."},
+		{"id": "C", "name": "group_C", "description": "Description group C."}
+		
+	],
+	
+	"questions" : [
+		{"id": 1, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "A", "text": "A"}, 
+			{"val": "E", "text": "E"}]},
+		{"id": 2, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "B", "text": "B"}, 
+			{"val": "D", "text": "D"}]},			 
+		{"id": 3, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "C", "text": "C"}, 
+			{"val": "B", "text": "B"}]},
+		{"id": 4, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "D", "text": "D"}, 
+			{"val": "E", "text": "E"}]},
+		{"id": 5, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "E", "text": "E"}, 
+			{"val": "C", "text": "C"}]},
+		{"id": 6, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "B", "text": "B"}, 
+			{"val": "E", "text": "E"}]},
+		{"id": 7, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "C", "text": "C"}, 
+			{"val": "A", "text": "A"}]},
+		{"id": 8, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "E", "text": "E"}, 
+			{"val": "A", "text": "A"}]},
+		{"id": 9, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "B", "text": "B"}, 
+			{"val": "C", "text": "C"}]},
+		{"id": 10, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "A", "text": "A"}, 
+			{"val": "D", "text": "D"}]},
+		{"id": 11, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "B", "text": "B"}, 
+			{"val": "A", "text": "A"}]},
+		{"id": 12, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "D", "text": "D"}, 
+			{"val": "E", "text": "E"}]}
+	]
+}
