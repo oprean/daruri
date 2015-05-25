@@ -5,11 +5,12 @@ define([
   'backbone.marionette',
   'views/HomeView',
   'views/StaticView',
+  'views/QuizView',
   'views/QuestionView',
   'views/ResultView',
   'views/GroupsView',
 ], function($, _, Backbone, Marionette, 
-	HomeView, StaticView, QuestionView, ResultView, GroupsView){
+	HomeView, StaticView, QuizView, QuestionView, ResultView, GroupsView){
 	var Controller = Marionette.Controller.extend({
 	  initialize: function() {
 	  },
@@ -28,7 +29,7 @@ define([
 	  	var view;
 	  	switch(questionId) {
 	  		case 'home':
-	  			view = new HomeView({quizId: quizId});
+	  			view = new QuizView({quizId: quizId});
 	  			break;
 	  		case 'result':
 	  			view = new ResultView({quizId: quizId});

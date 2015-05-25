@@ -1,15 +1,24 @@
 <div class="jumbotron-home text-center center-block">
   <h1 class="center-block"><%= name %></h1>
-  <div style="display:none" class="text-justify description-container">
+  <div class="text-justify description-container">
 	  <p><%= description %>  </p>
-	  <p><strong>Important:</strong> fă evaluarea darurilor spirituale pe baza a ceea ce ştii că este adevărat despre tine în prezent, nu pe baza a ceea ce crezi că este adevărat, sau ai vrea să fie adevărat sau trebuie să fie adevărat în ce te priveşte. Cât de potrivite sunt aceste afirmaţii referitor la tine? Care este experienţa ta? În ce măsură reflectă afirmaţia respectivă tendinţele tale naturale/fireşti.</p>  	
+	  <p><strong>Important:</strong> fă evaluarea raspunsurilor pe baza a ceea ce ştii că este adevărat despre tine în prezent, nu pe baza a ceea ce crezi că este adevărat, sau ai vrea să fie adevărat sau trebuie să fie adevărat în ce te priveşte. Cât de potrivite sunt aceste afirmaţii referitor la tine? Care este experienţa ta? În ce măsură reflectă afirmaţia respectivă tendinţele tale naturale/fireşti.</p>  	
   </div>
   <br />
-  <p>
-  	<a class="btn btn-primary btn-lg btn-start" href="#quiz/<%= id %>/1" role="button">Start</a>
-  	<a style="display:none" class="btn btn-primary btn-lg btn-resume" href="#quiz/<%= id + '/' + status.data %>" role="button">Continuă</a>
-  	<a style="display:none" class="btn btn-primary btn-lg btn-result" href="#quiz/<%= id %>/result" role="button">Rezultat</a>
-  	<p class="label-started-on" style="display:none">Început : <%= status.start_date %></p>
-  </p>
 </div>
  
+<div class="row">
+<% _.each(quizzes, function(quiz) { %>
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+  <div class="thumbnail">
+    <div class="caption">
+      <h3 id="thumbnail-label"><%= quiz.name %></h3>
+      <p><%= quiz.description %></p>
+      <p>
+      	<a role="button" class="btn btn-primary" href="#quiz/<%= quiz.id %>/home">Start</a> 
+      </p>
+    </div>
+  </div>
+</div>
+<% }) %>
+</div>

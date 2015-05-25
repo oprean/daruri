@@ -60,7 +60,7 @@ require([
 		});
 			
 		app.addInitializer(function(){
-			//app.env = Utils.bootstrapEnv();
+			app.env = Utils.bootstrapEnv();
 			moment.locale('ro');
 			app.router = new Router();
 			$.ajaxSetup({cache: false});

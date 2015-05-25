@@ -21,7 +21,7 @@ define([
 	
 	var Utils = {
 		
-		getQuizJson : function(name) {
+		getJson : function(name) {
 			var quiz;
 			$.ajax({
 				url : 'assets/data/' + name + '.json',
@@ -45,7 +45,7 @@ define([
 					var questions = new Questions();
 					quiz = collection.get(quizId);
 					if (!quiz) {
-						var quizJson = self.getQuizJson(quizId)
+						var quizJson = self.getJson(quizId)
 						quiz = new Quiz(quizJson);
 						collection.add(quiz);
 						quiz.save();
@@ -88,7 +88,7 @@ define([
 			question.set({
 				progress: progress,
 				quiz_id:quiz.get('id'),
-				options: quiz.get('options'),
+				options: (quiz.get('type')==1)?quiz.get('options'):question.get('options'), 
 				next: next,
 				selected: null
 			});
