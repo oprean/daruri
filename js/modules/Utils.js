@@ -141,21 +141,39 @@ define([
 			if (!result) throw quizId + 'results does not exist!';
 			
 			_.each(result.get('answers'), function(answer){
-				score = statistics.findWhere({group_id: answer.group_id})
-				if (!score) {
-					var group = _.findWhere(groups, {id: answer.group_id});
-					console.log(group);
-					score = new Score({ 
-						group_id: answer.group_id,
-						name: 'Darul ' + group.name,
-						description: group.description,  
-						value: parseInt(answer.value)
-					});
-					statistics.add(score);
+				if (quiz.get('type') == 1) {
+					score = statistics.findWhere({group_id: answer.group_id})
+					if (!score) {
+						var group = _.findWhere(groups, {id: answer.group_id});
+						console.log(group);
+						score = new Score({ 
+							group_id: answer.group_id,
+							name: 'Darul ' + group.name,
+							description: group.description,  
+							value: parseInt(answer.value)
+						});
+						statistics.add(score);
+					} else {
+						score.set({value: parseInt(score.get('value')) + parseInt(answer.value)})
+					}				
 				} else {
-					score.set({value: parseInt(score.get('value')) + parseInt(answer.value)})
+					score = statistics.findWhere({group_id: answer.value})
+					if (!score) {
+						var group = _.findWhere(groups, {id: answer.value});
+						console.log(group);
+						score = new Score({ 
+							group_id: answer.value,
+							name: group.name,
+							description: group.description,  
+							value: 1
+						});
+						statistics.add(score);
+					} else {
+						score.set({value: parseInt(score.get('value')) + 1})
+					}
 				}
-			})				
+			});
+
 			statistics.sort();
 			var top = _.findWhere(groups, {id: statistics.at(0).get('group_id')});
 					
