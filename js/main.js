@@ -46,12 +46,13 @@ require([
   'backbone.marionette',
   'modules/Router',
   'modules/Utils',
+  'models/QuizzesHome',
   'modules/Constants',
   'views/HeaderView',
   'views/FooterView',
   'moment',
   'jquery.bootstrap',
-    ], function ($, _, Backbone, Marionette, Router, Utils, Constants, HeaderView, FooterView, moment) {    
+    ], function ($, _, Backbone, Marionette, Router, Utils, QuizzesHome, Constants, HeaderView, FooterView, moment) {    
         window.app = new Backbone.Marionette.Application();
 		app.addRegions({
 			headerRegion : "#header-container",
@@ -61,6 +62,7 @@ require([
 			
 		app.addInitializer(function(){
 			app.env = Utils.bootstrapEnv();
+			app.quizzes = new QuizzesHome(Utils.getJson('quizzes'));
 			moment.locale('ro');
 			app.router = new Router();
 			$.ajaxSetup({cache: false});

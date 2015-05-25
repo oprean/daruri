@@ -148,7 +148,7 @@ define([
 						console.log(group);
 						score = new Score({ 
 							group_id: answer.group_id,
-							name: 'Darul ' + group.name,
+							name: group.name,
 							description: group.description,  
 							value: parseInt(answer.value)
 						});
