@@ -7,6 +7,9 @@ define([
 ], function($, _, Backbone, Marionette, footerTpl){
 	var FooterView = Backbone.Marionette.ItemView.extend({
 		template : _.template(footerTpl),
+		initialize : function(options) {
+			this.model = app.quizzes;
+		},
 		events : {
 			'click .local-storage-clear' : 'localStorageClear'
 		},

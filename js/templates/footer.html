@@ -2,8 +2,10 @@
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12">
 			<div class="text-center">
-				<a href="#home"><span aria-hidden="true" class="glyphicon glyphicon-home"></span></a> | 
-				<a href="#quiz/gifts/groups"><span aria-hidden="true" class="glyphicon glyphicon-gift"></span></a> |
+				
+				<% _.each(quizzes, function(quiz) { %>
+					<a href="#quiz/<%= quiz.id %>/home"><span aria-hidden="true" class="glyphicon <%= quiz.icon %>"></span></a> |
+				<% }) %>
 				<span class="local-storage-clear">Oprean &copy; 2015</span>
 			</div>
 		</div>

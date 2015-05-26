@@ -7,29 +7,34 @@
 			"id" : "gifts",
 			"type" : 1,
 			"name" : "Daruri Spirituale",
+			"icon" : "glyphicon-gift",
 			"description" : "Biblia învaţă că fiecare creştin are cel puţin un dar spiritual care poate fi folosit spre zidirea trupului lui Cristos. Darurile spirituale sunt împărţite de Duhul Sfânt iar apoi dezvoltate de fiecare creștin."
 		},
 		{
 			"id" : "conflict",
 			"type" : 1,
+			"icon" : "glyphicon-flash",
 			"name" : "Managementul conflictelor",
 			"description" : "Acest chestionar a fost conceput pentru a vă ajuta să identificaţi stilul dvs. preferat de rezolvare a conflictelor."
 		},
 		{
 			"id" : "love",
 			"type" : 2,
+			"icon" : "glyphicon-heart",
 			"name" : "Limbaje iubirii",
 			"description" : "Acest chestionar a fost conceput pentru a vă ajuta să identificaţi limbajul dvs. de dragoste."
 		},
 		{
 			"id" : "type1",
 			"type" : 1,
+			"icon" : "glyphicon-signal",
 			"name" : "Quiz type 1",
 			"description" : "Quiz type 1 for testing only."
 		},
 		{
 			"id" : "type2",
 			"type" : 2,
+			"icon" : "glyphicon-signal",
 			"name" : "Quiz type 2",
 			"description" : "Quiz type 2 for testing only."
 		}
