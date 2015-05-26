@@ -1,13 +1,14 @@
 Global:
 =======
 - show active quiz on header nav-bar
-- set devel/production mode (to hide test quizes)
+- change page title to reflect where you are
++ set devel/production mode (to hide test quizes)
 - add conflict management quiz type2
 - translate english quizzes texts
 - detect locale and use I8N
 - color codes for each quiz
 - format about page
-- build PDF results
+- build PDF results (tcpdf)
 - send result by email
 
 Home page:
