@@ -1,7 +1,7 @@
 define([
 ], function(){
 	var Constants = {
-		DEBUG : true,
+		DEBUG : false,
 		DEFAULT_QUIZ : 'conflict',
 		PARSE : {
 			AppID : '0yXFaABnkqXVSBDvY11WIRia0vWEVDnTCc959zTy',
