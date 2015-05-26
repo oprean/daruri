@@ -24,4 +24,14 @@
 			<%= (progress==100)?'Results':'Next' %>
 			<span aria-hidden="true" class="glyphicon <%= (progress==100)?'glyphicon-ok':'glyphicon-chevron-right' %>"></span>
 		</a></p>
+	<div>
+		<a class="btn btn-primary btn-lg btn-prev-question pull-left" href="#quiz/<%= quiz_id %>/1" role="button">
+			<span aria-hidden="true" class="glyphicon <%= (next==1)?'glyphicon-home':'glyphicon-chevron-left' %>"></span>
+			<%= (next==1)?'Home':'Previous' %>
+		</a>
+		<a class="btn btn-primary btn-lg btn-prev-question pull-right" href="#quiz/<%= quiz_id %>/<%= next %>" role="button">
+			<%= (next=='result')?'Results':'Next' %>
+			<span aria-hidden="true" class="glyphicon <%= (next=='result')?'glyphicon-ok':'glyphicon-chevron-right' %>"></span>
+		</a>
+	</div>
 </div>
