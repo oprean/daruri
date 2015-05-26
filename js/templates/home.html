@@ -1,12 +1,18 @@
 <div class="jumbotron-home text-center center-block">
-  <h1 class="center-block"><%= name %></h1>
-  <div class="text-justify description-container">
-	  <p><%= description %>  </p>
-	  <p><strong>Important:</strong> fă evaluarea raspunsurilor pe baza a ceea ce ştii că este adevărat despre tine în prezent, nu pe baza a ceea ce crezi că este adevărat, sau ai vrea să fie adevărat sau trebuie să fie adevărat în ce te priveşte. Cât de potrivite sunt aceste afirmaţii referitor la tine? Care este experienţa ta? În ce măsură reflectă afirmaţia respectivă tendinţele tale naturale/fireşti.</p>  	
-  </div>
-  <br />
+	<div class="row">
+		 <div class="col-md-4 col-sm-6">
+  			<img src="assets/img/logo.png" class="img-responsive center-block" alt="Baterie de teste">		 	
+		 </div>
+		 <div class="col-md-8 col-sm-6">
+		  <h1 class="center-block"><%= name %></h1>
+		  <div class="text-justify description-container">
+			  <p><%= description %>  </p>
+			  <p><strong>Important:</strong> fă evaluarea raspunsurilor pe baza a ceea ce ştii că este adevărat despre tine în prezent, nu pe baza a ceea ce crezi că este adevărat, sau ai vrea să fie adevărat sau trebuie să fie adevărat în ce te priveşte. Cât de potrivite sunt aceste afirmaţii referitor la tine? Care este experienţa ta? În ce măsură reflectă afirmaţia respectivă tendinţele tale naturale/fireşti.</p>  	
+		  </div>
+		 </div>
+	</div>
 </div>
- 
+ <br />
 <div class="row">
 <% _.each(quizzes, function(quiz) { %>
 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">

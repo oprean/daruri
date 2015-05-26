@@ -61,11 +61,11 @@ require([
 		});
 			
 		app.addInitializer(function(){
+			$.ajaxSetup({cache: false});
 			app.env = Utils.bootstrapEnv();
 			app.quizzes = new QuizzesHome(Utils.getJson('quizzes'));
 			moment.locale('ro');
 			app.router = new Router();
-			$.ajaxSetup({cache: false});
 			if( ! Backbone.History.started) Backbone.history.start();
 			app.headerRegion.show(new HeaderView());
 			app.footerRegion.show(new FooterView());
