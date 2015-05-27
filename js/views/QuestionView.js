@@ -4,8 +4,9 @@ define([
   'backbone',
   'backbone.marionette',
   'modules/Utils',
+  'modules/Constants',
   'text!templates/question.html',
-], function($, _, Backbone, Marionette, Utils, questionTpl){
+], function($, _, Backbone, Marionette, Utils, Constants, questionTpl){
 	var QuestionView = Backbone.Marionette.ItemView.extend({
 		template : _.template(questionTpl),
 		events : {
@@ -20,8 +21,11 @@ define([
 			
 		answer : function(e) {
 			Utils.updateAnswer(this.model, $(e.target).val());
-			this.$('.btn-next-question').css('display','inline-block');
-			this.$('.btn-next-question').addClass('animated fadeIn');
+			_.delay(this.moveNext, Constants.NEXT_QUESTION_DELAY, this.model)
+		},
+		
+		moveNext : function(model) {
+			app.router.navigate('#quiz/' + model.get('quiz_id') + '/' + model.get('next'), {trigger: true})			
 		}
 		
 	});
