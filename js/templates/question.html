@@ -3,22 +3,16 @@
     <%= progress %>%
   </div>
 </div>
-<div class="question-container text-center">
+<div class="question-container">
 	<p class="question"><%= text %></p>
-	<div class="text-center block-center">
 		<% _.each(options, function(option) { %>
-		<div class="radio visible-xs-block">
+		<div class="radio radio-option">
 			<label class="label-option">
 			  <input type="radio" class="answer" name="options" value="<%= option.val %>"> 
 			  <%= option.text%>
 			</label>
 		</div>
-		<label class="radio-inline hidden-xs">
-		  <input type="radio" class="answer" name="options" value="<%= option.val %>"> 
-		  <%= option.text%>
-		</label>
 		<% }) %>
-	</div>
 	<br />
 	<p><a class="btn btn-primary btn-lg btn-next-question" style="display: none;" href="#quiz/<%= quiz_id %>/<%= next %>" role="button">
 			<%= (progress==100)?'Results':'Next' %>

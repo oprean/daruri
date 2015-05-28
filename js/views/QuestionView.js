@@ -21,6 +21,9 @@ define([
 			
 		answer : function(e) {
 			Utils.updateAnswer(this.model, $(e.target).val());
+			this.$('.radio-option').removeClass('radio-selected');
+			$(e.target).closest('.radio-option').addClass('radio-selected');
+			
 			_.delay(this.moveNext, Constants.NEXT_QUESTION_DELAY, this.model)
 		},
 		

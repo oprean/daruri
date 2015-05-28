@@ -44,13 +44,29 @@ body {
 }
 
 .question {
+	/*text-align:justify;*/
 	font-size: 20px;
 	font-weight: 300;
 }
 
+.radio-option {
+	padding: 5px;
+	text-align: left;
+	max-width: 600px;
+}
+
+.radio-selected {
+	color: #FFFFFF;
+	background-color: #337ab7;
+	
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
 .label-option {
 	text-align: left;
-	width: 200px;
+	min-width: 200px;
 }
 
 .label-started-on {
