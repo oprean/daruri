@@ -10,6 +10,7 @@ Global:
 - format about page
 - build PDF results (tcpdf)
 - send result by email
+- save quiz result on parse and provide an fixed URL.
 
 Home page:
 =========

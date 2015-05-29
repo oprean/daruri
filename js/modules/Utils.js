@@ -78,6 +78,7 @@ define([
 		getQuestion : function(quizId, questionId) {
 			var quiz = this.getQuiz(quizId);
 			if (!quiz) throw quizId + 'does not exist!';
+
 			var questions = quiz.get('questions');
 			var question = questions.get(questionId);
 			 
@@ -85,12 +86,17 @@ define([
 			var next = (questions.length != questionId)
 				?parseInt(questionId)+1
 				:'result';
+			var prev = (questionId > 1)
+				?parseInt(questionId)-1
+				:'home';
+			
 			question.set({
 				progress: progress,
 				quiz_id:quiz.get('id'),
 				options: (quiz.get('type')==1)?quiz.get('options'):question.get('options'), 
 				next: next,
-				selected: null
+				prev:prev,
+				selected: this.getAnswer(question)
 			});
 			
 			return question;
@@ -113,6 +119,15 @@ define([
 			})
 			
 			return result;
+		},
+		
+		getAnswer : function(question) {
+			var result = this.getResult(question.get('quiz_id'));
+			if (!result) throw question.get('quiz_id') + 'results does not exist!';
+			var answers = result.get('answers');
+			var answer = answers[question.id-1]
+			console.log(result);
+			return answer?answer.value:null; 
 		},
 		
 		updateAnswer : function(question, value) {
