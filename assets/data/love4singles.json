@@ -1,0 +1,109 @@
+{
+	"id" : "love4singles",
+	"type" : 2,
+	"name" : "Love languages for singles",
+	"description" : "Below you will see 30 paired statements. Please circle the letter next to the statement that best defines what is most meaningful to you in your relationships with others. Both statements may (or may not) sound like they fi t your situation, but please choose the statement that captures the essence of what is most meaningful to you, the majority of the time. Allow 10 to 15 minutes to complete the profi le. Take it when you are relaxed, and try not to rush through it.",
+
+	"options" : [],
+	
+	"groups" : [
+		{"id": "A", "name": "Words of Affirmation", "description": "Actions don’t always speak louder than words. If this is your love language, unsolicited compliments mean the world to you. Hearing the words, “I love you,” are important—hearing the reasons behind that love sends your spirits skyward. Insults can leave you shattered and are not easily forgotten."},
+		{"id": "B", "name": "Quality Time", "description": "In the vernacular of Quality Time, nothing says, “I love you,” like full, undivided attention. Being there for this type of person is critical, but really being there—with the TV off, fork and knife down, and all chores and tasks on standby—makes your significant other feel truly special and loved. Distractions, postponed dates, or the failure to listen can be especially hurtful."},
+		{"id": "C", "name": "Receiving Gifts", "description": "Don’t mistake this love language for materialism; the receiver of gifts thrives on the love, thoughtfulness, and effort behind the gift. If you speak this language, the perfect gift or gesture shows that you are known, you are cared for, and you are prized above whatever was sacrificed to bring the gift to you. A missed birthday, anniversary, or a hasty, thoughtless gift would be disastrous—so would the absence of everyday gestures."},
+		{"id": "D", "name": "Acts of Service", "description": "Can vacuuming the floors really be an expression of love? Absolutely! Anything you do to ease the burden of responsibilities weighing on an “Acts of Service” person will speak volumes. The words he or she most want to hear: “Let me do that for you.” Laziness, broken commitments, and making more work for them tell speakers of this language their feelings don’t matter."},
+		{"id": "E", "name": "Physical Touch", "description": "This language isn’t all about the bedroom. A person whose primary language is Physical Touch is, not surprisingly, very touchy. Hugs, pats on the back, holding hands, and thoughtful touches on the arm, shoulder, or face—they can all be ways to show excitement, concern, care, and love. Physical presence and accessibility are crucial, while neglect or abuse can be unforgivable and destructive."}		
+	],
+	
+	"questions" : [
+		{"id": 1, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "A", "text": "someone I love sends me a loving note/text/email for no special reason."}, 
+			{"val": "E", "text": "I hug someone I love."}]},
+		{"id": 2, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "B", "text": "I can spend alone time with someone I love - just us."}, 
+			{"val": "D", "text": "someone I love does something practical to help me out."}]},
+		{"id": 3, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "C", "text": "someone I love gives me a little gift as a token of our love of concern for each other."}, 
+			{"val": "B", "text": "I get to spend uninterrupted leisure time with those I love."}]},
+		{"id": 4, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "D", "text": "someone I love does something unexpected for me to help me with a project."}, 
+			{"val": "E", "text": "I can share an innocent touch with someone I love."}]},
+		{"id": 5, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "E", "text": "someone I love puts their arm around me in public."}, 
+			{"val": "C", "text": "someone I love surprises me with a gift."}]},
+		{"id": 6, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "B", "text": "I’m around someone I love, even if we’re not really doing anything."}, 
+			{"val": "E", "text": "I can be comfortable holding hands, high-fi ving, or putting my arm around someone I love."}]},
+		{"id": 7, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "C", "text": "I receive a gift from someone I love."}, 
+			{"val": "A", "text": "I hear from someone I love that they love me."}]},
+		{"id": 8, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "E", "text": "I sit close to someone I love."}, 
+			{"val": "A", "text": "I am compiimented by someone I love for no apparent reason."}]},
+		{"id": 9, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "B", "text": "I get the chance to just “hang out” with someone I love."}, 
+			{"val": "C", "text": "I unexpectedly get small gifts from someone I love."}]},
+		{"id": 10, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "A", "text": "I hear someone I love tell me, “I’m proud of you.”"}, 
+			{"val": "D", "text": "someone I love helps me with a task."}]},			
+		{"id": 11, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "B", "text": "I get to do things with someone I love."}, 
+			{"val": "A", "text": "I hear supportive words from someone I love."}]},
+		{"id": 12, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "D", "text": "someone I love does things for me instead of just talking about doing nice things."}, 
+			{"val": "E", "text": "I feel connected to someone I love through a hug."}]},
+		{"id": 13, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "A", "text": "I hear praise from someone I love."}, 
+			{"val": "C", "text": "someone I love gives me something that shows they were really thinking about me."}]},
+		{"id": 14, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "B", "text": "I’m able to just be around someone I love."}, 
+			{"val": "E", "text": "I get a back rub from someone I love."}]},		 
+		{"id": 15, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "A", "text": "someone I love reacts positively to something I’ve accomplished."}, 
+			{"val": "D", "text": "someone I love does something for me that I know they don’t particularly enjoy."}]},
+		{"id": 16, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "E", "text": "I’m able to be in close physical proximity to someone I love."}, 
+			{"val": "B", "text": "I sense someone I love showing interest in the things I care about."}]},
+		{"id": 17, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "D", "text": "someone I love works on special projects with me that I have to complete."}, 
+			{"val": "C", "text": "someone I love gives me an exciting gift."}]},
+		{"id": 18, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "A", "text": "I’m complimented by someone I love on my appearance."}, 
+			{"val": "B", "text": "someone I love takes the time to listen to me and really understand my feelings."}]},
+		{"id": 19, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "E", "text": "I can share a meaningful touch in public with someone I love."}, 
+			{"val": "D", "text": "someone I love offers to run errands for me."}]},
+		{"id": 20, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "D", "text": "someone I love does something special for me to help me out."}, 
+			{"val": "C", "text": "I get a gift that someone I love put thought into choosing."}]},			 
+		{"id": 21, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "B", "text": "someone I love doesn’t check their phone while we’re talking with each other."}, 
+			{"val": "D", "text": "someone I love goes out of their way to do something that relieves pressure on me."}]},
+		{"id": 22, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "C", "text": "I can look forward to a holiday because I’ll probably get a gift from someone I love."}, 
+			{"val": "A", "text": "I hear the words, “I appreciate you” from someone I love."}]},
+		{"id": 23, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "C", "text": "someone I love and haven’t seen in a while thinks enough of me to give me a little gift."}, 
+			{"val": "D", "text": "someone I love takes care of something I’m responsible to do that I feel too stressed to do at the time."}]},
+		{"id": 24, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "B", "text": "someone I love doesn’t interrupt me while I’m talking."}, 
+			{"val": "C", "text": "gift giving is an important part of the relationship with someone I love."}]},
+		{"id": 25, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "D", "text": "someone I love helps me out when they know I’m already tired."}, 
+			{"val": "B", "text": "I get to go somewhere while spending time with someone I love."}]},
+		{"id": 26, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "E", "text": "someone I love touches my arm or shoulder to show their care or concern."}, 
+			{"val": "C", "text": "someone I love gives me a little gift that they picked up in the course of their normal day."}]},
+		{"id": 27, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "A", "text": "someone I love says something encouraging to me."}, 
+			{"val": "B", "text": "I get to spend time in a shared activity or hobby with someone I love."}]},
+		{"id": 28, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "C", "text": "someone I love surprises me with a small token of their appreciation."}, 
+			{"val": "E", "text": "I’m touching someone I love frequently to express our friendship."}]},
+		{"id": 29, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "D", "text": "someone I love helps me out - especially if I know they’re already busy."}, 
+			{"val": "A", "text": "I hear someone I love tell me that they appreciate me."}]},
+		{"id": 30, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "E", "text": "I get a hug from someone whom I haven’t seen in a while."}, 
+			{"val": "A", "text": "I hear someone I love tell me how much I mean to him/her."}]}
+	]
+}

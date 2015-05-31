@@ -79,24 +79,44 @@ define([
 			var quiz = this.getQuiz(quizId);
 			if (!quiz) throw quizId + 'does not exist!';
 
+			var result = this.getResult(quizId);
+			if (!result) throw quizId + 'results does not exist!';
+			
+			var answers = result.get('answers');
+			var answer = _.findWhere(answers, {question_id:parseInt(questionId)});
+			var answer = answer?answer.value:null;
+			var nextAnswer = _.findWhere(answers, {question_id:parseInt(questionId)+1});
+			
+
 			var questions = quiz.get('questions');
 			var question = questions.get(questionId);
 			 
-			var progress = Math.round((questionId * 100)/questions.length)
-			var next = (questions.length != questionId)
-				?parseInt(questionId)+1
-				:'result';
-			var prev = (questionId > 1)
-				?parseInt(questionId)-1
-				:'home';
+			var progress = {
+				text: questionId + '/' + questions.length,
+				percent: Math.round((questionId * 100)/questions.length)
+			}
+			
+			var navButtons = {
+				prev : {
+					text:(questionId>1)?'Previous':'Home',
+					icon:(questionId>1)?'glyphicon-chevron-left':'glyphicon-home',
+					url:(questionId>1)?parseInt(questionId)-1:'home',
+					visible: (questionId>1)?true:false
+				},
+				next: {
+					text: (questionId < questions.length)?'Next':'Results',
+					icon: (questionId < questions.length)?'glyphicon-chevron-right':'glyphicon-ok',
+					url: (questionId < questions.length)?parseInt(questionId)+1:'result',
+					visible: nextAnswer?true:false
+				}
+			}
 			
 			question.set({
 				progress: progress,
 				quiz_id:quiz.get('id'),
 				options: (quiz.get('type')==1)?quiz.get('options'):question.get('options'), 
-				next: next,
-				prev:prev,
-				selected: this.getAnswer(question)
+				button:navButtons,
+				selected: answer
 			});
 			
 			return question;
@@ -120,16 +140,7 @@ define([
 			
 			return result;
 		},
-		
-		getAnswer : function(question) {
-			var result = this.getResult(question.get('quiz_id'));
-			if (!result) throw question.get('quiz_id') + 'results does not exist!';
-			var answers = result.get('answers');
-			var answer = answers[question.id-1]
-			console.log(result);
-			return answer?answer.value:null; 
-		},
-		
+			
 		updateAnswer : function(question, value) {
 			var result = this.getResult(question.get('quiz_id'));
 			if (!result) throw question.get('quiz_id') + 'results does not exist!';

@@ -20,9 +20,9 @@ Home page:
 Question paage:
 ===============
 - center vertically questions and quiz/*/home
-- add back button for question view
-- move to next question automatically or set by user or quiz based
-- replace radio-buttons with something more grahically appealing
++ add back button for question view
++ move to next question automatically or set by user or quiz based
++ replace radio-buttons with something more grahically appealing
  
 Result page:
 ============

@@ -28,7 +28,8 @@ define([
 		},
 		
 		moveNext : function(model) {
-			app.router.navigate('#quiz/' + model.get('quiz_id') + '/' + model.get('next'), {trigger: true})			
+			var button = model.get('button');
+			app.router.navigate('#quiz/' + model.get('quiz_id') + '/' + button.next.url, {trigger: true})			
 		}
 		
 	});

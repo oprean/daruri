@@ -1,0 +1,79 @@
+{
+	"id" : "love4singles",
+	"type" : 2,
+	"name" : "Love languages for kids",
+	"description" : "Each clue box has two comments that parents sometimes make to their children. Read each clue box and, of the two comments, pick the one you like better and wish your mom or dad would say to you. Then circle the letter that goes with that comment. Be careful and only circle one letter in each clue box! After you’ve gone through all 20 clue boxes, go back and count how many A’s, B’s, C’s, D’s, and E’s that you circled. Then write your scores in the blanks at the end of the game. Ask your mom or dad for help if you have any questions. And have fun unlocking the love language mystery! Look at your scores. The highest score represents your primary love language—how you most like to receive love. This doesn’t mean the others aren’t important, it just means that this is your favorite.",
+
+	"options" : [],
+	
+	"groups" : [
+		{"id": "A", "name": "Words of Affirmation", "description": "People whose love language is words of affi rmation like for others to use words to tell them that they are special and that they do a good job."},
+		{"id": "B", "name": "Quality Time", "description": "People with the love language of quality time like it when others do things with them like play a game, watch television, or go to a ballgame."},
+		{"id": "C", "name": "Receiving Gifts", "description": "People with the love language of gifts feel good when someone gives them a special present or surprise."},
+		{"id": "D", "name": "Acts of Service", "description": "A person whose love language is acts of service likes it when others do nice things for them such as helping with chores, helping with school projects, or driving them places"},
+		{"id": "E", "name": "Physical Touch", "description": "People whose love language is physical touch like to receive hugs, kisses, and high-fives."}		
+	],
+
+	"questions" : [
+		{"id": 1, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "A", "text": "Give me a hug!"}, 
+			{"val": "B", "text": "You are terrific!"}]},
+		{"id": 2, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "C", "text": "I’ve got a special birthday present for you!"}, 
+			{"val": "D", "text": "I’ll help you with your project."}]},
+		{"id": 3, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "E", "text": "Let’s go to a movie."}, 
+			{"val": "A", "text": "Give me a high-five!"}]},
+		{"id": 4, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "B", "text": "You are so smart!"}, 
+			{"val": "C", "text": "Have you made your Christmas list?"}]},
+		{"id": 5, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "D", "text": "Would you help me cook dinner?"}, 
+			{"val": "E", "text": "I like going to fun places with you!"}]},
+		{"id": 6, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "A", "text": "Give me a kiss!"}, 
+			{"val": "B", "text": "You are #1!"}]},
+		{"id": 7, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "C", "text": "I’ve got a surprise for you."}, 
+			{"val": "D", "text": "We can make something really cool."}]},
+		{"id": 8, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "E", "text": "Let’s watch TV together!"}, 
+			{"val": "A", "text": "Tag, you’re it!"}]},
+		{"id": 9, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "B", "text": "You did a great job!"}, 
+			{"val": "C", "text": "You’ve earned a special surprise!"}]},
+		{"id": 10, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "D", "text": "You can invite your friends."}, 
+			{"val": "E", "text": "Let’s go to your favorite restaurant."}]},					
+		{"id": 11, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "A", "text": "I’m going to give you a big hug!"}, 
+			{"val": "B", "text": "You are an awesome kid!"}]},
+		{"id": 12, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "C", "text": "I made your favorite food."}, 
+			{"val": "D", "text": "I checked your homework, and it looks great!"}]},
+		{"id": 13, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "E", "text": "You are fun to hang out with!"}, 
+			{"val": "A", "text": "I’ll race you!"}]},
+		{"id": 14, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "B", "text": "Wow! You did it!"}, 
+			{"val": "C", "text": "Check under your bed for a special present!"}]},		 
+		{"id": 15, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "D", "text": "I cleaned up your room for you."}, 
+			{"val": "E", "text": "Let’s play a game together."}]},
+		{"id": 16, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "A", "text": "Would you like for me to scratch your back"}, 
+			{"val": "B", "text": "You can do it! Don’t give up!"}]},
+		{"id": 17, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "C", "text": "What would you like for your birthday?"}, 
+			{"val": "D", "text": "We can pick up your friend on the way to the movie."}]},
+		{"id": 18, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "E", "text": "I always like doing stuff with you."}, 
+			{"val": "A", "text": "You are so huggable!"}]},
+		{"id": 19, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "B", "text": "How did you know how to do that? You are brilliant!"}, 
+			{"val": "C", "text": "I can’t wait to give you your present!"}]},
+		{"id": 20, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "D", "text": "Don’t worry! I’ll pick you up on time!"}, 
+			{"val": "E", "text": "Let’s spend the day doing whatever you want to do!"}]}
+	]
+}

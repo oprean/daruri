@@ -99,3 +99,7 @@ ul.score li:nth-child(-n+3) {
 	font-size: 0.9em;
 	font-weight: normal;
 }
+
+.btn-nav-question {
+	width: 200px;
+}

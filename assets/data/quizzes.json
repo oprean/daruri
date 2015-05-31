@@ -21,7 +21,28 @@
 			"id" : "love",
 			"type" : 2,
 			"icon" : "glyphicon-heart",
-			"name" : "Limbaje iubirii",
+			"name" : "Love languages for copules",
+			"description" : "Acest chestionar a fost conceput pentru a vă ajuta să identificaţi limbajul dvs. de dragoste."
+		},
+		{
+			"id" : "love4teens",
+			"type" : 2,
+			"icon" : "glyphicon-heart",
+			"name" : "Love languages for teens",
+			"description" : "Acest chestionar a fost conceput pentru a vă ajuta să identificaţi limbajul dvs. de dragoste."
+		},
+		{
+			"id" : "love4singles",
+			"type" : 2,
+			"icon" : "glyphicon-heart",
+			"name" : "Love languages for singles",
+			"description" : "Acest chestionar a fost conceput pentru a vă ajuta să identificaţi limbajul dvs. de dragoste."
+		},
+		{
+			"id" : "love4kids",
+			"type" : 2,
+			"icon" : "glyphicon-heart",
+			"name" : "Love languages for kids",
 			"description" : "Acest chestionar a fost conceput pentru a vă ajuta să identificaţi limbajul dvs. de dragoste."
 		},
 		{

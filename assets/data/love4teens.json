@@ -1,0 +1,109 @@
+{
+	"id" : "love4teens",
+	"type" : 2,
+	"name" : "Love languages for teens",
+	"description" : "Which love language received the highest score? This is your primary love language. If point totals for two love languages are equal, you are “bilingual” and have two primary love languages. And, if you have a secondary love language, or one that is close in score to your primary love language, this means that both expressions of love are important to you. The highest possible score for any single love language is 12.",
+
+	"options" : [],
+	
+	"groups" : [
+		{"id": "A", "name": "Words of Affirmation", "description": "Actions don’t always speak louder than words. If this is your love language, unsolicited compliments mean the world to you. Hearing the words, “I love you,” are important—hearing the reasons behind that love sends your spirits skyward. Insults can leave you shattered and are not easily forgotten."},
+		{"id": "B", "name": "Quality Time", "description": "In the vernacular of Quality Time, nothing says, “I love you,” like full, undivided attention. Being there for this type of person is critical, but really being there—with the TV off, fork and knife down, and all chores and tasks on standby—makes your significant other feel truly special and loved. Distractions, postponed dates, or the failure to listen can be especially hurtful."},
+		{"id": "C", "name": "Receiving Gifts", "description": "Don’t mistake this love language for materialism; the receiver of gifts thrives on the love, thoughtfulness, and effort behind the gift. If you speak this language, the perfect gift or gesture shows that you are known, you are cared for, and you are prized above whatever was sacrificed to bring the gift to you. A missed birthday, anniversary, or a hasty, thoughtless gift would be disastrous—so would the absence of everyday gestures."},
+		{"id": "D", "name": "Acts of Service", "description": "Can vacuuming the floors really be an expression of love? Absolutely! Anything you do to ease the burden of responsibilities weighing on an “Acts of Service” person will speak volumes. The words he or she most want to hear: “Let me do that for you.” Laziness, broken commitments, and making more work for them tell speakers of this language their feelings don’t matter."},
+		{"id": "E", "name": "Physical Touch", "description": "This language isn’t all about the bedroom. A person whose primary language is Physical Touch is, not surprisingly, very touchy. Hugs, pats on the back, holding hands, and thoughtful touches on the arm, shoulder, or face—they can all be ways to show excitement, concern, care, and love. Physical presence and accessibility are crucial, while neglect or abuse can be unforgivable and destructive."}		
+	],
+	
+	"questions" : [
+		{"id": 1, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "A", "text": "Asks me what I think."}, 
+			{"val": "E", "text": "Puts his/her arm around my shoulder"}]},
+		{"id": 2, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "B", "text": "Goes to my ball games, recitals, etc."}, 
+			{"val": "D", "text": "Does my laundry"}]},			 
+		{"id": 3, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "C", "text": "Buys me clothes"}, 
+			{"val": "B", "text": "Watches TV or movies with me"}]},
+		{"id": 4, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "D", "text": "Helps me with school projects"}, 
+			{"val": "E", "text": "Hugs me"}]},
+		{"id": 5, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "E", "text": "Kisses me on the cheek"}, 
+			{"val": "C", "text": "Gives me money for things I need"}]},
+		{"id": 6, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "B", "text": "Takes time off of work to do stuff with me"}, 
+			{"val": "E", "text": "Rubs my shoulders or back"}]},
+		{"id": 7, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "C", "text": "Gives me cool things for my birthday"}, 
+			{"val": "A", "text": "Reassures me when I fail or mess up"}]},
+		{"id": 8, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "E", "text": "Gives me a high five"}, 
+			{"val": "A", "text": "Respects my opinions"}]},
+		{"id": 9, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "B", "text": "Goes out to eat or shops with me"}, 
+			{"val": "C", "text": "Lets me use his/her stuff"}]},
+		{"id": 10, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "A", "text": "Tells me I’m the best son/daughter in the world"}, 
+			{"val": "D", "text": "Drives me to places I need to go"}]},			
+		{"id": 11, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "B", "text": "Eats at least one meal with me most every day"}, 
+			{"val": "A", "text": "Listens to me and helps me work through problems"}]},
+		{"id": 12, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "D", "text": "Doesn’t invade my privacy"}, 
+			{"val": "E", "text": "Holds or shakes my hand"}]},
+		{"id": 13, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "A", "text": "Leaves me encouraging notes"}, 
+			{"val": "C", "text": "Knows what my favorite store is"}]},
+		{"id": 14, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "B", "text": "Hangs out with me sometimes"}, 
+			{"val": "E", "text": "Sits next to me on the couch"}]},		 
+		{"id": 15, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "A", "text": "Tells me how proud he/she is of me"}, 
+			{"val": "D", "text": "Cooks meals for me"}]},
+		{"id": 16, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "E", "text": "Straightens my collar, necklace, etc."}, 
+			{"val": "B", "text": "Shows interest in stuff that I’m interested in"}]},
+		{"id": 17, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "D", "text": "Allows my friends to hang out at our house"}, 
+			{"val": "C", "text": "Pays for me to go on school or church trips"}]},
+		{"id": 18, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "A", "text": "Tells me I look good"}, 
+			{"val": "B", "text": "Listens to me without judging me"}]},
+		{"id": 19, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "E", "text": "Touches or rubs my head"}, 
+			{"val": "D", "text": "Sometimes lets me pick out where we go on family trips"}]},
+		{"id": 20, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "D", "text": "Takes me to the doctor, dentist, etc."}, 
+			{"val": "C", "text": "Trusts me to be at home alone"}]},						 
+		{"id": 21, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "B", "text": "Takes me on trips with him/her"}, 
+			{"val": "D", "text": "Takes me and my friends to movies, ball games, etc."}]},
+		{"id": 22, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "C", "text": "Gives me stuff that I really like"}, 
+			{"val": "A", "text": "Notices when I do something good"}]},
+		{"id": 23, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "C", "text": "Gives me extra spending money"}, 
+			{"val": "D", "text": "Asks me if I need help"}]},
+		{"id": 24, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "B", "text": "Doesn’t interrupt me when I’m talking"}, 
+			{"val": "C", "text": "Likes the gifts I buy for him/her"}]},
+		{"id": 25, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "D", "text": "Lets me sleep in late sometimes"}, 
+			{"val": "B", "text": "Seems to really enjoy spending time with me"}]},
+		{"id": 26, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "E", "text": "Pats me on the back"}, 
+			{"val": "C", "text": "Buys me stuff and surprises me with it"}]},
+		{"id": 27, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "A", "text": "Tells me he/she believes in me"}, 
+			{"val": "B", "text": "Can ride in the car with me without lecturing me"}]},
+		{"id": 28, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "C", "text": "Picks up stuff that I need from various stores"}, 
+			{"val": "E", "text": "Sometimes holds or touches my face"}]},
+		{"id": 29, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "D", "text": "Gives me some space when I’m feeling upset or angry"}, 
+			{"val": "A", "text": "Tells me that I’m talented or special"}]},
+		{"id": 30, "text": "It’s more meaningful to me when…", "options" : [
+			{"val": "E", "text": "Hugs or kisses me at least once every day"}, 
+			{"val": "A", "text": "Says he/she is thankful that I’m his/her child"}]}
+	]
+}
