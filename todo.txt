@@ -29,3 +29,4 @@ Result page:
 - format result page based on type, 
 - add animal images for conflict management quizz
 - create badges for love languages
+- remove/repurpose groups view

@@ -63,13 +63,35 @@ define([
 		getQuizStatus : function(quizId) {
 			var result = this.getResult(quizId);
 			if (!result) throw quizId + 'results does not exist!';
+			var quiz = this.getQuiz(quizId);
+			if (!quiz) throw quizId + 'does not exist!';
+		
 			var status = null;
+			
 			if (result.get('result')) {
-				status = { id: 'done', data: result.get('result'), start_date: result.get('date')};
+				status = { 
+					id: 'done', 
+					data: result.get('result'), 
+					text: quiz.get('questions').length + '/' + quiz.get('questions').length, 
+					percent: 100, 
+					start_date: result.get('date')
+				};
 			} else if (result.get('answers').length) {
-				status = { id: 'progress', data: result.get('answers').length+1, start_date: result.get('date')};
+				status = { 
+					id: 'progress', 
+					data: result.get('answers').length+1,
+					text: result.get('answers').length + '/' + quiz.get('questions').length, 
+					percent: Math.round((result.get('answers').length * 100)/quiz.get('questions').length), 
+					start_date: result.get('date')
+				};
 			} else {
-				status = { id: 'new', data: null, start_date: null};
+				status = { 
+					id: 'new', 
+					data: 0, 
+					text: '0/' + quiz.get('questions').length, 
+					percent: 0,
+					start_date: null
+				};
 			}
 			
 			return status;
@@ -137,7 +159,6 @@ define([
 					}					
 				}
 			})
-			console.log(result);
 			return result;
 		},
 			

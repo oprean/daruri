@@ -37,7 +37,7 @@ define([
 					self.model.save();
 					self.$('.form-email').html('<div role="alert" class="alert alert-success"><strong>Success!</strong> Mail succesfully sent to <i>'+ self.$('#email').val() +'</i>!</div>');
 				} else {
-					self.$('.form-email').prepend('<div role="alert" class="alert alert-success"><strong>Error!</strong> Failed to send email!</div>');
+					self.$('.form-email').prepend('<div role="alert" class="alert alert-danger"><strong>Error!</strong> Failed to send email!</div>');
 				}
 			})
 		},

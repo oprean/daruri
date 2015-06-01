@@ -8,56 +8,64 @@
 			"type" : 1,
 			"name" : "Daruri Spirituale",
 			"icon" : "glyphicon-gift",
-			"description" : "Biblia învaţă că fiecare creştin are cel puţin un dar spiritual care poate fi folosit spre zidirea trupului lui Cristos. Darurile spirituale sunt împărţite de Duhul Sfânt iar apoi dezvoltate de fiecare creștin."
+			"description" : "Biblia învaţă că fiecare creştin are cel puţin un dar spiritual care poate fi folosit spre zidirea trupului lui Cristos. Darurile spirituale sunt împărţite de Duhul Sfânt iar apoi dezvoltate de fiecare creștin.",
+			"questions" : 133
 		},
 		{
 			"id" : "conflict",
 			"type" : 1,
 			"icon" : "glyphicon-flash",
 			"name" : "Managementul conflictelor",
-			"description" : "Acest chestionar a fost conceput pentru a vă ajuta să identificaţi stilul dvs. preferat de rezolvare a conflictelor."
+			"description" : "Acest chestionar a fost conceput pentru a vă ajuta să identificaţi stilul dvs. preferat de rezolvare a conflictelor.",
+			"questions" : 25
 		},
 		{
 			"id" : "love",
 			"type" : 2,
 			"icon" : "glyphicon-heart",
 			"name" : "Love languages for copules",
-			"description" : "Acest chestionar a fost conceput pentru a vă ajuta să identificaţi limbajul dvs. de dragoste."
+			"description" : "Acest chestionar a fost conceput pentru a vă ajuta să identificaţi limbajul dvs. de dragoste.",
+			"questions" : 30
 		},
 		{
 			"id" : "love4teens",
 			"type" : 2,
 			"icon" : "glyphicon-heart",
 			"name" : "Love languages for teens",
-			"description" : "Acest chestionar a fost conceput pentru a vă ajuta să identificaţi limbajul de dragoste al pre-adolescentului."
+			"description" : "Acest chestionar a fost conceput pentru a vă ajuta să identificaţi limbajul de dragoste al pre-adolescentului.",
+			"questions" : 30
 		},
 		{
 			"id" : "love4singles",
 			"type" : 2,
 			"icon" : "glyphicon-heart",
 			"name" : "Love languages for singles",
-			"description" : "Acest chestionar a fost conceput pentru a vă ajuta să identificaţi limbajul dvs. de dragoste."
+			"description" : "Acest chestionar a fost conceput pentru a vă ajuta să identificaţi limbajul dvs. de dragoste.",
+			"questions" : 30
 		},
 		{
 			"id" : "love4kids",
 			"type" : 2,
 			"icon" : "glyphicon-heart",
 			"name" : "Love languages for kids",
-			"description" : "Acest chestionar a fost conceput pentru a vă ajuta să identificaţi limbajul de dragoste al copilului."
+			"description" : "Acest chestionar a fost conceput pentru a vă ajuta să identificaţi limbajul de dragoste al copilului.",
+			"questions" : 30
 		},
 		{
 			"id" : "type1",
 			"type" : 1,
 			"icon" : "glyphicon-signal",
 			"name" : "Quiz type 1",
-			"description" : "Quiz type 1 for testing only."
+			"description" : "Quiz type 1 for testing only.",
+			"questions" : 12
 		},
 		{
 			"id" : "type2",
 			"type" : 2,
 			"icon" : "glyphicon-signal",
 			"name" : "Quiz type 2",
-			"description" : "Quiz type 2 for testing only."
+			"description" : "Quiz type 2 for testing only.",
+			"questions" : 12
 		}
 	]
 }
