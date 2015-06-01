@@ -10,6 +10,7 @@ define([
 			date: null,
 			person: 'anonymous',
 			answers: [],
+			email: false,
 			result: null
 		}
 	});

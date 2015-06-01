@@ -17,3 +17,22 @@
 <!--p class="text-center">
 	<button class="btn btn-primary btn-download" type="button">Descarcă PDF</button>
 </p-->
+<form style="display: <%= (email)?'none':'' %>" class="form-horizontal form-email">
+  <div class="form-group">
+    <label for="name" class="col-sm-2 control-label">Name</label>
+    <div class="col-sm-3">
+      <input type="text" class="form-control" id="name" placeholder="your name ...">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-3">
+      <input type="email" class="form-control" id="email" placeholder="your email ...">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-lg btn-primary btn-email">Send</button>
+    </div>
+  </div>
+</form>

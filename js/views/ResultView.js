@@ -16,11 +16,30 @@ define([
 		},
 		events : {
 			'click .btn-download' : 'download',
+			'click .btn-email' : 'email',
 			'click .score-item' : 'toggleDescription'
 		},
 		
 		toggleDescription : function(e) {			
 			this.$('.score-description').toggle();
+		},
+		
+		email : function() {
+			var self = this;
+			$.post('php/mail.php', {mail: {
+				name: this.$('#name').val(),
+				email: this.$('#email').val(),
+				subject: this.quiz.get('name') + ' results',
+				body: this.$('.result-container').html()
+			}}, function(data) {
+				if (data == 'ok') {
+					self.model.set('email', true);
+					self.model.save();
+					self.$('.form-email').html('<div role="alert" class="alert alert-success"><strong>Success!</strong> Mail succesfully sent to <i>'+ self.$('#email').val() +'</i>!</div>');
+				} else {
+					self.$('.form-email').prepend('<div role="alert" class="alert alert-success"><strong>Error!</strong> Failed to send email!</div>');
+				}
+			})
 		},
 		
 		download : function() {

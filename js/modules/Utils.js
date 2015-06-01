@@ -137,7 +137,7 @@ define([
 					}					
 				}
 			})
-			
+			console.log(result);
 			return result;
 		},
 			
@@ -186,7 +186,6 @@ define([
 					score = statistics.findWhere({group_id: answer.value})
 					if (!score) {
 						var group = _.findWhere(groups, {id: answer.value});
-						console.log(group);
 						score = new Score({ 
 							group_id: answer.value,
 							name: group.name,

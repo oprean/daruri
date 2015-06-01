@@ -29,7 +29,7 @@
 			"type" : 2,
 			"icon" : "glyphicon-heart",
 			"name" : "Love languages for teens",
-			"description" : "Acest chestionar a fost conceput pentru a vă ajuta să identificaţi limbajul dvs. de dragoste."
+			"description" : "Acest chestionar a fost conceput pentru a vă ajuta să identificaţi limbajul de dragoste al pre-adolescentului."
 		},
 		{
 			"id" : "love4singles",
@@ -43,7 +43,7 @@
 			"type" : 2,
 			"icon" : "glyphicon-heart",
 			"name" : "Love languages for kids",
-			"description" : "Acest chestionar a fost conceput pentru a vă ajuta să identificaţi limbajul dvs. de dragoste."
+			"description" : "Acest chestionar a fost conceput pentru a vă ajuta să identificaţi limbajul de dragoste al copilului."
 		},
 		{
 			"id" : "type1",
