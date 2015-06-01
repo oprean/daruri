@@ -12,21 +12,5 @@
 	</div>
 </div>
  <br />
-<div class="row">
-<% _.each(quizzes, function(quiz) { console.log(quiz) %>
-<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-	<div class="quiz-card-container">
-		<h3><%= quiz.name %></h3>
-		
-		<div style="display:<%=(quiz.status.id=='new'||quiz.status.id=='done')?'none':'block'%>" class="progress">
-		  <div class="progress-bar" role="progressbar" aria-valuenow="<%= quiz.status.percent %>" aria-valuemin="0" aria-valuemax="100" style="min-width: 3.5em; width: <%= quiz.status.percent %>%">
-		    <%= quiz.status.text %>
-		  </div>
-		</div>
-		
-		<p><%= quiz.description %></p>
-		<a role="button" class="btn btn-primary" href="#quiz/<%= quiz.id %>/home">View</a> 
-	</div>
-</div>
-<% }) %>
+<div class="row quizzes-card-container">
 </div>

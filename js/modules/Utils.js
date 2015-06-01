@@ -87,7 +87,8 @@ define([
 			} else {
 				status = { 
 					id: 'new', 
-					data: 0, 
+					data: 0,
+					class: 'progress-bar-danger', 
 					text: '0/' + quiz.get('questions').length, 
 					percent: 0,
 					start_date: null

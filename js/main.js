@@ -64,7 +64,6 @@ require([
 			$.ajaxSetup({cache: false});
 			app.env = Utils.bootstrapEnv();
 			app.quizzes = new QuizzesHome(Utils.getJson('quizzes'));
-			console.log(app.quizzes);
 			moment.locale('ro');
 			app.router = new Router();
 			if( ! Backbone.History.started) Backbone.history.start();

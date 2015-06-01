@@ -43,6 +43,11 @@ body {
 	/*text-shadow: 0px 0px 10px #000;*/
 }
 
+.quiz-card-container {
+	min-height: 200px;
+	padding-bottom: 50px;
+}
+
 .question {
 	/*text-align:justify;*/
 	font-size: 20px;
