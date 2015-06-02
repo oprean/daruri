@@ -30,6 +30,7 @@ body {
 }
 
 .navbar-brand {
+	font-size: 40px;
 	font-family: 'Tangerine';
 }
 
@@ -44,10 +45,25 @@ body {
 }
 
 .quiz-card-container {
-	min-height: 200px;
-	padding-bottom: 5px;
+	padding: 0px 10px 10px 10px;
+	background: #FFFFFF;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #CCCCCC;
+	margin-bottom: 20px;
 }
 
+
+.quiz-card-description {
+	min-height: 140px
+}
+
+
+.quiz-card-buttons-container {
+	position: absolute;
+	bottom: 30px;
+}
 .question {
 	/*text-align:justify;*/
 	font-size: 20px;

@@ -5,12 +5,14 @@
 	    <%= status.text %>
 	  </div>
 	</div>
-	<p style="text-align: justify;"><%= description %></p>
+	<div class="quiz-card-description" style="text-align: justify;"><%= description %></div>
+	<div class="quiz-card-buttons-container">
 	<% if (status.id=='done') { %>
 		<a role="button" class="btn btn-quiz-status btn-<%= status.class %>" href="#quiz/<%= id %>/result">Results</a>
 	<% } else if (status.id=='progress') { %>
 		<a role="button" class="btn btn-quiz-status btn-<%= status.class %>" href="#quiz/<%= id %>/<%= status.data %>">Continue</a>		
 	<% } else { %>
-		<a role="button" class="btn btn-quiz-status btn-<%= status.class %>" href="#quiz/<%= id %>/home">View</a>		
-	<% } %> 
+		<a role="button" class="btn btn-quiz-status btn-<%= status.class %>" href="#quiz/<%= id %>/home">Start</a>		
+	<% } %>
+	</div> 
 </div>
