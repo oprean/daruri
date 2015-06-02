@@ -4,7 +4,7 @@
   </div>
 </div>
 <div class="question-container">
-	<p class="question"><%= text %></p>
+	<p class="question"><%= id %>.<%= text %></p>
 		<% _.each(options, function(option) { %>
 		<div class="radio radio-option <%= (selected==option.val)?'radio-selected':'' %>">
 			<label class="label-option">
