@@ -106,5 +106,9 @@ ul.score li:nth-child(-n+3) {
 }
 
 .btn-nav-question {
-	width: 200px;
+	width: 150px;
+}
+
+.btn-quiz-status {
+	width: 100px;
 }
