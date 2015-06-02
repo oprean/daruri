@@ -10,12 +10,13 @@ Global:
 - format about page
 - build PDF results (tcpdf)
 + send result by email
-- save quiz result on parse and provide an fixed URL.
+- save quiz result on db and provide an fixed URL.
++ added to google & fb
 
 Home page:
 =========
-- on homepage show continue instead of view when is the case
-- format quiz card on homepage (same height, title closer to top)
++ on homepage show continue instead of view when is the case
++/- format quiz card on homepage (same height, title closer to top)
 
 Question paage:
 ===============
