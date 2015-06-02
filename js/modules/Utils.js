@@ -45,17 +45,17 @@ define([
 					var questions = new Questions();
 					quiz = collection.get(quizId);
 					if (!quiz) {
-						var quizJson = self.getJson(quizId)
+						var quizJson = self.getJson(quizId);
 						quiz = new Quiz(quizJson);
 						collection.add(quiz);
 						quiz.save();
 					}
 					_.each(quiz.get('questions'), function(questionJson){
-						questions.add(new Question(questionJson))
-					})
-					quiz.set({questions: questions})	
+						questions.add(new Question(questionJson));
+					});
+					quiz.set({questions: questions});
 				}
-			})
+			});
 			
 			return quiz;
 		},
@@ -73,15 +73,18 @@ define([
 					id: 'done', 
 					data: result.get('result'), 
 					text: quiz.get('questions').length + '/' + quiz.get('questions').length, 
-					percent: 100, 
+					percent: 100,
+					class: 'success', 
 					start_date: result.get('date')
 				};
 			} else if (result.get('answers').length) {
+				var percent = Math.round((result.get('answers').length * 100)/quiz.get('questions').length); 
 				status = { 
 					id: 'progress', 
 					data: result.get('answers').length+1,
 					text: result.get('answers').length + '/' + quiz.get('questions').length, 
-					percent: Math.round((result.get('answers').length * 100)/quiz.get('questions').length), 
+					percent: percent,
+					class: (percent <= 50)?'warning':'info', 
 					start_date: result.get('date')
 				};
 			} else {
@@ -91,6 +94,7 @@ define([
 					class: 'progress-bar-danger', 
 					text: '0/' + quiz.get('questions').length, 
 					percent: 0,
+					class: 'danger',
 					start_date: null
 				};
 			}
@@ -117,7 +121,7 @@ define([
 			var progress = {
 				text: questionId + '/' + questions.length,
 				percent: Math.round((questionId * 100)/questions.length)
-			}
+			};
 			
 			var navButtons = {
 				prev : {
@@ -132,7 +136,7 @@ define([
 					url: (questionId < questions.length)?parseInt(questionId)+1:'result',
 					visible: nextAnswer?true:false
 				}
-			}
+			};
 			
 			question.set({
 				progress: progress,
@@ -159,7 +163,7 @@ define([
 						result.save();
 					}					
 				}
-			})
+			});
 			return result;
 		},
 			
@@ -171,7 +175,7 @@ define([
 				question_id: question.id,
 				group_id: question.get('group_id'),
 				value: value
-			} 
+			};
 			
 			result.set('answers', answers);
 			console.log(result.get('answers'));
@@ -190,7 +194,7 @@ define([
 			
 			_.each(result.get('answers'), function(answer){
 				if (quiz.get('type') == 1) {
-					score = statistics.findWhere({group_id: answer.group_id})
+					score = statistics.findWhere({group_id: answer.group_id});
 					if (!score) {
 						var group = _.findWhere(groups, {id: answer.group_id});
 						console.log(group);
@@ -202,10 +206,10 @@ define([
 						});
 						statistics.add(score);
 					} else {
-						score.set({value: parseInt(score.get('value')) + parseInt(answer.value)})
+						score.set({value: parseInt(score.get('value')) + parseInt(answer.value)});
 					}				
 				} else {
-					score = statistics.findWhere({group_id: answer.value})
+					score = statistics.findWhere({group_id: answer.value});
 					if (!score) {
 						var group = _.findWhere(groups, {id: answer.value});
 						score = new Score({ 
@@ -216,7 +220,7 @@ define([
 						});
 						statistics.add(score);
 					} else {
-						score.set({value: parseInt(score.get('value')) + 1})
+						score.set({value: parseInt(score.get('value')) + 1});
 					}
 				}
 			});
@@ -231,7 +235,8 @@ define([
 					value: statistics.at(0).get('value'),
 					statistics: statistics
 				}
-			})
+			});
+			
 			result.save();
 		},
 						

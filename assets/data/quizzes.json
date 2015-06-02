@@ -1,14 +1,14 @@
 {
 	"id" : "quizzes",
 	"name" : "Bateria de teste",
-	"description" : "Bateria de teste de la Vox Domini pentru o crestere si dezvoltare ritmica, lejera, simbiotica, armonioasa. Pentru o unitate in diversitate si o ...",
+	"description" : "Prima din strategiile bisercicii Vox Domini este orientarea fiecarui membru al comunitatii „Vox Domini“ pe scopul pentru care a fost creat: glorificarea lui Dumnezeu si largirea Imparatiei Lui. Bateria aceasta de teste este conceputa pentru a oferi un set de instrumente de ajutor pentru o crestere si dezvoltare ritmica, lejera, simbiotica, armonioasa. Pentru o unitate in diversitate si o ... <strong>Alege unul dintre ele si orienteaza-te!</strong>",
 	"quizzes" : [
 		{
 			"id" : "gifts",
 			"type" : 1,
 			"name" : "Daruri Spirituale",
 			"icon" : "glyphicon-gift",
-			"description" : "Biblia învaţă că fiecare creştin are cel puţin un dar spiritual care poate fi folosit spre zidirea trupului lui Cristos. Darurile spirituale sunt împărţite de Duhul Sfânt iar apoi dezvoltate de fiecare creștin.",
+			"description" : "Biblia învaţă că fiecare creştin are cel puţin un dar spiritual care poate fi folosit spre zidirea trupului lui Cristos. Foloseste acest test pentru a-l afla pe al tau!",
 			"questions" : 133
 		},
 		{
@@ -16,7 +16,7 @@
 			"type" : 1,
 			"icon" : "glyphicon-flash",
 			"name" : "Managementul conflictelor",
-			"description" : "Acest chestionar a fost conceput pentru a vă ajuta să identificaţi stilul dvs. preferat de rezolvare a conflictelor.",
+			"description" : "Fiecare avem un stil preferat de rezolvare a conflictelor. Acest chestionar a fost conceput pentru a vă ajuta să identificaţi stilul preferat de rezolvare a conflictelor.",
 			"questions" : 25
 		},
 		{
@@ -24,7 +24,7 @@
 			"type" : 2,
 			"icon" : "glyphicon-heart",
 			"name" : "Love languages for copules",
-			"description" : "Acest chestionar a fost conceput pentru a vă ajuta să identificaţi limbajul dvs. de dragoste.",
+			"description" : "Between busy schedules and long days, expressing love can fall by the wayside. Take this test as a couple and start learning to express love in your spouse’s language.",
 			"questions" : 30
 		},
 		{

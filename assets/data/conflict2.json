@@ -16,42 +16,42 @@
 	
 	"questions" : [
 		{"id": 1, "text": "Your wishes differing from those of another person…", "options" : [
-			{"val": "A", "text": "There are times when I let others take responsibility for solving the problem."}, 
+			{"val": "D", "text": "There are times when I let others take responsibility for solving the problem."}, 
 			{"val": "E", "text": "Rather than negotiate the things on which we disagree, I try to stress the things upon which we both agree."}]},
 		{"id": 2, "text": "Your wishes differing from those of another person…", "options" : [
 			{"val": "B", "text": ""}, 
-			{"val": "D", "text": ""}]},
+			{"val": "C", "text": ""}]},
 		{"id": 3, "text": "Your wishes differing from those of another person…", "options" : [
-			{"val": "B", "text": ""}, 
-			{"val": "D", "text": ""}]},
+			{"val": "A", "text": ""}, 
+			{"val": "E", "text": ""}]},
 		{"id": 4, "text": "Your wishes differing from those of another person…", "options" : [
-			{"val": "B", "text": ""}, 
-			{"val": "D", "text": ""}]},
+			{"val": "C", "text": ""}, 
+			{"val": "E", "text": ""}]},
 		{"id": 5, "text": "Your wishes differing from those of another person…", "options" : [
 			{"val": "B", "text": ""}, 
 			{"val": "D", "text": ""}]},
 		{"id": 6, "text": "Your wishes differing from those of another person…", "options" : [
-			{"val": "B", "text": ""}, 
+			{"val": "A", "text": ""}, 
 			{"val": "D", "text": ""}]},
 		{"id": 7, "text": "Your wishes differing from those of another person…", "options" : [
-			{"val": "B", "text": ""}, 
+			{"val": "C", "text": ""}, 
 			{"val": "D", "text": ""}]},
 		{"id": 8, "text": "Your wishes differing from those of another person…", "options" : [
-			{"val": "B", "text": ""}, 
-			{"val": "D", "text": ""}]},
-		{"id": , "text": "Your wishes differing from those of another person…", "options" : [
-			{"val": "B", "text": ""}, 
+			{"val": "A", "text": ""}, 
+			{"val": "B", "text": ""}]},
+		{"id": 9, "text": "Your wishes differing from those of another person…", "options" : [
+			{"val": "A", "text": ""}, 
 			{"val": "D", "text": ""}]},
 			
 	]
 }
 
 1. A There are times when I let others take responsibility for solving the problem.  
- B Rather than negotiate the things on which we disagree, I try to stress the things    upon which we both agree.  
-2. A I try to find a compromise situation.  
- B I attempt to deal with all of his and my concerns.  
+ B Rather than negotiate the things on which we disagree, I try to stress the things    upon which we both agree.
+2. B I try to find a compromise situation.  
+ C I attempt to deal with all of his and my concerns.  
 3. A I am usually firm in pursuing my goals.  
- B I might try to soothe the other’s feelings and preserve our relationship.  
+ D I might try to soothe the other’s feelings and preserve our relationship.  
 4. A I try to find a compromise solution.  
  B I sometimes sacrifice my own wishes for the wishes of the other person.  
 5. A I consistently seek the other’s help in working out a solution.  
