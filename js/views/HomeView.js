@@ -21,7 +21,7 @@ define([
 			this.collection = new QuizzesCards();
 			_.each(this.model.get('quizzes'), function(quiz){
 				self.collection.add(new QuizCard(quiz));
-			})
+			});
 		},
 	});
 	 

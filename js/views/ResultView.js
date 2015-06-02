@@ -39,7 +39,7 @@ define([
 				} else {
 					self.$('.form-email').prepend('<div role="alert" class="alert alert-danger"><strong>Error!</strong> Failed to send email!</div>');
 				}
-			})
+			});
 		},
 		
 		download : function() {

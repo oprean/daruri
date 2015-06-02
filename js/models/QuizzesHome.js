@@ -16,7 +16,7 @@ define([
 			_.each(options.quizzes, function(quiz){
 				quiz['status'] = Utils.getQuizStatus(quiz.id);
 				quizzes.push(quiz);  
-			})
+			});
 			options.quizzes = quizzes;
 			 
 			this.set(options);

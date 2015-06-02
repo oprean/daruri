@@ -1,6 +1,12 @@
 <div class="jumbotron-home text-center center-block">
   <h1 class="center-block"><%= name %></h1>
-  <div style="display:none" class="text-justify description-container">
+  <br />
+	<div class="progress">
+	  <div class="progress-bar progress-bar-<%= status.class %>" role="progressbar" aria-valuenow="<%= status.percent %>" aria-valuemin="0" aria-valuemax="100" style="min-width: 3.5em; width: <%= status.percent %>%">
+	    <%= status.text %>
+	  </div>
+	</div>
+  <div class="text-justify description-container">
 	  <p><%= description %>  </p>
 	  <p><strong>Important:</strong> fă evaluarea raspunsurilor pe baza a ceea ce ştii că este adevărat despre tine în prezent, nu pe baza a ceea ce crezi că este adevărat, sau ai vrea să fie adevărat sau trebuie să fie adevărat în ce te priveşte. Cât de potrivite sunt aceste afirmaţii referitor la tine? Care este experienţa ta? În ce măsură reflectă afirmaţia respectivă tendinţele tale naturale/fireşti.</p>  	
   </div>

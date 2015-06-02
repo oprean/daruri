@@ -21,13 +21,13 @@ define([
 		},
 		
 		startQuiz : function() {
-			this.result.destroy( {wait: true})
+			this.result.destroy( {wait: true});
 		},
 		
 		templateHelpers : function() {
 			return {
 				status:this.status
-			}
+			};
 		},
 		
 		onRender : function() {
@@ -39,10 +39,7 @@ define([
 				case 'progress':
 					this.$('.btn-resume').css('display', 'inline-block');
 					this.$('.label-started-on').css('display', 'inline-block');
-					break;
-				case 'new':
-					this.$('.description-container').css('display', 'inline-block');
-				
+					break;				
 			}
 		}
 	});
