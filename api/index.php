@@ -1,6 +1,6 @@
 <?php
 require '../php/Slim/Slim.php';
-require '../php/rb.php';
+require '../php/redbean/rb.php';
 
 R::setup( 'sqlite:../assets/data/quizzes.sqlite' );
 
