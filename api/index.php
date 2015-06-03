@@ -22,7 +22,7 @@ $app->get(
 );
 
 $app->get(
-    '/gallery',
+    '/quiz',
     function () {
         $template = 'gallery';
         echo $template;
