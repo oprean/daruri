@@ -12,6 +12,7 @@ Global:
 + send result by email
 - save quiz result on db and provide an fixed URL.
 + added to google & fb
++ installing a deployment system (github webhook!)
 
 Home page:
 =========
