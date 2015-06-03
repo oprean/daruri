@@ -23,7 +23,8 @@ $LOCAL_REPO         = "{$LOCAL_ROOT}/{$LOCAL_REPO_NAME}";
 $REMOTE_REPO        = "git@github.com:oprean/daruri.git";
 $BRANCH             = "master";
 
-if ($_SERVER['HTTP_X_GITHUB_EVENT'] == 'push') {
+if (isset($_SERVER['HTTP_X_GITHUB_EVENT']) && 
+	$_SERVER['HTTP_X_GITHUB_EVENT'] == 'push') {
   // Only respond to requests from Github
   
   if( file_exists($LOCAL_REPO) ) {
@@ -39,6 +40,8 @@ if ($_SERVER['HTTP_X_GITHUB_EVENT'] == 'push') {
     
     die("done " . mktime());
   }
+} else {
+	echo 'Use this only for github webhook deployment ...';
 }
 
 ?>
