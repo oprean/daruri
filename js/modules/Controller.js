@@ -41,7 +41,7 @@ define([
 	  			view = new QuestionView({
 					quizId: quizId, 
 					questionId: questionId
-				})
+				});
 	  	}
 		app.mainRegion.show(view);
 	  },

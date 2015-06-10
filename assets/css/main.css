@@ -73,7 +73,6 @@ body {
 .radio-option {
 	padding: 5px;
 	text-align: left;
-	max-width: 600px;
 }
 
 .radio-selected {
