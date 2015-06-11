@@ -5,8 +5,7 @@ define([
   'backbone.marionette',
   'text!templates/result.html',
   'modules/Utils',
-  'jspdf'
-], function($, _, Backbone, Marionette, resultTpl, Utils, jsPDF){
+], function($, _, Backbone, Marionette, resultTpl, Utils){
 	var ResultView = Backbone.Marionette.ItemView.extend({
 		template : _.template(resultTpl),
 		initialize : function(options) {
@@ -43,11 +42,7 @@ define([
 		},
 		
 		download : function() {
-			console.log(jsPDF);
-			var doc = new jsPDF();
-			//doc.fromHTML($('.result-container').get(0), 15, 15, {'width': 170});
-			doc.text(20, 30, 'Darul iscusin&abreve;ei lucrului manual');						
-			doc.save('gifts.pdf');
+			console.log('download server generated pdf');
 		}
 	});
 	 

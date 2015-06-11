@@ -8,7 +8,7 @@ define([
 	var HeaderView = Backbone.Marionette.ItemView.extend({
 		template : _.template(headerTpl),
 		initialize : function(options) {
-			this.model = app.quizzes;
+			//this.model = app.quizzes;
 		},
 	});
 	 
