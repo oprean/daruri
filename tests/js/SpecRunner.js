@@ -1,14 +1,20 @@
 require.config({
-  //baseUrl: '../js/',
+  baseUrl: '../js',
   paths: {
-    'jquery'        : '../../js/lib/jquery-2.1.3.min',
-    'underscore'    : '../js/lib/lodash.min',
-    'backbone'      : '../js/lib/backbone-min',
-    'mocha'         : 'lib/mocha',
-    'chai'          : 'lib/chai',
-    'chai-jquery'   : 'lib/chai-jquery',
-    'models'        : '/app/models'
+    'jquery'               : 'lib/jquery-2.1.3.min',
+    'underscore'           : 'lib/lodash.min',
+    'backbone'             : 'lib/backbone-min',
+	'backbone.marionette'  : 'lib/backbone.marionette.min',
+	'backbone.localStorage': 'lib/backbone.localStorage.min',		
+	'moment'               : 'lib/moment.min',
+	'text'                 : 'lib/text',
+	
+	// test utils libs
+    'mocha'                : '../tests/js/lib/mocha',
+    'chai'                 : '../tests/js/lib/chai',
+    'chai-jquery'          : '../tests/js/lib/chai-jquery',
   },
+  
   shim: {
     'chai-jquery': {
     	'deps': ['jquery', 'chai'],
@@ -26,8 +32,6 @@ require.config({
 define(function(require) {
   var chai = require('chai');
   var mocha = require('mocha');
-  //require('jquery');
-  //require('chai-jquery');
  
   // Chai
   var should = chai.should();
@@ -37,6 +41,7 @@ define(function(require) {
  
   require([
     'js/spec/utils.spec.js',
+    'js/spec/homeView.spec.js',
   ], function(require) {
     mocha.run();
   });
