@@ -17,7 +17,6 @@ define([
 		initialize : function(options) {
 			var self = this;
 			this.model = app.quizzes;
-			console.log(this.model.get('quizzes'));
 			this.collection = new QuizzesCards();
 			_.each(this.model.get('quizzes'), function(quiz){
 				self.collection.add(new QuizCard(quiz));

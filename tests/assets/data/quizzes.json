@@ -1,0 +1,23 @@
+{
+	"id" : "quizzes",
+	"name" : "Bateria de teste",
+	"description" : "Test quizzes",
+	"quizzes" : [
+		{
+			"id" : "type1",
+			"type" : 1,
+			"icon" : "glyphicon-signal",
+			"name" : "Quiz type 1",
+			"description" : "Quiz type 1 for testing only.",
+			"questions" : 12
+		},
+		{
+			"id" : "type2",
+			"type" : 2,
+			"icon" : "glyphicon-signal",
+			"name" : "Quiz type 2",
+			"description" : "Quiz type 2 for testing only.",
+			"questions" : 12
+		}
+	]
+}
