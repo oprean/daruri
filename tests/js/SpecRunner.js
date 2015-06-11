@@ -40,8 +40,13 @@ define(function(require) {
   mocha.setup('bdd');
  
   require([
-    'js/spec/utils.spec.js',
-    'js/spec/homeView.spec.js',
+    'js/spec/Utils.spec.js',
+    //'js/spec/HeaderView.spec.js',
+    //'js/spec/StaticView.spec.js',
+    'js/spec/HomeView.spec.js',
+    //'js/spec/QuizView.spec.js',
+    'js/spec/QuestionView.spec.js',
+    //'js/spec/ResultView.spec.js',    
   ], function(require) {
     mocha.run();
   });

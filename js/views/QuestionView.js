@@ -15,8 +15,7 @@ define([
 		
 		initialize : function(options) {
 			var self = this;
-			this.model = Utils.getQuestion(options.quizId, options.questionId)
-			console.log(this.model);
+			this.model = Utils.getQuestion(options.quizId, options.questionId);
 		},
 			
 		answer : function(e) {
@@ -24,12 +23,12 @@ define([
 			this.$('.radio-option').removeClass('radio-selected');
 			$(e.target).closest('.radio-option').addClass('radio-selected');
 			
-			_.delay(this.moveNext, Constants.NEXT_QUESTION_DELAY, this.model)
+			_.delay(this.moveNext, Constants.NEXT_QUESTION_DELAY, this.model);
 		},
 		
 		moveNext : function(model) {
 			var button = model.get('button');
-			app.router.navigate('#quiz/' + model.get('quiz_id') + '/' + button.next.url, {trigger: true})			
+			app.router.navigate('#quiz/' + model.get('quiz_id') + '/' + button.next.url, {trigger: true});			
 		}
 		
 	});
