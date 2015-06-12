@@ -16,7 +16,7 @@ define([
 			it('selection one option should move to next question', function() {
 				
 				var questionView = new QuestionView({quizId:'type1', questionId:1}).render();
-				//$(questionView.$el.find('.answer')[0]).trigger('click');	
+				$(questionView.$el.find('.answer')[0]).trigger('click');	
 				var $output = questionView.$el;
 
 				//$output.find('.radio-selected').length.should.equal(1);

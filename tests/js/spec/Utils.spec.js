@@ -1,11 +1,12 @@
 define([
+   'test-utils',
    'modules/Utils',
-], function(Utils){
+], function(TestUtils, Utils){
   	describe('Utils.js', function() {
   		
  		describe('Utils.getJson(\'quizzes\')', function() {
 			it('should load json data from \'assests/data/quizes.json\'', function() {
-				localStorage.removeItem('quiz-data-type1');
+								
 				var json = Utils.getJson('quizzes');			 
 				json.quizzes.length.should.equal(2);
 			});
@@ -13,8 +14,7 @@ define([
  		
  		describe('Utils.GetQuiz(\'type1\')', function() {
 			it('should load quiz data into localStorage', function() {
-				localStorage.removeItem('quiz-data-type1');
-				localStorage.removeItem('quiz-result');
+				TestUtils.clearLocalStorage();
 				var quiz = Utils.getQuiz('type1');				
 				var quizJson = JSON.parse(localStorage.getItem('quiz-data-type1'));				 
 				quizJson.questions.length.should.equal(12);
@@ -23,6 +23,7 @@ define([
  		
  		describe('Utils.GetQuizStatus(\'type1\')', function() {
 			it('should load \'type1\' quiz results from localStorage and build quiz status', function() {
+				TestUtils.clearLocalStorage();
 				var status = Utils.getQuizStatus('type1');				
 				status.id.should.equal('new');
 			});

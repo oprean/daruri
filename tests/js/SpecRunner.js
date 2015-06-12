@@ -13,6 +13,7 @@ require.config({
     'mocha'                : '../tests/js/lib/mocha',
     'chai'                 : '../tests/js/lib/chai',
     'chai-jquery'          : '../tests/js/lib/chai-jquery',
+    'test-utils'           : '../tests/js/TestUtils'		 
   },
   
   shim: {

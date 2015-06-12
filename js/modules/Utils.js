@@ -158,7 +158,7 @@ define([
 				success: function(collection) {
 					result = collection.findWhere({quiz_id:quizId});
 					if (!result) {
-						result = new Result({quiz_id: quizId, date: moment().format("dddd, Do MMMM YYYY, h:mm:ss a")});
+						result = new Result({quiz_id: quizId, date: moment().locale('ro').format("dddd, Do MMMM YYYY, h:mm:ss a")});
 						collection.add(result);
 						result.save();
 					}					
