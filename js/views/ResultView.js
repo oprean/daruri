@@ -43,7 +43,10 @@ define([
 					} else {
 						self.$('.send-email-response').html('<div role="alert" class="alert alert-danger"><strong>Error! </strong> '+ result.data.message +'</div>');
 					}
-				}
+				},
+				error: function(result) {
+					self.$('.send-email-response').html('<div role="alert" class="alert alert-danger"><strong>Error!</strong> ' + result.data.message + '</div>');
+				} 
 			});
 		},
 		
@@ -70,7 +73,7 @@ define([
 						self.$('.pdf-generating-response').html('<div role="alert" class="alert alert-danger"><strong>Error! </strong> ' + result.data.message + '</div>');
 					}
 				},
-				error: function() {
+				error: function(result) {
 					self.$('.pdf-generating-response').html('<div role="alert" class="alert alert-danger"><strong>Error!</strong> ' + result.data.message + '</div>');
 				} 
 			});
