@@ -1,7 +1,5 @@
 <?php
 require_once('../../tcpdf/tcpdf.php');
-require_once '../php/config.php';
-
 
 class QPdf extends TCPDF {
 	

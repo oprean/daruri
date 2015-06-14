@@ -44,8 +44,8 @@ define([
 						self.$('.send-email-response').html('<div role="alert" class="alert alert-danger"><strong>Error! </strong> '+ result.data.message +'</div>');
 					}
 				},
-				error: function(result) {
-					self.$('.send-email-response').html('<div role="alert" class="alert alert-danger"><strong>Error!</strong> ' + result.data.message + '</div>');
+				error: function() {
+					self.$('.send-email-response').html('<div role="alert" class="alert alert-danger"><strong>Error!</strong> Internal server error!'</div>');
 				} 
 			});
 		},
@@ -74,7 +74,7 @@ define([
 					}
 				},
 				error: function(result) {
-					self.$('.pdf-generating-response').html('<div role="alert" class="alert alert-danger"><strong>Error!</strong> ' + result.data.message + '</div>');
+					self.$('.pdf-generating-response').html('<div role="alert" class="alert alert-danger"><strong>Error!</strong> Internal server error!</div>');
 				} 
 			});
 		}
