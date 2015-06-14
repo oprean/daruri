@@ -14,7 +14,7 @@ define([
 			this.quiz = Utils.getQuiz(options.quizId);
 		},
 		events : {
-			'click .btn-download' : 'download',
+			'click .btn-generate-pdf' : 'generatePdf',
 			'click .btn-email' : 'email',
 			'click .score-item' : 'toggleDescription'
 		},
@@ -25,24 +25,55 @@ define([
 		
 		email : function() {
 			var self = this;
-			$.post('php/mail.php', {mail: {
-				name: this.$('#name').val(),
-				email: this.$('#email').val(),
-				subject: this.quiz.get('name') + ' results',
-				body: this.$('.result-container').html()
-			}}, function(data) {
-				if (data == 'ok') {
-					self.model.set('email', true);
-					self.model.save();
-					self.$('.form-email').html('<div role="alert" class="alert alert-success"><strong>Success!</strong> Mail succesfully sent to <i>'+ self.$('#email').val() +'</i>!</div>');
-				} else {
-					self.$('.form-email').prepend('<div role="alert" class="alert alert-danger"><strong>Error!</strong> Failed to send email!</div>');
+			$.ajax({
+				type: "POST",
+				dataType: "json",
+				url: 'api/mail',
+				data: JSON.stringify({
+					name: this.$('#name').val(),
+					email: this.$('#email').val(),
+					subject: this.quiz.get('name') + ' results',
+					html: this.$('.result-container').html(),
+					data: this.model
+				}), 
+				success: function(result) {
+					if (result.status == 'success') {
+						self.model.save();
+						self.$('.send-email-response').html('<div role="alert" class="alert alert-success"><strong>Success!</strong> '+ result.data.message +'</div>');
+					} else {
+						self.$('.send-email-response').html('<div role="alert" class="alert alert-danger"><strong>Error! </strong> '+ result.data.message +'</div>');
+					}
 				}
 			});
 		},
 		
-		download : function() {
-			console.log('download server generated pdf');
+		generatePdf : function() {
+			var self = this;
+			console.log(this.model);
+			$.ajax({
+				type: "POST",
+				dataType: "json",
+				url: 'api/pdf', 
+				data: JSON.stringify({
+					html: this.$('.result-container').html(),
+					data: this.model,
+				}), 
+				success: function(result) {
+					if (result.status == 'success') {
+						self.model.save();
+						self.$('.pdf-generating-response').html('<div role="alert" class="alert alert-success"><strong>Success! </strong> ' + result.data.message + '</div>');
+						self.$('.btn-generate-pdf').toggle();
+						self.$('.btn-download-pdf').toggle();
+						self.$('.btn-download-pdf').html('Descarcă PDF');
+						self.$('.btn-download-pdf').attr('href', 'api/pdf/' + result.data.filename);
+					} else {
+						self.$('.pdf-generating-response').html('<div role="alert" class="alert alert-danger"><strong>Error! </strong> ' + result.data.message + '</div>');
+					}
+				},
+				error: function() {
+					self.$('.pdf-generating-response').html('<div role="alert" class="alert alert-danger"><strong>Error!</strong> ' + result.data.message + '</div>');
+				} 
+			});
 		}
 	});
 	 

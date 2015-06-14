@@ -127,3 +127,7 @@ ul.score li:nth-child(-n+3) {
 .btn-quiz-status {
 	width: 100px;
 }
+
+.vl {
+	border-left: 1px solid #AAAAAA;
+}
