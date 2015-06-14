@@ -1,2 +1,4 @@
 php/config.php
 assets/data/quizzes.sqlite
+runtime/*
+!runtime/.keep

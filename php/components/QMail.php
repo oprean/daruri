@@ -1,6 +1,7 @@
 <?php
 require_once('../php/phpmailer/class.smtp.php');
 require_once('../php/phpmailer/class.phpmailer.php');
+require_once '../php/config.php';
 require_once('QPdf.php');
 
 class QMail {
