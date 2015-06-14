@@ -45,7 +45,7 @@ define([
 					}
 				},
 				error: function() {
-					self.$('.send-email-response').html('<div role="alert" class="alert alert-danger"><strong>Error!</strong> Internal server error!'</div>');
+					self.$('.send-email-response').html('<div role="alert" class="alert alert-danger"><strong>Error!</strong> Internal server error!</div>');
 				} 
 			});
 		},
