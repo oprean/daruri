@@ -16,7 +16,7 @@ $app->post('/pdf', function () use ($app) {
 });
 
 $app->get('/pdf/:file', function ($file) use ($app) {
-	$file = RUNTIME_PATH.$file;
+	$file = RUNTIME_DIR.$file;
 
  	$app->response()->header('Content-Type', 'application/pdf');
     $app->response()->header('Content-Disposition: attachment; filename="'.$file.'";');

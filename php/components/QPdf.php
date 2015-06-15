@@ -22,10 +22,10 @@ class QPdf extends TCPDF {
 		$filename = $this->input->data->quiz_id.'_'.$this->input->data->id.'.pdf';
 		
 		$this->pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
-		$this->pdf->Output(RUNTIME_PATH.$filename, 'F');
+		$this->pdf->Output(RUNTIME_DIR.$filename, 'F');
 		
 		//http://labs.omniti.com/labs/jsend
-		if (file_exists(RUNTIME_PATH.$filename)) {
+		if (file_exists(RUNTIME_DIR.$filename)) {
 			$result = array(
 				'status' => 'success',
 				'data' => array(

@@ -20,12 +20,12 @@ class QMail {
 		$this->mail->IsHTML(true);
 
 		$filename = $this->input->data->quiz_id.'_'.$this->input->data->id.'.pdf';		
-		if (!file_exists(RUNTIME_PATH.$filename)) {
+		if (!file_exists(RUNTIME_DIR.$filename)) {
 			$pdf = new QPdf($input);
 			$result = $pdf->generate();
 		}
 		
-      	$this->mail->addAttachment(RUNTIME_PATH.$filename);
+      	$this->mail->addAttachment(RUNTIME_DIR.$filename);
 		
 		$this->mail->Username = SMTP_USERNAME;
 		$this->mail->Password = SMTP_PASSWORD;
