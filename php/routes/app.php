@@ -4,7 +4,7 @@ $app->get('/', function () use ($app) {
 	 echo $template;
 });
 $app->get('/results/:id', function ($id) use ($app) {
-	 $template = 'result '.$id;
-	 echo $template;
+	$result = R::findOne('results', 'result_id=?', [$id]);
+	echo $result->html;
 });
 ?>

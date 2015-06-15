@@ -32,10 +32,16 @@ class QMail {
 		$this->mail->SetFrom(SMTP_SETFROM);				
 	}
 	
+	private function getResultLink() {
+		return '<a href="'.$this->input->url.'">'.$this->input->data->quiz_id.'</a>';
+	}
+	
 	function send() {
 
 		$this->mail->Subject = $this->input->subject;
 		$this->mail->Body = $this->input->html;
+		$this->mail->Body .= $this->getResultLink();
+		
 		$this->mail->AddAddress($this->input->email);
 		 if($this->mail->Send()) {
 			$result = array(
