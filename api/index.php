@@ -1,4 +1,5 @@
 <?php
+require_once '../php/bootstrap.php';
 require_once '../php/Slim/Slim.php';
 require_once '../php/redbean/rb.php';
 require_once '../php/config.php';
