@@ -9,8 +9,9 @@ define([
   'views/QuestionView',
   'views/ResultView',
   'views/GroupsView',
+  'views/GeolocationView',
 ], function($, _, Backbone, Marionette, 
-	HomeView, StaticView, QuizView, QuestionView, ResultView, GroupsView){
+	HomeView, StaticView, QuizView, QuestionView, ResultView, GroupsView, GeolocationView){
 	var Controller = Marionette.Controller.extend({
 	  initialize: function() {
 	  },
@@ -45,6 +46,18 @@ define([
 	  	}
 		app.mainRegion.show(view);
 	  },
+	  
+	  test: function(feature) {
+	  	var view;
+		switch(feature) {
+	  		case 'geolocation':
+	  			view = new GeolocationView();
+	  			break;
+	  		default:
+	  			view = new StaticView({tpl:feature});
+	  	}
+	  	app.mainRegion.show(view);
+	  }
 	});
 	
 	return Controller;

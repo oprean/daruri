@@ -23,6 +23,7 @@ define([
 	    'home': 'home',
 	    'static/:template': 'static',
 	  	'quiz/:name/:q': 'quiz',
+	  	'test/:feature': 'test'
 	  }
 	});
   return Router;
