@@ -15,7 +15,7 @@ define([
 		},
 		events : {
 			'click .btn-generate-pdf' : 'generatePdf',
-			'click .btn-email' : 'email',
+			'click .btn-send-email' : 'sendEmail',
 			'click .score-item' : 'toggleDescription'
 		},
 		
@@ -23,8 +23,9 @@ define([
 			this.$('.score-description').toggle();
 		},
 		
-		email : function() {
+		sendEmail : function() {
 			var self = this;
+			this.$('.btn-send-email').button('loading');
 			$.ajax({
 				type: "POST",
 				dataType: "json",
@@ -45,7 +46,11 @@ define([
 					}
 				},
 				error: function() {
+
 					self.$('.send-email-response').html('<div role="alert" class="alert alert-danger"><strong>Error!</strong> Internal server error!</div>');
+				},
+				complete: function() {
+					self.$('.btn-send-email').button('reset');					
 				} 
 			});
 		},
@@ -53,6 +58,7 @@ define([
 		generatePdf : function() {
 			var self = this;
 			console.log(this.model);
+			this.$('.btn-generate-pdf').button('loading');
 			$.ajax({
 				type: "POST",
 				dataType: "json",
@@ -75,7 +81,10 @@ define([
 				},
 				error: function(result) {
 					self.$('.pdf-generating-response').html('<div role="alert" class="alert alert-danger"><strong>Error!</strong> Internal server error!</div>');
-				} 
+				},
+				complete: function() {
+					self.$('.btn-generate-pdf').button('reset');					
+				}
 			});
 		}
 	});
