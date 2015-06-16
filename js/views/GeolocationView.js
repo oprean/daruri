@@ -33,6 +33,16 @@ define([
 				});
 			}
 		},
+		
+		onRender: function() {
+			this.$('.qrcode-container').qrcode({
+				radius:50,
+				text: 'http://oprean.ddns.net/quizzes/',
+				mode: 2,
+				label: 'Vox Domini',
+				fontcolor: '#ff9818'
+			});
+		}
 	});
 	 
 	return GeolocationView;

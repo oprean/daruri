@@ -11,8 +11,7 @@ require.config({
 		"backbone.validation":"lib/backbone-validation-min",		
 		
 		"moment":"lib/moment.min",
-		"jspdf":"lib/jspdf.min",
-
+		"qrcode":"lib/jquery.qrcode-0.12.0.min",
 		"text":"lib/text",
 	},
 	
@@ -52,6 +51,7 @@ require([
   'views/FooterView',
   'moment',
   'jquery.bootstrap',
+  'qrcode',
     ], function ($, _, Backbone, Marionette, Router, Utils, QuizzesHome, Constants, HeaderView, FooterView, moment) {    
         window.app = new Backbone.Marionette.Application();
 		app.addRegions({
