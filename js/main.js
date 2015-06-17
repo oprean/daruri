@@ -3,6 +3,12 @@ require.config({
 	"paths":{
 		"jquery" : "lib/jquery-2.1.3.min",
  		"jquery.bootstrap": "lib/bootstrap.min",
+ 		
+		"jquery.ui":"lib/jquery-ui.min",
+		//"jquery.ui.touch-punch":"lib/jquery.ui.touch-punch.min",
+		"jquery.ui.touch-punch":"lib/jquery.ui.touch-punch-improved",
+		"jquery.ui.custom":"lib/jquery-ui.custom",
+		
 		"underscore":"lib/lodash.min",
 		
 		"backbone":"lib/backbone-min",
@@ -18,6 +24,12 @@ require.config({
 	"shim":{
 		"jquery.bootstrap": {
 			"deps": ["jquery"]
+		},
+		"jquery.ui.touch-punch": {
+			"deps": ["jquery.ui"]
+		},
+		"jquery.ui.custom": {
+			"deps": ["jquery.ui"]
 		},
 		"jquery.qrcode": {
 			"deps": ["jquery"]
@@ -54,6 +66,9 @@ require([
   'views/FooterView',
   'moment',
   'jquery.bootstrap',
+  'jquery.ui',
+  'jquery.ui.touch-punch',
+  'jquery.ui.custom',
   'jquery.qrcode',
     ], function ($, _, Backbone, Marionette, Router, Utils, QuizzesHome, Constants, HeaderView, FooterView, moment) {    
         window.app = new Backbone.Marionette.Application();

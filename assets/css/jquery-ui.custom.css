@@ -1,0 +1,60 @@
+.select-surface-control {
+	position: relative;
+	border: 1px solid #CCCCCC;
+}
+
+.control-point {
+	border-radius:50%;
+	border: 1px solid #337AB7;
+	position: absolute;
+	cursor: crosshair;
+	
+	-webkit-box-shadow: 0px 0px 7px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    0px 0px 7px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         0px 0px 7px 0px rgba(50, 50, 50, 0.75);
+	
+}
+
+.top {
+	position: absolute;
+	top: 0px;
+}
+
+.right {
+	position: absolute;
+	right: 0px;
+}
+
+.bottom {
+	position: absolute;
+	bottom: 0px;
+}
+
+.left {
+	position: absolute;
+	left: 0px;
+}
+
+.top-left {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.top-right {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+.bottom-left {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
+
+.bottom-right {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}

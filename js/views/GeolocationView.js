@@ -21,7 +21,6 @@ define([
 			});
 			if ( navigator.geolocation ) {
 				window.navigator.geolocation.getCurrentPosition(function(pos) {
-				  console.log(pos);
 				  self.model.set({
 				  	pos: pos,
 				  	distances: [
@@ -36,11 +35,17 @@ define([
 		
 		onRender: function() {
 			this.$('.qrcode-container').qrcode({
+				size:300,
 				radius:50,
 				text: 'http://oprean.ddns.net/quizzes/',
-				mode: 2,
+				//mode: 2,
 				label: 'Vox Domini',
 				fontcolor: '#ff9818'
+			});
+			
+			this.$('.surface').surface({
+				width: 300,
+				height: 200
 			});
 		}
 	});
