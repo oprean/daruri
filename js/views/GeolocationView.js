@@ -43,9 +43,38 @@ define([
 				fontcolor: '#ff9818'
 			});
 			
-			this.$('.surface').surface({
-				width: 300,
-				height: 200
+			this.$('.surface-single').surface({
+				size: 240,
+				components:[
+					{label:'aplicabil', class:'top-left'},
+				]
+			});
+			
+			this.$('.surface-dual').surface({
+				size: 240,
+				components:[
+					{label:'aplicabil', class:'top-left'},
+					{label:'inspirational', class:'top-right'},
+				]
+			});
+			
+			this.$('.surface-tri').surface({
+				size: 240,
+				components:[
+					{label:'aplicabil', class:'top'},
+					{label:'inspirational', class:'bottom-left'},
+					{label:'precis', class:'bottom-right'},
+				]
+			});
+			
+			this.$('.surface-quad').surface({
+				size: 240,
+				components:[
+					{label:'aplicabil', class:'top-left'},
+					{label:'inspirational', class:'top-right'},
+					{label:'precis', class:'bottom-right'},
+					{label:'interesant', class:'bottom-left'},
+				]
 			});
 		}
 	});

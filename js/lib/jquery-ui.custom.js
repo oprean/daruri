@@ -11,8 +11,7 @@
 
 $.widget("ui.surface", {
 	options: {
-		width: 200,
-		height:200,
+		size: 200,
 		name: 'surface',
 		control: {
 			size: 20,
@@ -20,11 +19,11 @@ $.widget("ui.surface", {
 			color: '#275d74'	
 		},
 
-		axis:[
-			{label:'axis1', class:'top-left'},
-			{label:'axis2', class:'top-right'},
-			{label:'axis3', class:'bottom-right'},
-			{label:'axis4', class:'bottom-left'},
+		components:[
+			{label:'component1', class:'top-left'},
+			{label:'component2', class:'top-right'},
+			{label:'component3', class:'bottom-right'},
+			{label:'component4', class:'bottom-left'},
 		]
 	},
 	
@@ -32,22 +31,23 @@ $.widget("ui.surface", {
 		this._surface = $("<div>");
 		var self = this;
 		this.values = [];
-		$.each(this.options.axis, function( i, axis ) {
+		$.each(this.options.components, function( i, component ) {
 			self._surface.append(
-			'<div class="'+ axis.class +'">'+ axis.label +'</div>\n '
+			'<div class="'+ component.class +'">'+ component.label +'</div>\n '
   			);
 		});
 		
+		this.controlHeight = this.getControlHeight();
+		
 		if (this.options.control.start == null) {
 			this.options.control.start = {
-				top: (this.options.height/2) - (this.options.control.size/2), 
-				left: (this.options.width/2) - (this.options.control.size/2),
+				left: (this.options.size/2) - (this.options.control.size/2),
+				top: (this.controlHeight/2) - (this.options.control.size/2),
 			}; 
 		};
-		this.max = Math.sqrt(
-			this.options.height*this.options.height + 
-			this.options.width*this.options.width
-		);
+
+		this.max = this.getMaxRawValue();
+
 		this._surface.append('<div class="control-point" style="' + 
 				'top:'+	this.options.control.start.top +'px;' + 
 				'left:'+ this.options.control.start.left +'px;' +
@@ -57,35 +57,46 @@ $.widget("ui.surface", {
 			'"></div>');
 			
 		$(this.element).append(this._surface); 
-		$(this.element).css('width', this.options.width);
-		$(this.element).css('height', this.options.height);
+		$(this.element).css('width', this.options.size);
+		$(this.element).css('height', this.controlHeight);		
 		$(this.element).css('border-radius', this.options.control.size/2);
 		$(this.element).addClass('select-surface-control');
-		/*$( ".select-surface-control" ).click(function(e){
-			var posX = $(this).offset().left, 
-				posY = $(this).offset().top;
-			console.log((e.pageX - posX)+ ' , ' + (e.pageY - posY));
-			$( ".control-point" ).css('left', e.pageX - posX);
-			$( ".control-point" ).css('top', e.pageY - posY);
-		});*/
+
 		$( ".control-point" ).draggable({ 
-			containment: ".select-surface-control", 
+			containment: ".select-surface-control",
 			scroll: false, 
 			stop: function(event, ui) {
 				this.values = [];
 				this.values.push(self.distance({top:0, left:0}, ui.position));
-				this.values.push(self.distance({top:0, left:self.options.width}, ui.position));
-				this.values.push(self.distance({top:self.options.height, left:self.options.width}, ui.position));
-				this.values.push(self.distance({top:self.options.height, left:0}, ui.position));
+				this.values.push(self.distance({top:0, left:self.options.size}, ui.position));
+				this.values.push(self.distance({top:self.options.size, left:self.options.size}, ui.position));
+				this.values.push(self.distance({top:self.options.size, left:0}, ui.position));
 				this.values = _.map(this.values, function(value){ return (value*100/self.max).toFixed(0); });
 				console.log(this.values);
 			},
       });
 	},
 	
+	getControlHeight: function() {
+		switch(this.options.components.length) {
+			case 1:
+			case 2: return this.options.control.size;
+			case 3: return this.options.size*Math.sqrt(3)/2;
+			case 4: return this.options.size;
+		}
+	},
+	
+	getMaxRawValue: function() {
+		return (this.options.components.length < 4)
+			?this.options.size
+			:Math.sqrt( this.options.size*this.options.size * 2);
+	},
+	
 	distance: function(p1, p2) {
 		return Math.sqrt((p2.left -p1.left)*(p2.left -p1.left) + (p2.top-p1.top)*(p2.top-p1.top));
 	},
+	
+	//http://www.geeksforgeeks.org/check-whether-a-given-point-lies-inside-a-triangle-or-not/
 	
 	_setOption: function(option, value) {
 		$.Widget.prototype._setOption.apply( this, arguments );
