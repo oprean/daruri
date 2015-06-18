@@ -9,9 +9,11 @@ define([
   'views/QuestionView',
   'views/ResultView',
   'views/GroupsView',
-  'views/GeolocationView',
+  'views/sandbox/GeolocationView',
+  'views/sandbox/QRCodeView',
+  'views/sandbox/SurfaceView',
 ], function($, _, Backbone, Marionette, 
-	HomeView, StaticView, QuizView, QuestionView, ResultView, GroupsView, GeolocationView){
+	HomeView, StaticView, QuizView, QuestionView, ResultView, GroupsView, GeolocationView, QRCodeView, SurfaceView){
 	var Controller = Marionette.Controller.extend({
 	  initialize: function() {
 	  },
@@ -52,6 +54,12 @@ define([
 		switch(feature) {
 	  		case 'geolocation':
 	  			view = new GeolocationView();
+	  			break;
+	  		case 'qrcode':
+	  			view = new QRCodeView();
+	  			break;
+	  		case 'surface':
+	  			view = new SurfaceView();
 	  			break;
 	  		default:
 	  			view = new StaticView({tpl:feature});

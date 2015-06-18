@@ -30,11 +30,16 @@ $.widget("ui.surface", {
 	_create: function() {
 		this._surface = $("<div>");
 		var self = this;
-		this.values = [];
+		this._values = [];
 		$.each(this.options.components, function( i, component ) {
-			self._surface.append(
-			'<div class="'+ component.class +'">'+ component.label +'</div>\n '
-  			);
+			var html = (component.class.indexOf('bottom') == 0)
+			?'<div class="component-value"></div>' + 
+				'<div class="component-name">'+ component.label + '</div>'
+			:'<div class="component-name">'+ component.label + '</div>' +
+				'<div class="component-value"></div>'
+			;
+	 
+			self._surface.append('<div class="component-container '+ component.class +'">' + html + '</div>\n');
 		});
 		
 		this.controlHeight = this.getControlHeight();
@@ -56,20 +61,47 @@ $.widget("ui.surface", {
 				'background:'+ this.options.control.color +';' +
 			'"></div>');
 
-		$(this.element).append(this._surface); 
-		$(this.element).css('width', this.options.size);
-		$(this.element).css('height', this.controlHeight);		
-		$(this.element).css('border-radius', this.options.control.size/2);
-		$(this.element).addClass('select-surface-control');
+		this.element.append(this._surface); 
+		this.element.css('width', this.options.size);
+		this.element.css('height', this.controlHeight);		
+		this.element.css('border-radius', this.options.control.size/2);
+		this.element.addClass('select-surface-control');
 
-		$( '#'+$(this.element).attr('id') + " .control-point" ).draggable({
-			containment: '#'+$(this.element).attr('id'),
+		this.element.click(function(e){
+			var posX = $(this).position().left,posY = $(this).position().top;
+			var position = {top:e.pageY - posY, left:e.pageX - posX};
+
+			if (position.top < self.options.control.size) position.top = self.options.control.size; 
+			if (position.top > self.controlHeight) position.top = self.controlHeight;
+			if (position.left < self.options.control.size) position.left = self.options.control.size;
+			if (position.left > self.options.size) position.left = self.options.size;
+
+			        	
+        	$( '#'+self.element.attr('id') + " .control-point" ).animate({
+        		'top': position.top - self.options.control.size,
+        		'left': position.left - self.options.control.size
+        	},250);
+        	
+        	self._values = self.getValues(position);
+        	self.updateUiValues();
+		});
+
+		$( '#'+this.element.attr('id') + " .control-point" ).draggable({
+			containment: '#'+this.element.attr('id'),
+			cursorAt: {
+				top: this.options.control.size/2, 
+				left:this.options.control.size/2
+			},
 			scroll: false, 
 			stop: function(event, ui) {
-				self.values = self.getValues(ui.position);
-				console.log(self.values);
+				self._values = self.getValues(ui.position);
+				self.updateUiValues();
 			},
-      });
+		});
+	},
+	
+	values: function() {
+		return this._values;
 	},
 	
 	getControlHeight: function() {
@@ -107,6 +139,29 @@ $.widget("ui.surface", {
 		values = _.map(values, function(value){ return (value*100/self.max).toFixed(0); });
 		
 		return values;
+	},
+	
+	updateUiValues: function() {
+		switch(this.options.components.length) {
+			case 1: 
+				$( '#'+this.element.attr('id') + " .top-left .component-value").html(this._values[0]);
+				break;
+			case 2: 
+				$( '#'+this.element.attr('id') + " .top-left .component-value").html(this._values[0]);
+				$( '#'+this.element.attr('id') + " .top-right .component-value").html(this._values[1]);
+				break;
+			case 3: 
+				$( '#'+this.element.attr('id') + " .top .component-value").html(this._values[0]);
+				$( '#'+this.element.attr('id') + " .bottom-right .component-value").html(this._values[1]);
+				$( '#'+this.element.attr('id') + " .bottom-left .component-value").html(this._values[2]);
+				break;
+			case 4: 
+				$( '#'+this.element.attr('id') + " .top-left .component-value").html(this._values[0]);
+				$( '#'+this.element.attr('id') + " .top-right .component-value").html(this._values[1]);
+				$( '#'+this.element.attr('id') + " .bottom-right .component-value").html(this._values[2]);
+				$( '#'+this.element.attr('id') + " .bottom-left .component-value").html(this._values[3]);
+				break;
+		}		
 	},
 	
 	getMaxRawValue: function() {
