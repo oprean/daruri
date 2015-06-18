@@ -59,6 +59,7 @@ $.widget("ui.surface", {
 		$(this.element).append(this._surface); 
 		$(this.element).css('width', this.options.width);
 		$(this.element).css('height', this.options.height);
+		$(this.element).css('border-radius', this.options.control.size/2);
 		$(this.element).addClass('select-surface-control');
 		/*$( ".select-surface-control" ).click(function(e){
 			var posX = $(this).offset().left, 
