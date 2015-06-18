@@ -43,14 +43,14 @@ define([
 				fontcolor: '#ff9818'
 			});
 			
-			this.$('.surface-single').surface({
+			this.$('#surface-single').surface({
 				size: 240,
 				components:[
 					{label:'aplicabil', class:'top-left'},
 				]
 			});
 			
-			this.$('.surface-dual').surface({
+			this.$('#surface-dual').surface({
 				size: 240,
 				components:[
 					{label:'aplicabil', class:'top-left'},
@@ -58,7 +58,7 @@ define([
 				]
 			});
 			
-			this.$('.surface-tri').surface({
+			this.$('#surface-tri').surface({
 				size: 240,
 				components:[
 					{label:'aplicabil', class:'top'},
@@ -67,7 +67,7 @@ define([
 				]
 			});
 			
-			this.$('.surface-quad').surface({
+			this.$('#surface-quad').surface({
 				size: 240,
 				components:[
 					{label:'aplicabil', class:'top-left'},

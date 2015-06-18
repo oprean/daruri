@@ -38,7 +38,7 @@ $.widget("ui.surface", {
 		});
 		
 		this.controlHeight = this.getControlHeight();
-		
+
 		if (this.options.control.start == null) {
 			this.options.control.start = {
 				left: (this.options.size/2) - (this.options.control.size/2),
@@ -55,24 +55,19 @@ $.widget("ui.surface", {
 				'height:'+ this.options.control.size +'px;' +
 				'background:'+ this.options.control.color +';' +
 			'"></div>');
-			
+
 		$(this.element).append(this._surface); 
 		$(this.element).css('width', this.options.size);
 		$(this.element).css('height', this.controlHeight);		
 		$(this.element).css('border-radius', this.options.control.size/2);
 		$(this.element).addClass('select-surface-control');
 
-		$( ".control-point" ).draggable({ 
-			containment: ".select-surface-control",
+		$( '#'+$(this.element).attr('id') + " .control-point" ).draggable({
+			containment: '#'+$(this.element).attr('id'),
 			scroll: false, 
 			stop: function(event, ui) {
-				this.values = [];
-				this.values.push(self.distance({top:0, left:0}, ui.position));
-				this.values.push(self.distance({top:0, left:self.options.size}, ui.position));
-				this.values.push(self.distance({top:self.options.size, left:self.options.size}, ui.position));
-				this.values.push(self.distance({top:self.options.size, left:0}, ui.position));
-				this.values = _.map(this.values, function(value){ return (value*100/self.max).toFixed(0); });
-				console.log(this.values);
+				self.values = self.getValues(ui.position);
+				console.log(self.values);
 			},
       });
 	},
@@ -84,6 +79,34 @@ $.widget("ui.surface", {
 			case 3: return this.options.size*Math.sqrt(3)/2;
 			case 4: return this.options.size;
 		}
+	},
+	
+	getValues: function(position) {
+		var values = [];
+		var self = this;
+		switch(this.options.components.length) {
+			case 1: 
+				values.push(position.left);
+				break;
+			case 2: 
+				values.push(this.distance({top:0, left:0}, position));
+				values.push(this.distance({top:0, left:this.options.size}, position));
+				break;
+			case 3: 
+				values.push(this.distance({top:0, left:this.options.size/2}, position));
+				values.push(this.distance({top:this.controlHeight, left:this.options.size}, position));
+				values.push(this.distance({top:this.controlHeight, left:0}, position));
+				break;
+			case 4: 
+				values.push(this.distance({top:0, left:0}, position));
+				values.push(this.distance({top:0, left:this.options.size}, position));
+				values.push(this.distance({top:this.options.size, left:this.options.size}, position));
+				values.push(this.distance({top:this.options.size, left:0}, position));
+				break;
+		}	
+		values = _.map(values, function(value){ return (value*100/self.max).toFixed(0); });
+		
+		return values;
 	},
 	
 	getMaxRawValue: function() {
