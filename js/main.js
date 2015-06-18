@@ -21,8 +21,11 @@ require.config({
 	},
 	
 	"shim":{
-		"jquery.bootstrap": {
+		"jquery.ui": {
 			"deps": ["jquery"]
+		},
+		"jquery.bootstrap": {
+			"deps": ["jquery.ui"]
 		},
 		"jquery.ui.touch-punch": {
 			"deps": ["jquery.ui"]
