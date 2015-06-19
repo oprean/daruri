@@ -127,7 +127,6 @@ $.widget("ui.surface", {
 	getValues: function(position) {
 		var values = [];
 		var self = this;
-		console.log(position);
 		switch(this.options.components.length) {
 			case 1: 
 				values.push(position.left);

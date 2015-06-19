@@ -15,13 +15,14 @@ define([
 		},
 		
 		initialize : function(options) {
+			_.delay(this.render, 0);
 		},
 		
 		getValues: function(e) {
 			this.$('.surface-values').html(this.$('#surface-quad').surface('values').join(','));
 		},
 		
-		onRender: function() {						
+		onRender: function() {				
 			this.$('#surface-single').surface({
 				size: 240,
 				name: 'Mesajul',
