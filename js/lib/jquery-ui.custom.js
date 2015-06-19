@@ -10,6 +10,8 @@
 }(function( $ ) {
 
 $.widget("ui.surface", {
+	
+	//defaults
 	options: {
 		size: 200,
 		name: 'surface',
@@ -31,27 +33,30 @@ $.widget("ui.surface", {
 		this._surface = $("<div>");
 		var self = this;
 		this._values = [];
+
+		this._controlHeight = this.get_controlHeight();
+		this._maxRaw = this.getMaxRawValue();
+		
+		if (this.options.control.start == null) {
+			this.options.control.start = {
+				left: (this.options.size/2) - (this.options.control.size/2),
+				top: (this._controlHeight/2) - (this.options.control.size/2),
+			}; 
+		};
+		
+		this._values = this.getValues(this.options.control.start);
+        this.updateUiValues();
+		
 		$.each(this.options.components, function( i, component ) {
 			var html = (component.class.indexOf('bottom') == 0)
-			?'<div class="component-value"></div>' + 
+			?'<div class="component-value">'+self._values[i]+'</div>' + 
 				'<div class="component-name">'+ component.label + '</div>'
 			:'<div class="component-name">'+ component.label + '</div>' +
-				'<div class="component-value"></div>'
+				'<div class="component-value">'+self._values[i]+'</div>'
 			;
 	 
 			self._surface.append('<div class="component-container '+ component.class +'">' + html + '</div>\n');
 		});
-		
-		this.controlHeight = this.getControlHeight();
-
-		if (this.options.control.start == null) {
-			this.options.control.start = {
-				left: (this.options.size/2) - (this.options.control.size/2),
-				top: (this.controlHeight/2) - (this.options.control.size/2),
-			}; 
-		};
-
-		this.max = this.getMaxRawValue();
 
 		this._surface.append('<div class="control-point" style="' + 
 				'top:'+	this.options.control.start.top +'px;' + 
@@ -63,7 +68,7 @@ $.widget("ui.surface", {
 
 		this.element.append(this._surface); 
 		this.element.css('width', this.options.size);
-		this.element.css('height', this.controlHeight);		
+		this.element.css('height', this._controlHeight);		
 		this.element.css('border-radius', this.options.control.size/2);
 		this.element.addClass('select-surface-control');
 
@@ -72,7 +77,7 @@ $.widget("ui.surface", {
 			var position = {top:e.pageY - posY, left:e.pageX - posX};
 
 			if (position.top < self.options.control.size) position.top = self.options.control.size; 
-			if (position.top > self.controlHeight) position.top = self.controlHeight;
+			if (position.top > self._controlHeight) position.top = self._controlHeight;
 			if (position.left < self.options.control.size) position.left = self.options.control.size;
 			if (position.left > self.options.size) position.left = self.options.size;
 
@@ -92,7 +97,11 @@ $.widget("ui.surface", {
 				top: this.options.control.size/2, 
 				left:this.options.control.size/2
 			},
-			scroll: false, 
+			scroll: false,
+			drag: function(event, ui) {
+				self._values = self.getValues(ui.position);
+				self.updateUiValues();
+			}, 
 			stop: function(event, ui) {
 				self._values = self.getValues(ui.position);
 				self.updateUiValues();
@@ -104,7 +113,7 @@ $.widget("ui.surface", {
 		return this._values;
 	},
 	
-	getControlHeight: function() {
+	get_controlHeight: function() {
 		switch(this.options.components.length) {
 			case 1:
 			case 2: return this.options.control.size;
@@ -126,8 +135,8 @@ $.widget("ui.surface", {
 				break;
 			case 3: 
 				values.push(this.distance({top:0, left:this.options.size/2}, position));
-				values.push(this.distance({top:this.controlHeight, left:this.options.size}, position));
-				values.push(this.distance({top:this.controlHeight, left:0}, position));
+				values.push(this.distance({top:this._controlHeight, left:this.options.size}, position));
+				values.push(this.distance({top:this._controlHeight, left:0}, position));
 				break;
 			case 4: 
 				values.push(this.distance({top:0, left:0}, position));
@@ -136,7 +145,7 @@ $.widget("ui.surface", {
 				values.push(this.distance({top:this.options.size, left:0}, position));
 				break;
 		}	
-		values = _.map(values, function(value){ return (value*100/self.max).toFixed(0); });
+		values = _.map(values, function(value){ return (value*100/self._maxRaw).toFixed(0); });
 		
 		return values;
 	},
