@@ -65,6 +65,8 @@ $.widget("ui.surface", {
 				'height:'+ this.options.control.size +'px;' +
 				'background:'+ this.options.control.color +';' +
 			'"></div>');
+			
+		this._surface.append('<div class="surface-name">' + this.options.name + '</div>');
 
 		this.element.append(this._surface); 
 		this.element.css('width', this.options.size);
@@ -125,6 +127,7 @@ $.widget("ui.surface", {
 	getValues: function(position) {
 		var values = [];
 		var self = this;
+		console.log(position);
 		switch(this.options.components.length) {
 			case 1: 
 				values.push(position.left);

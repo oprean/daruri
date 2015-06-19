@@ -24,6 +24,7 @@ define([
 		onRender: function() {						
 			this.$('#surface-single').surface({
 				size: 240,
+				name: 'Mesajul',
 				components:[
 					{label:'aplicabil', class:'top-left'},
 				]
@@ -31,6 +32,7 @@ define([
 			
 			this.$('#surface-dual').surface({
 				size: 240,
+				name: 'Mesajul',
 				components:[
 					{label:'aplicabil', class:'top-left'},
 					{label:'inspirational', class:'top-right'},
@@ -39,6 +41,7 @@ define([
 			
 			this.$('#surface-tri').surface({
 				size: 240,
+				name: 'Mesajul',
 				components:[
 					{label:'aplicabil', class:'top'},
 					{label:'inspirational', class:'bottom-left'},
@@ -48,6 +51,7 @@ define([
 			
 			this.$('#surface-quad').surface({
 				size: 240,
+				name: 'Mesajul',
 				components:[
 					{label:'aplicabil', class:'top-left'},
 					{label:'inspirational', class:'top-right'},
