@@ -1,7 +1,9 @@
 .select-surface-control {
 	background: url("../img/graphy.png");
 	position: relative;
-	margin: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
 	cursor: crosshair;
 	
 	-webkit-user-select: none; /* Chrome/Safari */        
@@ -18,7 +20,7 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	text-shadow: 2px 2px 15px rgba(150, 150, 150, 1);
+	/*text-shadow: 2px 2px 15px rgba(150, 150, 150, 1);*/
 	font-size:2em;
 	font-weight: 900;
 	opacity: 0.2;
@@ -69,7 +71,7 @@
 
 .left {
 	position: absolute;
-	left: px;
+	left: 0px;
 }
 
 .top-left {

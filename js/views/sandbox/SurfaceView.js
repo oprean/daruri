@@ -24,16 +24,23 @@ define([
 		
 		onRender: function() {				
 			this.$('#surface-single').surface({
-				size: 240,
+				size: 280,
 				name: 'Mesajul',
+				control: {
+					size:20,
+				},
 				components:[
-					{label:'aplicabil', class:'top-left'},
+					{label:'aplicabil', class:'left'},
 				]
 			});
 			
 			this.$('#surface-dual').surface({
-				size: 240,
+				size: 280,
 				name: 'Mesajul',
+				control: {
+					size:20,
+					color: '#3c986b'
+				},
 				components:[
 					{label:'aplicabil', class:'top-left'},
 					{label:'inspirational', class:'top-right'},
@@ -41,8 +48,12 @@ define([
 			});
 			
 			this.$('#surface-tri').surface({
-				size: 240,
+				size: 280,
 				name: 'Mesajul',
+				control: {
+					size:30,
+					color: '#c68841',
+				},
 				components:[
 					{label:'aplicabil', class:'top'},
 					{label:'inspirational', class:'bottom-left'},
@@ -51,8 +62,13 @@ define([
 			});
 			
 			this.$('#surface-quad').surface({
-				size: 240,
+				size: 280,
 				name: 'Mesajul',
+				control: {
+					size:50,
+					color: '#763ca4',
+					start: {left:50, top: 50}
+				},
 				components:[
 					{label:'aplicabil', class:'top-left'},
 					{label:'inspirational', class:'top-right'},
