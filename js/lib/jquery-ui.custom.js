@@ -148,7 +148,7 @@ $.widget("ui.surface", {
 				values.push(this.distance({top:this.options.size, left:0}, position));
 				break;
 		}	
-		values = _.map(values, function(value){ return (value*100/self._maxRaw).toFixed(0); });
+		values = _.map(values, function(value){ return (100 - value*100/self._maxRaw).toFixed(0); });
 		
 		return values;
 	},
