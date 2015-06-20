@@ -23,8 +23,18 @@ define([
 			this.$('.score-description').toggle();
 		},
 		
+		validate : function() {
+			return this.$('#name').val() && this.$('#email').val();
+		},
+		
 		sendEmail : function() {
 			var self = this;
+			
+			if (!this.validate()) {
+				self.$('.send-email-response').html('<div role="alert" class="alert alert-danger"><strong>Error! </strong> Name or/and Email can not be empty!</div>');
+				return;
+			};
+			
 			this.$('.btn-send-email').button('loading');
 			$.ajax({
 				type: "POST",
