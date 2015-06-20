@@ -27,4 +27,44 @@ $app->post('/mail', function () use ($app) {
 	$app->response()->header('Content-Type', 'application/json');
 	echo json_encode($result);
 });
+
+$app->get('/mail', function () use ($app) {
+	
+		$address = 'oprean@gmail.com';
+		$mail = new PHPMailer(); // create a new object
+		$mail->CharSet = 'UTF-8';
+		$mail->IsSMTP(); // enable SMTP
+		$mail->SMTPAuth = true; // authentication enabled
+		$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
+		$mail->Host = "smtp.gmail.com";
+		$mail->Port = 465; // or 587
+		$mail->IsHTML(true);
+	
+		$mail->Username = SMTP_USERNAME;
+		$mail->Password = SMTP_PASSWORD;
+		$mail->SetFrom(SMTP_SETFROM);				
+	
+		$mail->Subject = 'test email';
+		$mail->Body = 'test';
+		
+		$mail->AddAddress($address);
+		 if($mail->Send()) {
+			$result = array(
+				'status' => 'success',
+				'data' => array(
+					'message' => 'Mail succesfully sent to <i>'. $address.'</i>!' 
+				)
+			); 
+		} else {
+			$result = array(
+				'status' => 'error',
+				'data' => array(
+					'message' => 'Failed to send the email to <i>'. $address.'</i>!' 
+				)
+			);
+		}
+			
+	$app->response()->header('Content-Type', 'application/json');
+	echo json_encode($result);
+});
 ?>
