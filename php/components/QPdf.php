@@ -18,7 +18,10 @@ class QPdf extends TCPDF {
 		$this->pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 		$this->pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
 		$this->pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
-		$html = $this->input->html;
+		$html = '<br><br><h1>Dear '. (isset($this->input->name)?$this->input->name:'').',<h1><br><br><br>';
+		$html .= 'This is your result:<hr>';
+		$html .= $this->input->html;
+		$html .= '<hr>Generated on :'.date('Y-m-d H:i:s').'<br>More on: <a href="oprean.ddns/quizzes">oprean.ddns/quizzes</a>';
 		$filename = $this->input->data->quiz_id.'_'.$this->input->data->id.'.pdf';
 		
 		$this->pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);

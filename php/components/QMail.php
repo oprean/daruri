@@ -33,13 +33,16 @@ class QMail {
 	}
 	
 	private function getResultLink() {
-		return '<a href="'.$this->input->url.'">'.$this->input->data->quiz_id.'</a>';
+		return '<a href="'.$this->input->url.'">'.$this->input->url.'</a>';
 	}
 	
 	function send() {
 
 		$this->mail->Subject = $this->input->subject;
-		$this->mail->Body = $this->input->html;
+		$this->mail->Body = '<h2>Dear '.$this->input->name.'</h2> ';
+		$this->mail->Body .= 'This is your result:<hr>';
+		$this->mail->Body .= $this->input->html;
+		$this->mail->Body .= '<hr>You can visit later this result following this link: <br>';
 		$this->mail->Body .= $this->getResultLink();
 		
 		$this->mail->AddAddress($this->input->email);
