@@ -158,7 +158,7 @@ define([
 					text: (questionId < questions.length)?'Next':'Results',
 					icon: (questionId < questions.length)?'glyphicon-chevron-right':'glyphicon-ok',
 					url: (questionId < questions.length)?parseInt(questionId)+1:'result',
-					visible: nextAnswer?true:false
+					visible: (nextAnswer||answer)?true:false
 				}
 			};
 			
