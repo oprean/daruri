@@ -16,7 +16,10 @@
             name: "infrastructure"
         }*/
         
-    ]
+    ],
+    paths: {
+		"globals": "empty:" 
+    }
 })
 
  /*rmDir = function(dirPath) {
