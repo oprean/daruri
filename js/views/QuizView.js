@@ -6,6 +6,7 @@ define([
   'text!templates/quiz.html',
   'modules/Utils',
   'modules/Constants',
+  'jquery.qrcode',
 ], function($, _, Backbone, Marionette, quizTpl, Utils, Constants){
 	var QuizView = Backbone.Marionette.ItemView.extend({
 		template : _.template(quizTpl),
@@ -31,6 +32,10 @@ define([
 		},
 		
 		onRender : function() {
+			this.$('.qrcode-container').qrcode({
+				size:150,
+				text: 'http://oprean.ddns.net/quizzes/#quiz/'+ this.model.id +'/home',
+			});
 			switch(this.status.id) {
 				case 'done':
 					this.$('.btn-result').css('display', 'inline-block');
