@@ -4,12 +4,15 @@ define([
   'backbone',
   'backbone.marionette',
   'modules/Controller',
-], function($, _, Backbone, Marionette, Controller){
+  'globals'
+], function($, _, Backbone, Marionette, Controller, globals){
 	var controller = new Controller();
 	var Router = Marionette.AppRouter.extend({
 	  
 	  initialize: function() {
-	    return this.bind('route', this._trackPageview);
+	  	if (globals.DEBUG_MODE == false) {
+	    	return this.bind('route', this._trackPageview);	  		
+	  	}
 	  },
 	  _trackPageview: function() {
 	    var url;

@@ -8,7 +8,7 @@ define([
 	'modules/Constants',
 	'views/HeaderView',
 	'views/FooterView',
-], function( $, _, Backbone, Marionette, Utils, QuizzesHome, Constants, HeaderView, FooterView ) {
+], function( $, _, Backbone, Marionette, Utils, QuizzesHome, Constants, HeaderView, FooterView) {
 	var App = Backbone.Marionette.Application.extend({
 		initialize: function() {
 			$.ajaxSetup({cache: false});

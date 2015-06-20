@@ -1,7 +1,6 @@
 define([
 ], function(){
 	var Constants = {
-		DEBUG : false,
 		DEFAULT_QUIZ : 'conflict',
 		NEXT_QUESTION_DELAY : 500,
 		PARSE : {

@@ -17,36 +17,10 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.custom.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
-	<script type="text/javascript" data-main="dist/main" src="js/lib/require.min.js"></script>
-	<script>define('globals', [], function() { return {DEBUG_MODE: false} });</script>
+	<script type="text/javascript" data-main="js/main" src="js/lib/require.min.js"></script>
+	<script>define('globals', [], function() { return {DEBUG_MODE: true} });</script>
 </head>
 <body>	
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-	
-	  ga('create', 'UA-63644786-1', 'auto');
-	  ga('send', 'pageview');
-	</script>
-	
-	<script>
-	  window.fbAsyncInit = function() {
-	    FB.init({
-	      appId      : '855360894531636',
-	      xfbml      : true,
-	      version    : 'v2.3'
-	    });
-	  };
-	  (function(d, s, id){
-	     var js, fjs = d.getElementsByTagName(s)[0];
-	     if (d.getElementById(id)) {return;}
-	     js = d.createElement(s); js.id = id;
-	     js.src = "//connect.facebook.net/en_US/sdk.js";
-	     fjs.parentNode.insertBefore(js, fjs);
-	   }(document, 'script', 'facebook-jssdk'));
-	</script>
 	<div id="header-container"> </div>
 	<div class="container" id="main-container"> </div>
 	<div id="footer-container"> </div>
