@@ -1,0 +1,18 @@
+<div class="quiz-card-container">
+	<h3><a href="#quiz/<%= id%>/home"><%= name %></a></h3>
+	<div class="progress">
+	  <div class="progress-bar progress-bar-<%= status.class %>" role="progressbar" aria-valuenow="<%= status.percent %>" aria-valuemin="0" aria-valuemax="100" style="min-width: 3.5em; width: <%= status.percent %>%">
+	    <%= status.text %>
+	  </div>
+	</div>
+	<div class="quiz-card-description" style="text-align: justify;"><%= description %></div>
+	<div class="quiz-card-buttons-container">
+	<% if (status.id=='done') { %>
+		<a role="button" class="btn btn-quiz-status btn-<%= status.class %>" href="#quiz/<%= id %>/result">Results</a>
+	<% } else if (status.id=='progress') { %>
+		<a role="button" class="btn btn-quiz-status btn-<%= status.class %>" href="#quiz/<%= id %>/<%= status.data %>">Continue</a>		
+	<% } else { %>
+		<a role="button" class="btn btn-quiz-status btn-<%= status.class %>" href="#quiz/<%= id %>/home">Start</a>		
+	<% } %>
+	</div> 
+</div>

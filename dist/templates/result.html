@@ -1,0 +1,48 @@
+<div class="result-container">
+	<h1><%= result.name %> <span class="badge" style="font-size: 1em;"><%= result.value %></span></h1>
+	<p><%= result.description %></p>
+	<div class="text-center">
+		<ul class="score">
+			<% _.each(result.statistics, function(item) { %>
+			<li class="score-item" data-group-id="<%= item.group_id %>">
+				<span class="score-name"><%= item.name %></span>
+				<span class="badge"><%= item.value %></span><br />
+				<span style="display: none" class="score-description"><%= item.description %></span>
+			</li>	
+			<% }) %>
+		</ul>
+	</div>
+</div>
+<hr />
+<div class="row">
+	<div class="col-md-6">
+		<span class="send-email-response"></span>
+		<form style="display: <%= (email)?'none':'' %>" class="form-horizontal form-email">
+		  <div class="form-group">
+		    <label for="name" class="col-sm-4 control-label">Name</label>
+		    <div class="col-sm-8">
+		      <input type="text" class="form-control" id="name" placeholder="your name ...">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="email" class="col-sm-4 control-label">Email</label>
+		    <div class="col-sm-8">
+		      <input type="email" class="form-control" id="email" placeholder="your email ...">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <div class="col-sm-offset-4 col-sm-8">
+		      <button type="button" class="btn btn-primary btn-send-email" data-loading-text="Sending...">Send</button>
+		    </div>
+		  </div>
+		</form>		 	
+	</div>
+	<div class="col-md-1 text-center center-block">
+		<div class="vl text-center center-block hidden-xs" style="width:1px; height: 120px;"></div>						 	
+	</div>
+	<div class="col-md-5">
+		<span class="pdf-generating-response"></span>
+		<button class="btn btn-lg btn-primary btn-generate-pdf" data-loading-text="Generating ..." type="button">Generează PDF</button>
+		<a style="display: none" class="btn btn-lg btn-primary btn-download-pdf" href=""></a>
+	</div>
+</div>

@@ -1,0 +1,27 @@
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="<%= progress.percent %>" aria-valuemin="0" aria-valuemax="100" style="min-width: 3.5em; width: <%= progress.percent %>%">
+    <%= progress.text %>
+  </div>
+</div>
+<div class="question-container">
+	<p class="question"><%= id %>.<%= text %></p>
+		<% _.each(options, function(option) { %>
+		<div class="radio radio-option <%= (selected==option.val)?'radio-selected':'' %>">
+			<label class="label-option">
+			  <input type="radio" class="answer" name="options" value="<%= option.val %>" <%=(selected==option.val)?'checked="checked"':'' %> > 
+			  <%= option.text%>
+			</label>
+		</div>
+		<% }) %>
+	<br />
+	<div>
+		<a <%= !button.prev.visible?'style="display:none"':''%> class="btn btn-primary btn-lg btn-nav-question pull-left" href="#quiz/<%= quiz_id %>/<%= button.prev.url %>" role="button">
+			<span aria-hidden="true" class="glyphicon <%= button.prev.icon %>"></span>
+			<%= button.prev.text %>
+		</a>
+		<a <%= !button.next.visible?'style="display:none"':''%> class="btn btn-primary btn-lg btn-nav-question pull-right" href="#quiz/<%= quiz_id %>/<%= button.next.url %>" role="button">
+			<%= button.next.text %>
+			<span aria-hidden="true" class="glyphicon <%= button.next.icon %>"></span>
+		</a>
+	</div>
+</div>

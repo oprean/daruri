@@ -55,36 +55,16 @@ require.config({
 	}
 });
 
-require([
-  'jquery',
-  'underscore',
-  'backbone',
-  'backbone.marionette',
-  'modules/Router',
-  'modules/Utils',
-  'models/QuizzesHome',
-  'modules/Constants',
-  'views/HeaderView',
-  'views/FooterView',
-  'moment',
-  'jquery.bootstrap',
-    ], function ($, _, Backbone, Marionette, Router, Utils, QuizzesHome, Constants, HeaderView, FooterView, moment) {    
-        window.app = new Backbone.Marionette.Application();
-		app.addRegions({
-			headerRegion : "#header-container",
-			mainRegion: "#main-container",
-			footerRegion: "#footer-container",
-		});
-			
-		app.addInitializer(function(){
-			$.ajaxSetup({cache: false});
-			app.env = Utils.bootstrapEnv();
-			app.quizzes = new QuizzesHome(Utils.getJson('quizzes'));
-			app.router = new Router();
-			if( ! Backbone.History.started) Backbone.history.start();
-			app.headerRegion.show(new HeaderView());
-			app.footerRegion.show(new FooterView());
-		});
-		
-		app.start();
-   });
+require([ 
+  'infrastructure', 
+], function () { 
+	require([ 
+	  'app',
+	  'modules/Router',
+	], function ( App, Router ) {
+		app = new App();
+		app.router = new Router();
+		if( ! Backbone.History.started) Backbone.history.start();
+		app.start(); 
+	}); 
+});

@@ -18,7 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.custom.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 	
-	<script type="text/javascript" data-main="js/main" src="js/lib/require.min.js"></script>
+	<script type="text/javascript" data-main="dist/main" src="js/lib/require.min.js"></script>
 </head>
 <body>	
 	<script>
