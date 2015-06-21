@@ -5,7 +5,8 @@ require.config({
     'underscore'           : 'lib/lodash.min',
     'backbone'             : 'lib/backbone-min',
 	'backbone.marionette'  : 'lib/backbone.marionette.min',
-	'backbone.localStorage': 'lib/backbone.localStorage.min',		
+	'backbone.localStorage': 'lib/backbone.localStorage.min',
+	'jquery.qrcode'        :  'lib/jquery.qrcode-0.12.0.min',		
 	'moment'               : 'lib/moment.min',
 	'text'                 : 'lib/text',
 	

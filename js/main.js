@@ -1,5 +1,5 @@
 require.config({
-	//urlArgs: new Date().getTime().toString(),
+	urlArgs: new Date().getTime().toString(),
 	"paths":{
 		"jquery" : "lib/jquery-2.1.3.min",
  		"jquery.bootstrap": "lib/bootstrap.min",

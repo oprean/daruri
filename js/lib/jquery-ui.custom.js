@@ -15,6 +15,7 @@ $.widget("ui.surface", {
 	options: {
 		size: 200,
 		name: 'surface',
+		background: 'url("assets/img/graphy.png")',
 		control: {
 			size: 20,
 			start: null,
@@ -72,6 +73,7 @@ $.widget("ui.surface", {
 		this.element.css('width', this.options.size);
 		this.element.css('height', this._controlHeight);		
 		this.element.css('border-radius', this.options.control.size/2);
+		this.element.css('background', this.options.background);
 		this.element.addClass('select-surface-control');
 
 		this.element.click(function(e){
