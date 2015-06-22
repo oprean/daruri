@@ -51,6 +51,12 @@
 	opacity: 0.2;
 }
 
+.component-point {
+	border-radius:50%;
+	position: absolute;
+	background: #337AB7;
+}
+
 .top {
 	position: absolute;
 	text-align:center;
@@ -76,25 +82,25 @@
 .top-left {
 	position: absolute;
 	top: 0px;
-	left: 5px;
+	left: 0px;
 }
 
 .top-right {
 	position: absolute;
 	text-align:right;
 	top: 0px;
-	right: 5px;
+	right: 0px;
 }
 
 .bottom-left {
 	position: absolute;
 	bottom: 0px;
-	left: 5px;
+	left: 0px;
 }
 
 .bottom-right {
 	position: absolute;
 	text-align:right;
 	bottom: 0px;
-	right: 5px;
+	right: 0px;
 }

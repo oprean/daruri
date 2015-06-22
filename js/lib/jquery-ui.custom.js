@@ -54,11 +54,13 @@ $.widget("ui.surface", {
 		
 		$.each(this.options.components, function( i, component ) {
 			var value = self.options.visible.values?'<div class="component-value">'+self._values[i]+'</div>':'';
+			var point = self.options.visible.points
+				?'<div class="component-point" style="width:'+ self.options.control.size +'px;height:'+ self.options.control.size +'px;"></div>':'';
 			var label = '<div class="component-name">'+ component.label + '</div>'; 
 			var html = (component.class.indexOf('bottom') == 0)
 				?value+label
 				:label+value; 
-	 
+	 		//html += point;
 			self._surface.append('<div class="component-container '+ component.class +'">' + html + '</div>\n');
 		});
 
