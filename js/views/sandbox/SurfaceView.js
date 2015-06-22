@@ -26,6 +26,11 @@ define([
 			this.$('#surface-single').surface({
 				size: 280,
 				name: 'Mesajul',
+				visible: {
+					name:true,
+					value:false,
+					points:false
+				},
 				control: {
 					size:20,
 				},
@@ -37,6 +42,11 @@ define([
 			this.$('#surface-dual').surface({
 				size: 280,
 				name: 'Mesajul',
+				visible: {
+					name:true,
+					value:false,
+					points:false
+				},
 				control: {
 					size:20,
 					color: '#3c986b'
@@ -50,6 +60,11 @@ define([
 			this.$('#surface-tri').surface({
 				size: 280,
 				name: 'Mesajul',
+				visible: {
+					name:true,
+					value:true,
+					points:true
+				},
 				control: {
 					size:30,
 					color: '#c68841',
@@ -64,6 +79,11 @@ define([
 			this.$('#surface-quad').surface({
 				size: 280,
 				name: 'Mesajul',
+				visible: {
+					name:true,
+					value:true,
+					points:true
+				},
 				control: {
 					size:50,
 					color: '#763ca4',

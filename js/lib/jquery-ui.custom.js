@@ -16,12 +16,17 @@ $.widget("ui.surface", {
 		size: 200,
 		name: 'surface',
 		background: 'url("assets/img/graphy.png")',
+		
 		control: {
 			size: 20,
 			start: null,
 			color: '#275d74'	
 		},
-
+		visible: {
+			name: true,
+			values: true,
+			points: true			
+		},
 		components:[
 			{label:'component1', class:'top-left'},
 			{label:'component2', class:'top-right'},
@@ -46,15 +51,13 @@ $.widget("ui.surface", {
 		};
 		
 		this._values = this.getValues(this.options.control.start);
-        this.updateUiValues();
 		
 		$.each(this.options.components, function( i, component ) {
+			var value = self.options.visible.values?'<div class="component-value">'+self._values[i]+'</div>':'';
+			var label = '<div class="component-name">'+ component.label + '</div>'; 
 			var html = (component.class.indexOf('bottom') == 0)
-			?'<div class="component-value">'+self._values[i]+'</div>' + 
-				'<div class="component-name">'+ component.label + '</div>'
-			:'<div class="component-name">'+ component.label + '</div>' +
-				'<div class="component-value">'+self._values[i]+'</div>'
-			;
+				?value+label
+				:label+value; 
 	 
 			self._surface.append('<div class="component-container '+ component.class +'">' + html + '</div>\n');
 		});
@@ -66,8 +69,10 @@ $.widget("ui.surface", {
 				'height:'+ this.options.control.size +'px;' +
 				'background:'+ this.options.control.color +';' +
 			'"></div>');
-			
-		this._surface.append('<div class="surface-name">' + this.options.name + '</div>');
+
+		if (self.options.visible.name) {
+			this._surface.append('<div class="surface-name">' + this.options.name + '</div>');
+		}
 
 		this.element.append(this._surface); 
 		this.element.css('width', this.options.size);
@@ -92,7 +97,10 @@ $.widget("ui.surface", {
         	},250);
         	
         	self._values = self.getValues(position);
-        	self.updateUiValues();
+        	if (self.options.visible.values) {
+        		self.updateUiValues();        		
+        	}
+
 		});
 
 		$( '#'+this.element.attr('id') + " .control-point" ).draggable({
@@ -104,11 +112,16 @@ $.widget("ui.surface", {
 			scroll: false,
 			drag: function(event, ui) {
 				self._values = self.getValues(ui.position);
-				self.updateUiValues();
+				if (self.options.visible.values) {
+					self.updateUiValues();
+				}
+
 			}, 
 			stop: function(event, ui) {
 				self._values = self.getValues(ui.position);
-				self.updateUiValues();
+				if (self.options.visible.values) {
+					self.updateUiValues();
+				}
 			},
 		});
 	},
