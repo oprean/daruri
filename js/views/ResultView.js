@@ -30,15 +30,35 @@ define([
 		
 		shareResult: function() {
 			var self = this;
-			FB.login(function(){
+			console.log(this.model);
+			FB.ui({
+			  method: 'feed',
+			  link: 'http://oprean.ddns.net/quizzes/#quiz/' + self.model.get('quiz_id') + '/home',
+			  ref: 'results',
+			  //picture: 'http://oprean.ddns.net/quizzes/assets/img/logo.png',
+			  name: this.model.get('result').name + ' - ' + this.model.get('result').value,
+			  caption: this.quiz.get('name'),
+			  description: this.model.get('result').description,
+			  // here you can build the rest of the results
+			  properties:{
+			  	prop1:'prop1v',
+			  	prop2:{text:'prop2v', href: 'http://oprean.ddns.net/quizzes'},
+			  },
+			  actions: [{
+			  	name:'Take the test',
+			  	link:'http://oprean.ddns.net/quizzes/#quiz/' + self.model.get('quiz_id') + '/home',
+			  }]
+			}, function(response){});
+			
+			/*FB.login(function(){
 			  FB.api('/me/feed', 'post', {
 			  	subject: 'title',
 			  	message: self.$('.result-container h1').text(),
 			  	//prepare a PHP link with the result 
 			 	link: 'http://oprean.ddns.net/quizzes/#' + self.model.get('quiz_id') + '/home',
-			 	//picture: 'http://oprean.ddns.net/quizzes/assets/img/logo.png'
+			 	picture: 'http://oprean.ddns.net/quizzes/assets/img/logo.png'
 			  });
-			}, {scope: 'publish_actions'});
+			}, {scope: 'publish_actions'});*/
 		},
 		
 		sendEmail : function() {
