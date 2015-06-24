@@ -16,6 +16,7 @@ define([
 		events : {
 			'click .btn-generate-pdf' : 'generatePdf',
 			'click .btn-send-email' : 'sendEmail',
+			'click .btn-share' : 'shareResult',
 			'click .score-item' : 'toggleDescription'
 		},
 		
@@ -25,6 +26,19 @@ define([
 		
 		validate : function() {
 			return this.$('#name').val() && this.$('#email').val();
+		},
+		
+		shareResult: function() {
+			var self = this;
+			FB.login(function(){
+			  FB.api('/me/feed', 'post', {
+			  	subject: 'title',
+			  	message: self.$('.result-container h1').text(),
+			  	//prepare a PHP link with the result 
+			 	link: 'http://oprean.ddns.net/quizzes/#' + self.model.get('quiz_id') + '/home',
+			 	//picture: 'http://oprean.ddns.net/quizzes/assets/img/logo.png'
+			  });
+			}, {scope: 'publish_actions'});
 		},
 		
 		sendEmail : function() {
