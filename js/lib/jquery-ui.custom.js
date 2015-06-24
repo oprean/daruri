@@ -40,7 +40,7 @@ $.widget("ui.surface", {
 		var self = this;
 		this._values = [];
 
-		this._controlHeight = this.get_controlHeight();
+		this._controlHeight = this.getControlHeight();
 		this._maxRaw = this.getMaxRawValue();
 		
 		if (this.options.control.start == null) {
@@ -86,18 +86,20 @@ $.widget("ui.surface", {
 		this.element.click(function(e){
 			var posX = $(this).position().left,posY = $(this).position().top;
 			var position = {top:e.pageY - posY, left:e.pageX - posX};
-
-			if (position.top < self.options.control.size) position.top = self.options.control.size; 
-			if (position.top > self._controlHeight) position.top = self._controlHeight;
-			if (position.left < self.options.control.size) position.left = self.options.control.size;
-			if (position.left > self.options.size) position.left = self.options.size;
-
+			var point = { 
+				top: position.top,
+				left: position.left
+			};
+			
+			if(position.top + self.options.control.size > self._controlHeight) {
+				position.top = self._controlHeight - self.options.control.size; 
+			}
+			if(position.left + self.options.control.size > self.options.size) {
+				position.left = self.options.size - self.options.control.size; 
+			}
+			
+			self.updateControlPoint(point);
 			        	
-        	$( '#'+self.element.attr('id') + " .control-point" ).animate({
-        		'top': position.top - self.options.control.size,
-        		'left': position.left - self.options.control.size
-        	},250);
-        	
         	self._values = self.getValues(position);
         	if (self.options.visible.values) {
         		self.updateUiValues();        		
@@ -112,13 +114,13 @@ $.widget("ui.surface", {
 				left:this.options.control.size/2
 			},
 			scroll: false,
-			drag: function(event, ui) {
+			/*drag: function(event, ui) {
 				self._values = self.getValues(ui.position);
 				if (self.options.visible.values) {
 					self.updateUiValues();
 				}
 
-			}, 
+			},*/ 
 			stop: function(event, ui) {
 				self._values = self.getValues(ui.position);
 				if (self.options.visible.values) {
@@ -132,7 +134,29 @@ $.widget("ui.surface", {
 		return this._values;
 	},
 	
-	get_controlHeight: function() {
+	updateControlPoint: function(position) {		
+		if (position.top < this.options.control.size) 
+			position.top = this.options.control.size/2; //ok 
+		
+		if (position.top > this._controlHeight-this.options.control.size/2) 
+			position.top = this._controlHeight-this.options.control.size/2; //ok
+		
+		if (position.left < this.options.control.size/2) 
+			position.left = this.options.control.size/2; //ok
+		
+		if (position.left > this.options.size-this.options.control.size/2) 
+			position.left = this.options.size-this.options.control.size/2; //ok
+		
+		position.top -= this.options.control.size/2;
+		position.left -= this.options.control.size/2;
+		
+    	$( '#'+this.element.attr('id') + " .control-point" ).animate({
+    		'top': position.top,
+    		'left': position.left
+    	},250);
+	},
+	
+	getControlHeight: function() {
 		switch(this.options.components.length) {
 			case 1:
 			case 2: return this.options.control.size;
@@ -142,6 +166,8 @@ $.widget("ui.surface", {
 	},
 	
 	getValues: function(position) {
+		console.log(position);
+		var length = this.options.size - this.options.control.size;
 		var values = [];
 		var self = this;
 		switch(this.options.components.length) {
@@ -150,18 +176,18 @@ $.widget("ui.surface", {
 				break;
 			case 2: 
 				values.push(this.distance({top:0, left:0}, position));
-				values.push(this.distance({top:0, left:this.options.size}, position));
+				values.push(this.distance({top:0, left:length}, position));
 				break;
 			case 3: 
-				values.push(this.distance({top:0, left:this.options.size/2}, position));
-				values.push(this.distance({top:this._controlHeight, left:this.options.size}, position));
+				values.push(this.distance({top:0, left:length/2}, position));
+				values.push(this.distance({top:this._controlHeight, left:length}, position));
 				values.push(this.distance({top:this._controlHeight, left:0}, position));
 				break;
 			case 4: 
 				values.push(this.distance({top:0, left:0}, position));
-				values.push(this.distance({top:0, left:this.options.size}, position));
-				values.push(this.distance({top:this.options.size, left:this.options.size}, position));
-				values.push(this.distance({top:this.options.size, left:0}, position));
+				values.push(this.distance({top:0, left:length}, position));
+				values.push(this.distance({top:length, left:length}, position));
+				values.push(this.distance({top:length, left:0}, position));
 				break;
 		}	
 		values = _.map(values, function(value){ return (100 - value*100/self._maxRaw).toFixed(0); });
@@ -193,9 +219,10 @@ $.widget("ui.surface", {
 	},
 	
 	getMaxRawValue: function() {
+		var length = this.options.size - this.options.control.size;
 		return (this.options.components.length < 4)
-			?this.options.size
-			:Math.sqrt( this.options.size*this.options.size * 2);
+			?length
+			:Math.sqrt( length * length * 2);
 	},
 	
 	distance: function(p1, p2) {

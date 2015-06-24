@@ -11,7 +11,7 @@
 	<meta property="og:description" content="Bateria de teste de la Vox Domini pentru o crestere si dezvoltare ritmica, lejera, simbiotica, armonioasa. Pentru o unitate in diversitate si o ...">
 	<meta property="og:image" content="http://oprean.ddns.net/quizzes/assets/img/logo.png">
 
-	<title>Bateria de teste - Vox Domini</title>
+	<title>DEBUG - Bateria de teste - Vox Domini</title>
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine|Roboto|Lato">
 	<link rel="stylesheet" type="text/css" href="assets/css/animate.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
