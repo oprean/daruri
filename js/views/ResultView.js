@@ -31,7 +31,7 @@ define([
 		shareResult: function() {
 			var self = this;
 			console.log(this.model);
-			FB.ui({
+			/*FB.ui({
 			  method: 'feed',
 			  link: 'http://oprean.ddns.net/quizzes/#quiz/' + self.model.get('quiz_id') + '/home',
 			  ref: 'results',
@@ -48,17 +48,7 @@ define([
 			  	name:'Take the test',
 			  	link:'http://oprean.ddns.net/quizzes/#quiz/' + self.model.get('quiz_id') + '/home',
 			  }]
-			}, function(response){});
-			
-			/*FB.login(function(){
-			  FB.api('/me/feed', 'post', {
-			  	subject: 'title',
-			  	message: self.$('.result-container h1').text(),
-			  	//prepare a PHP link with the result 
-			 	link: 'http://oprean.ddns.net/quizzes/#' + self.model.get('quiz_id') + '/home',
-			 	picture: 'http://oprean.ddns.net/quizzes/assets/img/logo.png'
-			  });
-			}, {scope: 'publish_actions'});*/
+			}, function(response){});*/
 		},
 		
 		sendEmail : function() {

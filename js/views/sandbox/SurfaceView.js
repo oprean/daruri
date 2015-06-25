@@ -32,10 +32,10 @@ define([
 					points:false
 				},
 				control: {
-					size:20,
+					size:50,
 				},
 				components:[
-					{label:'aplicabil', class:'left'},
+					{label:'aplicabil', position:'top-left'},
 				]
 			});
 			
@@ -48,12 +48,12 @@ define([
 					points:false
 				},
 				control: {
-					size:20,
+					size:50,
 					color: '#3c986b'
 				},
 				components:[
-					{label:'aplicabil', class:'top-left'},
-					{label:'inspirational', class:'top-right'},
+					{label:'aplicabil', position:'top-left'},
+					{label:'inspirational', position:'top-right'},
 				]
 			});
 			
@@ -66,13 +66,13 @@ define([
 					points:true
 				},
 				control: {
-					size:30,
+					size:50,
 					color: '#c68841',
 				},
 				components:[
-					{label:'aplicabil', class:'top'},
-					{label:'inspirational', class:'bottom-left'},
-					{label:'precis', class:'bottom-right'},
+					{label:'aplicabil', position:'top'},
+					{label:'inspirational', position:'bottom-left'},
+					{label:'precis', position:'bottom-right'},
 				]
 			});
 			
@@ -90,10 +90,10 @@ define([
 					start: {left:50, top: 50}
 				},
 				components:[
-					{label:'aplicabil', class:'top-left'},
-					{label:'inspirational', class:'top-right'},
-					{label:'precis', class:'bottom-right'},
-					{label:'interesant', class:'bottom-left'},
+					{label:'aplicabil', position:'top-left'},
+					{label:'inspirational', position:'top-right'},
+					{label:'precis', position:'bottom-right'},
+					{label:'interesant', position:'bottom-left'},
 				]
 			});
 		}

@@ -24,14 +24,13 @@ $.widget("ui.surface", {
 		},
 		visible: {
 			name: true,
-			values: true,
-			points: true			
+			values: true,			
 		},
 		components:[
-			{label:'component1', class:'top-left'},
-			{label:'component2', class:'top-right'},
-			{label:'component3', class:'bottom-right'},
-			{label:'component4', class:'bottom-left'},
+			{label:'component1', position:'top-left'},
+			{label:'component2', position:'top-right'},
+			{label:'component3', position:'bottom-right'},
+			{label:'component4', position:'bottom-left'},
 		]
 	},
 	
@@ -53,15 +52,16 @@ $.widget("ui.surface", {
 		this._values = this.getValues(this.options.control.start);
 		
 		$.each(this.options.components, function( i, component ) {
-			var value = self.options.visible.values?'<div class="component-value">'+self._values[i]+'</div>':'';
-			var point = self.options.visible.points
-				?'<div class="component-point" style="width:'+ self.options.control.size +'px;height:'+ self.options.control.size +'px;"></div>':'';
-			var label = '<div class="component-name">'+ component.label + '</div>'; 
-			var html = (component.class.indexOf('bottom') == 0)
-				?value+label
-				:label+value; 
-	 		//html += point;
-			self._surface.append('<div class="component-container '+ component.class +'">' + html + '</div>\n');
+			var label = '<div class="component-name" style="">'+ component.label + '</div>';
+			var point = '<div class="component-point" style="' + 
+				'width:'+ self.options.control.size + 'px;' +
+				'height:'+ self.options.control.size + 'px;' +
+				'line-height:'+ self.options.control.size +'px;">' + 
+				self._values[i] + 
+			'</div>';
+			self._surface.append('<div class="component-container ' + component.position + '" style="' + 
+				self.getPositionStyle(component.position) + '">' + point + label + 
+			'</div>\n');
 		});
 
 		this._surface.append('<div class="control-point" style="' + 
@@ -114,13 +114,13 @@ $.widget("ui.surface", {
 				left:this.options.control.size/2
 			},
 			scroll: false,
-			/*drag: function(event, ui) {
+			drag: function(event, ui) {
 				self._values = self.getValues(ui.position);
 				if (self.options.visible.values) {
 					self.updateUiValues();
 				}
 
-			},*/ 
+			},
 			stop: function(event, ui) {
 				self._values = self.getValues(ui.position);
 				if (self.options.visible.values) {
@@ -134,6 +134,20 @@ $.widget("ui.surface", {
 		return this._values;
 	},
 	
+	getPositionStyle: function(position) {
+		var halfLength = (this.options.size-this.options.control.size)/2;
+		switch(position) {
+			case 'top-left':	return 'top:0px;left:0px;';
+			case 'top':			return 'top: 0px;left:' + halfLength + 'px;';
+			case 'top-right':	return 'top:0px;right:' + this.options.control.size + 'px;';
+			case 'right':		return 'top: ' + halfLength + 'px;left:0px;';
+			case 'bottom-right':return 'bottom:' + this.options.control.size + 'px;right:' + this.options.control.size + 'px;';
+			case 'bottom':		return 'bottom:' + this.options.control.size + 'px;left:' + halfLength + 'px;';
+			case 'bottom-left':	return 'bottom:' + this.options.control.size + 'px;left:0px;';
+			case 'left':		return 'top: ' + halfLength + 'px;left:0px;';
+		}
+	},
+
 	updateControlPoint: function(position) {		
 		if (position.top < this.options.control.size) 
 			position.top = this.options.control.size/2; //ok 
@@ -166,7 +180,6 @@ $.widget("ui.surface", {
 	},
 	
 	getValues: function(position) {
-		console.log(position);
 		var length = this.options.size - this.options.control.size;
 		var values = [];
 		var self = this;
@@ -198,22 +211,22 @@ $.widget("ui.surface", {
 	updateUiValues: function() {
 		switch(this.options.components.length) {
 			case 1: 
-				$( '#'+this.element.attr('id') + " .top-left .component-value").html(this._values[0]);
+				$( '#'+this.element.attr('id') + " .top-left .component-point").html(this._values[0]);
 				break;
 			case 2: 
-				$( '#'+this.element.attr('id') + " .top-left .component-value").html(this._values[0]);
-				$( '#'+this.element.attr('id') + " .top-right .component-value").html(this._values[1]);
+				$( '#'+this.element.attr('id') + " .top-left .component-point").html(this._values[0]);
+				$( '#'+this.element.attr('id') + " .top-right .component-point").html(this._values[1]);
 				break;
 			case 3: 
-				$( '#'+this.element.attr('id') + " .top .component-value").html(this._values[0]);
-				$( '#'+this.element.attr('id') + " .bottom-right .component-value").html(this._values[1]);
-				$( '#'+this.element.attr('id') + " .bottom-left .component-value").html(this._values[2]);
+				$( '#'+this.element.attr('id') + " .top .component-point").html(this._values[0]);
+				$( '#'+this.element.attr('id') + " .bottom-right .component-point").html(this._values[1]);
+				$( '#'+this.element.attr('id') + " .bottom-left .component-point").html(this._values[2]);
 				break;
 			case 4: 
-				$( '#'+this.element.attr('id') + " .top-left .component-value").html(this._values[0]);
-				$( '#'+this.element.attr('id') + " .top-right .component-value").html(this._values[1]);
-				$( '#'+this.element.attr('id') + " .bottom-right .component-value").html(this._values[2]);
-				$( '#'+this.element.attr('id') + " .bottom-left .component-value").html(this._values[3]);
+				$( '#'+this.element.attr('id') + " .top-left .component-point").html(this._values[0]);
+				$( '#'+this.element.attr('id') + " .top-right .component-point").html(this._values[1]);
+				$( '#'+this.element.attr('id') + " .bottom-right .component-point").html(this._values[2]);
+				$( '#'+this.element.attr('id') + " .bottom-left .component-point").html(this._values[3]);
 				break;
 		}		
 	},

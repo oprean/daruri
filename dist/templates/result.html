@@ -1,7 +1,7 @@
 <div class="result-container">
 	<h1><%= result.name %> <span class="badge" style="font-size: 1em;"><%= result.value %></span></h1>
 	<p><%= result.description %></p>
-	<div class="text-center">
+	<div class="statistics-container">
 		<ul class="score">
 			<% _.each(result.statistics, function(item) { %>
 			<li class="score-item" data-group-id="<%= item.group_id %>">
@@ -15,7 +15,7 @@
 </div>
 <hr />
 <div class="row">
-	<div class="col-md-6">
+	<div class="col-md-4">
 		<span class="send-email-response"></span>
 		<form style="display: <%= (email)?'none':'' %>" class="form-horizontal form-email">
 		  <div class="form-group">
@@ -32,7 +32,7 @@
 		  </div>
 		  <div class="form-group">
 		    <div class="col-sm-offset-4 col-sm-8">
-		      <button type="button" class="btn btn-primary btn-send-email" data-loading-text="Sending...">Send</button>
+		      <button type="button" class="btn btn-block btn-lg btn-primary btn-send-email" data-loading-text="Sending..."><i class="fa fa-envelope-o"></i> Send by e-mail</button>
 		    </div>
 		  </div>
 		</form>		 	
@@ -40,9 +40,16 @@
 	<div class="col-md-1 text-center center-block">
 		<div class="vl text-center center-block hidden-xs" style="width:1px; height: 120px;"></div>						 	
 	</div>
-	<div class="col-md-5">
+	<div class="col-md-3">
 		<span class="pdf-generating-response"></span>
-		<button class="btn btn-lg btn-primary btn-generate-pdf" data-loading-text="Generating ..." type="button">Generează PDF</button>
-		<a style="display: none" class="btn btn-lg btn-primary btn-download-pdf" href=""></a>
+		<button class="btn btn-block btn-lg btn-primary btn-generate-pdf" data-loading-text="Generating ..." type="button"><i class="fa fa-file-pdf-o"></i> Generate PDF</button>
+		<a style="display: none" class="btn btn-block btn-lg btn-primary btn-download-pdf" href=""><i class="fa fa-file-pdf-o"></i> Download PDF</a>
+		<p></p>
 	</div>
+	<div class="col-md-1 text-center center-block">
+		<div class="vl text-center center-block hidden-xs" style="width:1px; height: 120px;"></div>						 	
+	</div>
+	<div class="col-md-3">
+		<button class="btn btn-block btn-lg btn-primary btn-share" data-loading-text="Generating ..." type="button"><i class="fa fa-facebook-official"></i> Share it!</button>
+	</div>	
 </div>

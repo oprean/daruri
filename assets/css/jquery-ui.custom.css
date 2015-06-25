@@ -9,9 +9,9 @@
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+ */
 	
-	-webkit-box-shadow: inset 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+/*	-webkit-box-shadow: inset 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
 	-moz-box-shadow:    inset 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
-	box-shadow:         inset 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         inset 0px 0px 5px 0px rgba(50, 50, 50, 0.75);*/
 }
 
 .surface-name {
@@ -38,69 +38,21 @@
 }
 
 .component-container {
+	position: absolute;
 }
 
 .component-name {
+	position: absolute;
 	font-weight: 900;
 	opacity: 0.6;
 }
 
-.component-value {
-	font-size:2em;
-	font-weight: 900;
-	opacity: 0.2;
-}
-
 .component-point {
+	font-size: 2em;
+	font-weight: 900;
 	border-radius:50%;
 	position: absolute;
-	background: #337AB7;
-}
-
-.top {
-	position: absolute;
-	text-align:center;
-	width:100%;
-	top: 0px;
-}
-
-.right {
-	position: absolute;
-	right: 0px;
-}
-
-.bottom {
-	position: absolute;
-	bottom: 0px;
-}
-
-.left {
-	position: absolute;
-	left: 0px;
-}
-
-.top-left {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-}
-
-.top-right {
-	position: absolute;
-	text-align:right;
-	top: 0px;
-	right: 0px;
-}
-
-.bottom-left {
-	position: absolute;
-	bottom: 0px;
-	left: 0px;
-}
-
-.bottom-right {
-	position: absolute;
-	text-align:right;
-	bottom: 0px;
-	right: 0px;
+	background: #AAAAAA;
+ 	text-align:center;
+ 	opacity: 0.4;
 }
