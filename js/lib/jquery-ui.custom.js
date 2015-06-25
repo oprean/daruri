@@ -57,7 +57,7 @@ $.widget("ui.surface", {
 				'width:'+ self.options.control.size + 'px;' +
 				'height:'+ self.options.control.size + 'px;' +
 				'line-height:'+ self.options.control.size +'px;">' + 
-				self._values[i] + 
+				self._values[i] + '<span class="postfix">%</span>' +
 			'</div>';
 			self._surface.append('<div class="component-container ' + component.position + '" style="' + 
 				self.getPositionStyle(component.position) + '">' + point + label + 
@@ -207,30 +207,35 @@ $.widget("ui.surface", {
 				values.push(this.distance({top:length, left:0}, position));
 				break;
 		}	
-		values = _.map(values, function(value){ return (100 - value*100/self._maxRaw).toFixed(0); });
+		
+		values = _.map(values, function(value){
+			var percent = 100 - value*100/self._maxRaw;  
+			return (percent>0)?percent.toFixed(0):0; 
+		});
 		
 		return values;
 	},
 	
 	updateUiValues: function() {
+		var p = '<span class="postfix">%</span>';
 		switch(this.options.components.length) {
 			case 1: 
-				$( '#'+this.element.attr('id') + " .center .component-point").html(this._values[0]);
+				$( '#'+this.element.attr('id') + " .center .component-point").html(this._values[0]+p);
 				break;
 			case 2: 
-				$( '#'+this.element.attr('id') + " .top-left .component-point").html(this._values[0]);
-				$( '#'+this.element.attr('id') + " .top-right .component-point").html(this._values[1]);
+				$( '#'+this.element.attr('id') + " .top-left .component-point").html(this._values[0]+p);
+				$( '#'+this.element.attr('id') + " .top-right .component-point").html(this._values[1]+p);
 				break;
 			case 3: 
-				$( '#'+this.element.attr('id') + " .top .component-point").html(this._values[0]);
-				$( '#'+this.element.attr('id') + " .bottom-right .component-point").html(this._values[1]);
-				$( '#'+this.element.attr('id') + " .bottom-left .component-point").html(this._values[2]);
+				$( '#'+this.element.attr('id') + " .top .component-point").html(this._values[0]+p);
+				$( '#'+this.element.attr('id') + " .bottom-right .component-point").html(this._values[1]+p);
+				$( '#'+this.element.attr('id') + " .bottom-left .component-point").html(this._values[2]+p);
 				break;
 			case 4: 
-				$( '#'+this.element.attr('id') + " .top-left .component-point").html(this._values[0]);
-				$( '#'+this.element.attr('id') + " .top-right .component-point").html(this._values[1]);
-				$( '#'+this.element.attr('id') + " .bottom-right .component-point").html(this._values[2]);
-				$( '#'+this.element.attr('id') + " .bottom-left .component-point").html(this._values[3]);
+				$( '#'+this.element.attr('id') + " .top-left .component-point").html(this._values[0]+p);
+				$( '#'+this.element.attr('id') + " .top-right .component-point").html(this._values[1]+p);
+				$( '#'+this.element.attr('id') + " .bottom-right .component-point").html(this._values[2]+p);
+				$( '#'+this.element.attr('id') + " .bottom-left .component-point").html(this._values[3]+p);
 				break;
 		}		
 	},
