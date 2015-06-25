@@ -113,7 +113,6 @@ ul.score li:nth-child(-n+3) {
 }
 
 .score-description {
-	width: 200px;
 	text-align: justify;
 	display: inline-block;
 	font-size: 0.9em;

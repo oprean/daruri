@@ -117,7 +117,6 @@ define([
 						self.$('.pdf-generating-response').html('<div role="alert" class="alert alert-success"><strong>Success! </strong> ' + result.data.message + '</div>');
 						self.$('.btn-generate-pdf').toggle();
 						self.$('.btn-download-pdf').toggle();
-						self.$('.btn-download-pdf').html('Descarcă PDF');
 						self.$('.btn-download-pdf').attr('href', 'api/pdf/' + result.data.filename);
 					} else {
 						self.$('.pdf-generating-response').html('<div role="alert" class="alert alert-danger"><strong>Error! </strong> ' + result.data.message + '</div>');

@@ -13,6 +13,7 @@
 
 	<title>DEBUG - Bateria de teste - Vox Domini</title>
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine|Roboto|Lato">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/animate.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.custom.css">
