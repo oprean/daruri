@@ -35,7 +35,7 @@ define([
 					size:50,
 				},
 				components:[
-					{label:'aplicabil', position:'top-left'},
+					{label:'aplicabil', position:'center'},
 				]
 			});
 			

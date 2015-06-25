@@ -73,13 +73,16 @@ $.widget("ui.surface", {
 			'"></div>');
 
 		if (self.options.visible.name) {
-			this._surface.append('<div class="surface-name">' + this.options.name + '</div>');
+			var style = (this.options.components.length==1)?'transform:translate(-50%, 100%)':'';
+			this._surface.append('<div class="surface-name" style="'+style+'">' + this.options.name + '</div>');
 		}
 
 		this.element.append(this._surface); 
 		this.element.css('width', this.options.size);
 		this.element.css('height', this._controlHeight);		
-		this.element.css('border-radius', this.options.control.size/2);
+		this.element.css('border-radius', (this.options.components.length!=1)
+			?this.options.control.size/2
+			:this.options.size/2);
 		this.element.css('background', this.options.background);
 		this.element.addClass('select-surface-control');
 
@@ -145,6 +148,7 @@ $.widget("ui.surface", {
 			case 'bottom':		return 'bottom:' + this.options.control.size + 'px;left:' + halfLength + 'px;';
 			case 'bottom-left':	return 'bottom:' + this.options.control.size + 'px;left:0px;';
 			case 'left':		return 'top: ' + halfLength + 'px;left:0px;';
+			case 'center':		return 'top: ' + halfLength + 'px;left:' + halfLength + 'px;';
 		}
 	},
 
@@ -172,7 +176,7 @@ $.widget("ui.surface", {
 	
 	getControlHeight: function() {
 		switch(this.options.components.length) {
-			case 1:
+			case 1: return this.options.size;
 			case 2: return this.options.control.size;
 			case 3: return this.options.size*Math.sqrt(3)/2;
 			case 4: return this.options.size;
@@ -185,7 +189,7 @@ $.widget("ui.surface", {
 		var self = this;
 		switch(this.options.components.length) {
 			case 1: 
-				values.push(position.left);
+				values.push(this.distance({top:length/2, left:length/2}, position));
 				break;
 			case 2: 
 				values.push(this.distance({top:0, left:0}, position));
@@ -211,7 +215,7 @@ $.widget("ui.surface", {
 	updateUiValues: function() {
 		switch(this.options.components.length) {
 			case 1: 
-				$( '#'+this.element.attr('id') + " .top-left .component-point").html(this._values[0]);
+				$( '#'+this.element.attr('id') + " .center .component-point").html(this._values[0]);
 				break;
 			case 2: 
 				$( '#'+this.element.attr('id') + " .top-left .component-point").html(this._values[0]);
@@ -233,9 +237,13 @@ $.widget("ui.surface", {
 	
 	getMaxRawValue: function() {
 		var length = this.options.size - this.options.control.size;
-		return (this.options.components.length < 4)
-			?length
-			:Math.sqrt( length * length * 2);
+		switch(this.options.components.length) {
+			case 1: return length/2;
+			case 4:	return Math.sqrt( length * length * 2); 
+			case 2: return length;
+			case 3: return length;
+						
+		}
 	},
 	
 	distance: function(p1, p2) {
