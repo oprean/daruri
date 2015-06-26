@@ -52,7 +52,11 @@ $.widget("ui.surface", {
 		this._values = this.getValues(this.options.control.start);
 		
 		$.each(this.options.components, function( i, component ) {
-			var label = '<div class="component-name" style="">'+ component.label + '</div>';
+			var label = '<div class="component-name" style="' + 
+				// this is for the right alignment of component name;
+				(component.position.indexOf('right')>0?'right: ' + -self.options.control.size + 'px;':'') + '">' + 
+				component.label + 
+			'</div>';
 			var point = '<div class="component-point" style="' + 
 				'width:'+ self.options.control.size + 'px;' +
 				'height:'+ self.options.control.size + 'px;' +
