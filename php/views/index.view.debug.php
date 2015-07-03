@@ -44,7 +44,7 @@
 			<div id="loader"></div>
 		</div>
 	</div>
-	<div id="footer-container"> </div>
+	<div id="footer-container" class="hidden-xs"> </div>
 </body>
 </html>
 
