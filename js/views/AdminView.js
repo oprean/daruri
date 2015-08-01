@@ -10,13 +10,9 @@ define([
 	var AdminView = Backbone.Marionette.ItemView.extend({
 		template : _.template(adminTpl),
 		initialize : function(options) {
-			var results = new Results(); 
 		},
 		
 		templateHelpers : function() {
-			return {
-				status:this.status
-			};
 		},
 		
 	});
