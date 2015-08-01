@@ -14,6 +14,7 @@ require.config({
 		"backbone.marionette":"lib/backbone.marionette.min",
 		"backbone.localStorage":"lib/backbone.localStorage.min",
 		"backbone.validation":"lib/backbone-validation-min",		
+		"backgrid" : "lib/backgrid.min",
 		
 		"moment":"lib/moment.min",
 		"jquery.qrcode":"lib/jquery.qrcode-0.12.0.min",
@@ -52,6 +53,10 @@ require.config({
 			"deps":["backbone"],
 			"exports":"Backbone"
 		},
+		"backgrid":{
+			"deps":["jquery", "underscore", "backbone"],
+			"exports": "Backgrid"
+		}
 	}
 });
 

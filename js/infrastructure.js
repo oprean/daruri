@@ -9,6 +9,7 @@ define([
 	"backbone.marionette",
 	"backbone.localStorage",
 	"backbone.validation",
+	"backgrid",
 	"moment",
 	"jquery.qrcode",
 	"text",
