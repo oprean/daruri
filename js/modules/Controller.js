@@ -4,6 +4,7 @@ define([
   'backbone',
   'backbone.marionette',
   'views/HomeView',
+  'views/AdminView',
   'views/StaticView',
   'views/QuizView',
   'views/QuestionView',
@@ -13,7 +14,7 @@ define([
   'views/sandbox/QRCodeView',
   'views/sandbox/SurfaceView',
 ], function($, _, Backbone, Marionette, 
-	HomeView, StaticView, QuizView, QuestionView, ResultView, GroupsView, GeolocationView, QRCodeView, SurfaceView){
+	HomeView, AdminView, StaticView, QuizView, QuestionView, ResultView, GroupsView, GeolocationView, QRCodeView, SurfaceView){
 	var Controller = Marionette.Controller.extend({
 	  initialize: function() {
 	  },
@@ -22,7 +23,12 @@ define([
 	  	console.log('home ' + quizId);
 		app.mainRegion.show(new HomeView({quizId: quizId}));
 	  },
-	  
+
+	  admin: function() {
+	  	console.log('admin');
+		app.mainRegion.show(new AdminView());
+	  },
+	  	  
 	  static: function(file) {
 		app.mainRegion.show(new StaticView({tpl:file}));
 	  },

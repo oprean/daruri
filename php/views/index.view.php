@@ -49,8 +49,12 @@
 	   }(document, 'script', 'facebook-jssdk'));
 	</script>
 	<div id="header-container"> </div>
-	<div class="container" id="main-container"> </div>
-	<div id="footer-container"> </div>
+	<div class="container" id="main-container">
+		<div id="loader-wrapper">
+			<div id="loader"></div>
+		</div> 
+	</div>
+	<div id="footer-container" class="hidden-xs"> </div>
 </body>
 </html>
 
