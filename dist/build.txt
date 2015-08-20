@@ -23,6 +23,8 @@ collections/QuizzesCards.js
 text!templates/quiz-card.html
 views/QuizCardView.js
 views/HomeView.js
+text!templates/admin.html
+views/AdminView.js
 text!templates/static.html
 text!templates/contact.html
 text!templates/about.html
