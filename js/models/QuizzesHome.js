@@ -9,8 +9,10 @@ define([
 		initialize: function(options) {
 			var quizzes = [];			
 			_.each(options.quizzes, function(quiz){
-				quiz['status'] = Utils.getQuizStatus(quiz.id);
-				quizzes.push(quiz);  
+				if (quiz.active == true) {
+					quiz['status'] = Utils.getQuizStatus(quiz.id);
+					quizzes.push(quiz);					
+				}
 			});
 			options.quizzes = quizzes;
 			 
