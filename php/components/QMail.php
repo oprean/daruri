@@ -46,6 +46,7 @@ class QMail {
 		$this->mail->Body .= $this->getResultLink();
 		
 		$this->mail->AddAddress($this->input->email);
+		$this->mail->addCC('gelupaul@gmail.com');
 		 if($this->mail->Send()) {
 			$result = array(
 				'status' => 'success',
