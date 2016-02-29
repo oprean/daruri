@@ -2,7 +2,7 @@
 	"id" : "gifts",
 	"type" : 1,
 	"name" : "Daruri Spirituale",
-	"description" : "Biblia Invata ca fiecare crestin are cel putin un dar spiritual care poate fi folosit spre zidirea trupului lui Cristos. Darurile spirituale sunt Impartite de Duhul Sfant iar apoi dezvoltate de fiecare creștin.",
+	"description" : "Biblia invata ca fiecare crestin are cel putin un dar spiritual care poate fi folosit spre zidirea trupului lui Cristos. Darurile spirituale sunt Impartite de Duhul Sfant iar apoi dezvoltate de fiecare creștin.",
 	
 	"options" : [
 		{"val": 3, "text": "Intotdeauna"},
@@ -17,7 +17,7 @@
 		{"id": "C", "name": "iscusintei lucrului manual", "description": "Capacitatea divina de a sprijini lucrarea construiind creativ uneltele necesare lucrari"},
 		{"id": "D", "name": "comunicarii creative", "description": "Capacitatea divina de a comunica adevarul lui Dumnezeu printr-o varietate de forme artist"},
 		{"id": "E", "name": "discernamantului", "description": "Capacitatea divina de a face o distinctie intre adevar si eroare si de a identifica inselaciunea in caracter si in relatii."},
-		{"id": "F", "name": "Incurajarii", "description": "Capacitatea divina de a prezenta adevarul intaririi, mangaierii sau indemnului la actiune a celor descurajati sau sovaitori in credinta."},
+		{"id": "F", "name": "incurajarii", "description": "Capacitatea divina de a prezenta adevarul intaririi, mangaierii sau indemnului la actiune a celor descurajati sau sovaitori in credinta."},
 		{"id": "G", "name": "evanghelizarii", "description": "Capacitatea divina de a comunica eficient evanghelia celor care nu o cunosc astfel incat ei sa poata raspunde prin credinta si sa intre in procesul de ucenicie."},
 		{"id": "H", "name": "credintei", "description": "Capacitatea divina de a te increde in voia lui Dumnezeu si de a actiona pe baza ei cu credinta ferma in capacitatea lui Dumnezeu."},
 		{"id": "I", "name": "darniciei", "description": "Capacitatea divina de a contribui cu bucurie si marinimie, material si financiar, la inaintarea lucrarii Domnului ."},
@@ -118,7 +118,7 @@
 		{"id": 81, "text": "Primesc confirmarea de la altii in ce priveste temeinicia ideilor sau perceptiilor mele.",  "group_id": "E"},
 		{"id": 82, "text": "Intaresc pe cei care oscileaza in credinta.",  "group_id": "F"},
 		{"id": 83, "text": "Spun deschis oamenilor ca sunt crestin si vreau ca ei sa ma intrebe despre credinta mea.",  "group_id": "G"},
-		{"id": 84, "text": "Sunt convins de prezenta si actiunea zilnica a lui Dumnezeu In viata mea.",  "group_id": "H"},
+		{"id": 84, "text": "Sunt convins de prezenta si actiunea zilnica a lui Dumnezeu in viata mea.",  "group_id": "H"},
 		{"id": 85, "text": "Imi place sa aflu ca sprijinul meu financiar produce schimbare in vietile si lucrarile oamenilor lui Dumnezeu.",  "group_id": "I"},
 		{"id": 86, "text": "Imi place sa gasesc lucruri mici ce trebuie facute si adesea le fac fara sa mi se ceara.",  "group_id": "J"},
 		{"id": 87, "text": "Imi place sa relationez cu altii si sa-mi deschid casa pentru ei.",  "group_id": "K"},

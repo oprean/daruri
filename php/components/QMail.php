@@ -40,13 +40,12 @@ class QMail {
 
 		$this->mail->Subject = $this->input->subject;
 		$this->mail->Body = '<h2>Dear '.$this->input->name.'</h2> ';
-		$this->mail->Body .= 'This is your result:<hr>';
 		$this->mail->Body .= $this->input->html;
 		$this->mail->Body .= '<hr>You can visit later this result following this link: <br>';
 		$this->mail->Body .= $this->getResultLink();
 		
 		$this->mail->AddAddress($this->input->email);
-		$this->mail->addCC('gelupaul@gmail.com');
+		//$this->mail->addCC('gelupaul@gmail.com');
 		 if($this->mail->Send()) {
 			$result = array(
 				'status' => 'success',

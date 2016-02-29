@@ -13,6 +13,31 @@
 		</ul>
 	</div>
 </div>
+
+<div class="result-container-pdf" style="display: none">
+	<p style="font-size: 10px">Acesta este darul tau spiritual:</p>
+	<table style="background-color: #CCCCCC">
+		<tr>
+			<td align="center" style="font-size: 20px">Darul<br /><%= result.name %></td>
+			<td align="center" valign="middle" style="font-size: 20px;width:50px"><%= result.value %></td>
+			<td style="font-size: 10px;width:300px;">
+				<%= result.description %>
+			</td>
+		</tr>
+	</table>
+	<p style="font-size: 10px">De asemenea, in mai mica masura esti inzestrat si cu urmatoarele daruri:</p>
+	<table class="score">
+		<% _.each(result.statistics, function(item) {
+			if (item.name != result.name) { %>
+		<tr>
+			<td style="width: 40px"></td> <td>Darul <%= item.name %> (<%= item.value %>)</td>
+		</tr>
+		<% }}) %>
+	</table>
+	<br /><br />
+	<p align="right" style="font-size: 10px">Sa le folosesti cu intelepciune,<br /> Echipa</p>
+</div>
+
 <hr />
 <div class="row">
 	<div class="col-md-4">
@@ -43,7 +68,7 @@
 	<div class="col-md-3">
 		<span class="pdf-generating-response"></span>
 		<button class="btn btn-block btn-lg btn-primary btn-generate-pdf" data-loading-text="Generating ..." type="button"><i class="fa fa-file-pdf-o"></i> Generate PDF</button>
-		<a style="display: none" class="btn btn-block btn-lg btn-primary btn-download-pdf" href=""><i class="fa fa-file-pdf-o"></i> Download PDF</a>
+		<a style="display: none" class="btn btn-block btn-lg btn-primary btn-download-pdf" target="_blank" href=""><i class="fa fa-file-pdf-o"></i> Download PDF</a>
 		<p></p>
 	</div>
 	<div class="col-md-1 text-center center-block">
