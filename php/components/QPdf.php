@@ -19,8 +19,8 @@ class QPdf extends TCPDF {
 	
     public function Header() {
     	
-        $image_file = '../assets/img/logo100.png';
-        $this->Image($image_file, 10, 5, 0, 10, 'png', '', 'T', false, 300, '', false, false, 0, false, false, false);
+        $image_file = '../assets/img/logo100.jpg';
+        $this->Image($image_file, 10, 5, 0, 10, 'jpg', '', 'T', false, 300, '', false, false, 0, false, false, false);
         // Set font
         $this->SetFont('helvetica', '', 12);
         // Title
