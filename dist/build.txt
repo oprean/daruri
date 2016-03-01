@@ -37,6 +37,8 @@ text!templates/result.html
 views/ResultView.js
 text!templates/groups.html
 views/GroupsView.js
+text!templates/login.html
+views/LoginView.js
 text!templates/sandbox/geolocation.html
 views/sandbox/GeolocationView.js
 text!templates/sandbox/qrcode.html
