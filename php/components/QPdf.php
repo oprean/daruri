@@ -38,8 +38,8 @@ class QPdf extends TCPDF {
         $this->SetY(-15);
         // Set font
         $this->SetFont('helvetica', 'I', 8);
+		$this->SetTextColor(128,128,128);
         // Page number
-        //$this->Cell(0, 15, $this->getAliasNumPage().'/'.$this->getAliasNbPages().' - oprean.ddns/quizzes', 0, false, 'L', 0, '', 0, false, 'T', 'M');
 		$this->Cell(0, 15, $this->getAliasNumPage().'/'.$this->getAliasNbPages().' - oprean.ddns/quizzes', 0, false, 'L', 0, '', 0, false, 'M', 'B');
 		$this->Cell(0, 15, 'generat in '.date('d-M-Y h:i:s'), 0, false, 'R', 0, '', 0, false, 'M', 'B');
         $style = array('width' => 0.1, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(128, 128, 128));
@@ -65,7 +65,7 @@ h1 {
 </style>
 EOF;
 		$html .= '<br><br><h1>Draga '. (isset($this->input->name)?$this->input->name:'').',<h1><br><br><br>';
-		$html .= $this->input->html;
+		$html .= $this->input->htmlPdf;
 		$filename = $this->input->data->quiz_id.'_'.$this->input->data->id.'.pdf';
 		
 		$this->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);

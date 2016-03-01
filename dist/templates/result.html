@@ -1,3 +1,4 @@
+<!-- Browser -->
 <div class="result-container">
 	<h1>Darul <%= result.name %> <span class="badge" style="font-size: 1em;"><%= result.value %></span></h1>
 	<p><%= result.description %></p>
@@ -14,6 +15,7 @@
 	</div>
 </div>
 
+<!-- PDF -->
 <div class="result-container-pdf" style="display: none">
 	<p style="font-size: 10px">Acesta este darul tau spiritual:</p>
 	<table style="background-color: #e5d3a1;width:500px">
@@ -35,7 +37,6 @@
 			</td>
 		</tr>
 	</table>
-	<span style="height:1pt;padding: 10;margin: 0;"></span>
 	<table style="background-color: #f3e8ee;width:500px">
 		<tr>		
 			<td align="center" style="font-size: 15px">Darul<br /><%= result.statistics[2].name %></td>
@@ -58,26 +59,73 @@
 		<img src="http://oprean.ddns.net/quizzes/assets/img/vox-ms-logo.jpg" width="75" /></p>
 </div>
 
+<!-- E-mail -->
+<div class="result-container-mail text-center center-block" style="display: none; width: 100%">
+	<div style="width: 500px;">
+	<p>Acesta este darul tau spiritual:</p>
+	<table style="background-color: #e5d3a1;width:500px;border-radius: 5px;">
+		<tr>
+			<td align="center" style="font-size: 20px">Darul<br /><%= result.name %></td>
+			<td align="center" valign="middle" style="font-size: 20px;width:50px"><%= result.value %></td>
+			<td style="font-size: 10px;width:300px;">
+				<%= result.description %>
+			</td>
+		</tr>
+	</table>
+	<p>De asemenea, in mai mica masura esti inzestrat si cu urmatoarele daruri:</p>
+	<table style="background-color: #e1deed;width:500px;border-radius: 5px;">
+		<tr>		
+			<td align="center" style="font-size: 15px">Darul<br /><%= result.statistics[1].name %></td>
+			<td align="center" valign="middle" style="font-size: 15px;width:50px"><%= result.statistics[1].value %></td>
+			<td style="font-size: 10px;width:300px;">
+				<%= result.statistics[1].description %>
+			</td>
+		</tr>
+	</table>
+	<div style="height:10px;"></div>
+	<table style="background-color: #f3e8ee;width:500px;border-radius: 5px;">
+		<tr>		
+			<td align="center" style="font-size: 15px">Darul<br /><%= result.statistics[2].name %></td>
+			<td align="center" valign="middle" style="font-size: 15px;width:50px"><%= result.statistics[2].value %></td>
+			<td style="font-size: 10px;width:300px;">
+				<%= result.statistics[2].description %>
+			</td>
+		</tr>
+	</table>
+	<p>Iar restul darurilor:</p>
+	<table class="score">
+		<% for(i=3;i<result.statistics.length;i++) { %>
+		<tr>
+			<td style="width: 40px"></td> <td>Darul <%= result.statistics[i].name %> (<%= result.statistics[i].value %>)</td>
+		</tr>
+		<% } %>
+	</table>
+	<br /><br />
+	<p align="right" style="font-size: 10px">Sa le folosesti cu intelepciune,<br /> 
+		<img src="http://oprean.ddns.net/quizzes/assets/img/vox-ms-logo.jpg" width="75" /></p>
+	</div>
+</div>
+
 <hr />
 <div class="row">
 	<div class="col-md-4">
 		<span class="send-email-response"></span>
 		<form style="display: <%= (email)?'none':'' %>" class="form-horizontal form-email">
 		  <div class="form-group">
-		    <label for="name" class="col-sm-4 control-label">Name</label>
+		    <label for="name" class="col-sm-4 control-label">Nume</label>
 		    <div class="col-sm-8">
-		      <input type="text" class="form-control" id="name" placeholder="your name ...">
+		      <input type="text" class="form-control" id="name" placeholder="name ...">
 		    </div>
 		  </div>
 		  <div class="form-group">
 		    <label for="email" class="col-sm-4 control-label">Email</label>
 		    <div class="col-sm-8">
-		      <input type="email" class="form-control" id="email" placeholder="your email ...">
+		      <input type="email" class="form-control" id="email" placeholder="email ...">
 		    </div>
 		  </div>
 		  <div class="form-group">
 		    <div class="col-sm-offset-4 col-sm-8">
-		      <button type="button" class="btn btn-block btn-lg btn-primary btn-send-email" data-loading-text="Sending..."><i class="fa fa-envelope-o"></i> Send by e-mail</button>
+		      <button type="button" class="btn btn-block btn-lg btn-primary btn-send-email" data-loading-text="Se trimite..."><i class="fa fa-envelope-o"></i> Trimite prin e-mail</button>
 		    </div>
 		  </div>
 		</form>		 	
@@ -87,8 +135,8 @@
 	</div>
 	<div class="col-md-3">
 		<span class="pdf-generating-response"></span>
-		<button class="btn btn-block btn-lg btn-primary btn-generate-pdf" data-loading-text="Generating ..." type="button"><i class="fa fa-file-pdf-o"></i> Generate PDF</button>
-		<a style="display: none" class="btn btn-block btn-lg btn-primary btn-download-pdf" target="_blank" href=""><i class="fa fa-file-pdf-o"></i> Download PDF</a>
+		<button class="btn btn-block btn-lg btn-primary btn-generate-pdf" data-loading-text="Generating ..." type="button"><i class="fa fa-file-pdf-o"></i> Genereaza PDF</button>
+		<a style="display: none" class="btn btn-block btn-lg btn-primary btn-download-pdf" target="_blank" href=""><i class="fa fa-file-pdf-o"></i> Descarca PDF</a>
 		<p></p>
 	</div>
 	<div class="col-md-1 text-center center-block">

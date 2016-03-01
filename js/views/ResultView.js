@@ -68,7 +68,8 @@ define([
 					name: this.$('#name').val(),
 					email: this.$('#email').val(),
 					subject: 'Rezultate Test '+this.quiz.get('name'),
-					html: this.$('.result-container-pdf').html(),
+					htmlPdf: this.$('.result-container-pdf').html(),
+					htmlMail: this.$('.result-container-mail').html(),
 					data: this.model
 				}), 
 				success: function(result) {
@@ -98,7 +99,7 @@ define([
 				dataType: "json",
 				url: 'api/pdf', 
 				data: JSON.stringify({
-					html: this.$('.result-container-pdf').html(),
+					htmlPdf: this.$('.result-container-pdf').html(),
 					data: this.model,
 				}), 
 				success: function(result) {

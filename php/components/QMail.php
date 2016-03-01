@@ -40,7 +40,7 @@ class QMail {
 
 		$this->mail->Subject = $this->input->subject;
 		$this->mail->Body = '<h2>Draga '.$this->input->name.'</h2> ';
-		$this->mail->Body .= $this->input->html;
+		$this->mail->Body .= $this->input->htmlMail;
 		$this->mail->Body .= '<hr>Poti revizita aceste rezultate aici: <br>';
 		$this->mail->Body .= $this->getResultLink();
 		

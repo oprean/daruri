@@ -149,13 +149,13 @@ define([
 			
 			var navButtons = {
 				prev : {
-					text:(questionId>1)?'Previous':'Home',
+					text:(questionId>1)?'Inapoi':'Acasa',
 					icon:(questionId>1)?'glyphicon-chevron-left':'glyphicon-home',
 					url:(questionId>1)?parseInt(questionId)-1:'home',
 					visible: (questionId>1)?true:false
 				},
 				next: {
-					text: (questionId < questions.length)?'Next':'Results',
+					text: (questionId < questions.length)?'Inainte':'Rezultate',
 					icon: (questionId < questions.length)?'glyphicon-chevron-right':'glyphicon-ok',
 					url: (questionId < questions.length)?parseInt(questionId)+1:'result',
 					visible: (nextAnswer||answer)?true:false
