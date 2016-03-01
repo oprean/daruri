@@ -210,3 +210,7 @@ ul.score li:nth-child(-n+3) {
 .vl {
 	border-left: 1px solid #AAAAAA;
 }
+
+.login {
+	/*width: 400px;*/
+}
