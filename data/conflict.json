@@ -1,0 +1,51 @@
+{
+	"id" : "conflict",
+	"type" : 1,
+	"name" : "Managementul conflictelor",
+	"description" : "Acest chestionar a fost conceput pentru a vă ajuta să identificaţi stilul dvs. preferat de rezolvare a conflictelor.",
+
+	"options" : [
+		{"val": 5, "text": "Categoric adevărat"},
+		{"val": 4, "text": "Adevărat"},
+		{"val": 3, "text": "Tinde să fie adevărat"},
+		{"val": 2, "text": "Tinde să fie fals"},
+		{"val": 1, "text": "Fals"},
+		{"val": 0, "text": "Categoric fals"}
+	],
+	
+	"groups" : [
+		{"id": "A", "name": "Rechin", "description": "“I value the point being made more than our relationship.”  “It's them or me.”  “I've got to win this one!”  “I'm sure they will see it my way if they just think about it.”  “I know I'm right.”  This is the “I win, you lose” position.  Often symbolized as a shark."},
+		{"id": "B", "name": "Testoasa", "description": "“I will be quiet and listen.”  “It's not that big a deal.”  “I'd rather just forget it.”  “It's not worth the trouble.”  “What difference could I make anyway.”  “I lose, you lose.”  A turtle."},
+		{"id": "C", "name": "Ursulet", "description": "“I value our relationship more than the point.”  “Let's just get this over with so we can get on to other things.”  “This tension is very uncomfortable.  I'll just do what they want.”  “Fine I give in, have it your way.”  “I lose, you win.”  A teddy bear."},
+		{"id": "D", "name": "Bufnita", "description": "“I'm sure if we work together we can come up with a better answer than either of us individually.”  “I'm not giving in yet, but I am willing to hear your opinion, and give you mine.”  “I win, you win.”  An owl."},
+		{"id": "E", "name": "Vulpe", "description": "“This isn't important enough to fight over.”  “I don't want to be unreasonable.”  “If I give her this, maybe she'll give me that.”  “We could both live with that.”  A fox."}		
+	],
+	
+	"questions" : [
+		{"id": 1, "text": "Am nevoie / Trebuie să obţin rezultate excelente şi nu pot fi îngrădit de alţii.",  "group_id": "A"},
+		{"id": 2, "text": "Sunt întotdeauna dispus să ascult opinile celorlalţi, dar vreau şi eu să le prezint pe ale mele.",  "group_id": "B"},
+		{"id": 3, "text": "Deseori îmi modific puțin obiectivele mele personale pentru a întâmpina nevoile celorlalţi.",  "group_id": "C"},
+		{"id": 4, "text": "Dacă nu îmi este respectată opinia, o păstrez pentru mine.",  "group_id": "D"},
+		{"id": 5, "text": "Când alţii cred că au o idee buna, cooperez şi le ofer sprijinul meu.",  "group_id": "E"},
+		{"id": 6, "text": "Cănd se ivesc conflicte, de obicei mă bazez pe principiile mele. ",  "group_id": "A"},
+		{"id": 7, "text": "Sunt întotdeauna dispus să am în vedere părerile celorlalţi, dar iau proprile hotărâri.",  "group_id": "B"},
+		{"id": 8, "text": "Când are loc un conflict, de obicei sunt dispus să îmi ajustez priorităţiile pentru a găsi o soluție.",  "group_id": "C"},
+		{"id": 9, "text": "Când are loc un conflict, tind să mă retrag din situaţia conflictuală şi să fac altceva.",  "group_id": "D"},
+		{"id": 10, "text": "Nu îmi place să clatin barca, aşadar cooperez şi accept cu uşurinţă instrucţiunile altora. ",  "group_id": "E"},
+		{"id": 11, "text": "În timp ce îmi urmăresc priorităţiile, de obicei sunt ferm şi nu sunt influenţat de alţii.",  "group_id": "A"},
+		{"id": 12, "text": "În timpul conflictului, mă străduiesc să scot imediat la lumină preocupările tuturor.",  "group_id": "B"},
+		{"id": 13, "text": "În timpul conflictului, încerc să găsesc un compromis.",  "group_id": "C"},
+		{"id": 14, "text": "Nu merită să te îngrijorezi întotdeauna de diferenţele de opinie, aşa că de obicei le evit.",  "group_id": "D"},
+		{"id": 15, "text": "Îmi place să cer părerea celorlalţi şi încerc să găsesc mijloace pentru a coopera.",  "group_id": "E"},
+		{"id": 16, "text": "Odată ce am luat o hotărâre, nu imi place când ceilalţi încearcă să mă facă să mi-o schimb.",  "group_id": "A"},
+		{"id": 17, "text": "Într-un conflict, insist să îmi prezint punctul meu de vedere, şi îi invit şi pe ceilalţi să facă la fel. ",  "group_id": "B"},
+		{"id": 18, "text": "Când există puncte de vedere contradictorii, de obicei propun o cale de mijloc.",  "group_id": "C"},
+		{"id": 19, "text": "Încerc să evit persoanele cu opinii puternice.",  "group_id": "D"},
+		{"id": 20, "text": "Consider că este mai important să mă înțeleg bine cu alții, decât să câştig o dispută. ",  "group_id": "E"},
+		{"id": 21, "text": "După ce am luat o decizie, o apăr cu fermitate.",  "group_id": "A"},
+		{"id": 22, "text": "Îmi place să iau decizii, dar ţin să îi ascult şi pe ceilalţi pentru a găsi cea mai bună soluţie posibilă.",  "group_id": "B"},
+		{"id": 23, "text": "Îmi place să întâmpin alți oameni la jumătatea drumului.",  "group_id": "C"},
+		{"id": 24, "text": "Deseori îmi păstrez părerile pentrun mine, deoarece pentru majoritatea lucrurilor nu merită să te cerţi.",  "group_id": "D"},
+		{"id": 25, "text": "Încerc să îmi ajustez priorităţiile astfel încât să împac şi nevoile celorlalţi.",  "group_id": "E"}
+	] 
+}
