@@ -39,9 +39,9 @@ class QMail {
 	function send() {
 
 		$this->mail->Subject = $this->input->subject;
-		$this->mail->Body = '<h2>Dear '.$this->input->name.'</h2> ';
+		$this->mail->Body = '<h2>Draga '.$this->input->name.'</h2> ';
 		$this->mail->Body .= $this->input->html;
-		$this->mail->Body .= '<hr>You can visit later this result following this link: <br>';
+		$this->mail->Body .= '<hr>Poti revizita aceste rezultate aici: <br>';
 		$this->mail->Body .= $this->getResultLink();
 		
 		$this->mail->AddAddress($this->input->email);
@@ -50,14 +50,14 @@ class QMail {
 			$result = array(
 				'status' => 'success',
 				'data' => array(
-					'message' => 'Mail succesfully sent to <i>'. $this->input->email.'</i>!' 
+					'message' => 'E-Mail trimis cu succes la <i>'. $this->input->email.'</i>!' 
 				)
 			); 
 		} else {
 			$result = array(
 				'status' => 'error',
 				'data' => array(
-					'message' => 'Failed to send the email to <i>'. $this->input->email.'</i>!' 
+					'message' => 'Eroare de trimitere E-mail la <i>'. $this->input->email.'</i>!' 
 				)
 			);
 		}

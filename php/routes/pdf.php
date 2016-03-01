@@ -6,7 +6,6 @@ $app->post('/pdf', function () use ($app) {
 	$request = $app->request();
 	$body = $request->getBody(); 
 	$input = json_decode($body);
-	
 	$pdf = new QPdf($input);
 	$result = $pdf->generate();
 

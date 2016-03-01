@@ -19,13 +19,15 @@ class QPdf extends TCPDF {
 	
     public function Header() {
     	
-        $image_file = '../assets/img/vox-ms-logo.jpg';
-        $this->Image($image_file, 10, 5, 0, 10, 'jpg', '', 'T', false, 300, '', false, false, 0, false, false, false);
+        $image_file = '../assets/img/logo100.png';
+        $this->Image($image_file, 10, 5, 0, 10, 'png', '', 'T', false, 300, '', false, false, 0, false, false, false);
         // Set font
         $this->SetFont('helvetica', '', 12);
         // Title
         $this->SetTextColor(128,128,128);
-        $this->Cell(0, 15, 'Rezultat Test | Darurile spirituale '.' | '.date('d-M-Y'), 0, false, 'R', 0, '', 0, false, 'M', 'B');
+        $this->Cell(0, 15, 'Test de daruri spirituale', 0, false, 'L', 0, '', 0, false, 'M', 'B');
+		$this->SetFont('helvetica', '', 10);
+		$this->Cell(0, 15, 'Terminat '.$this->input->data->date, 0, false, 'R', 0, '', 0, false, 'M', 'B');
 		$style = array('width' => 0.1, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(128, 128, 128));
 		$this->Line(10, 16, 200, 16, $style);
     }
@@ -37,7 +39,11 @@ class QPdf extends TCPDF {
         // Set font
         $this->SetFont('helvetica', 'I', 8);
         // Page number
-        $this->Cell(0, 10, $this->getAliasNumPage().'/'.$this->getAliasNbPages().' - oprean.ddns/quizzes', 0, false, 'L', 0, '', 0, false, 'T', 'M');
+        //$this->Cell(0, 15, $this->getAliasNumPage().'/'.$this->getAliasNbPages().' - oprean.ddns/quizzes', 0, false, 'L', 0, '', 0, false, 'T', 'M');
+		$this->Cell(0, 15, $this->getAliasNumPage().'/'.$this->getAliasNbPages().' - oprean.ddns/quizzes', 0, false, 'L', 0, '', 0, false, 'M', 'B');
+		$this->Cell(0, 15, 'generat in '.date('d-M-Y h:i:s'), 0, false, 'R', 0, '', 0, false, 'M', 'B');
+        $style = array('width' => 0.1, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(128, 128, 128));
+        $this->Line(10, $this->getPageHeight()-12, 200, $this->getPageHeight()-12, $style);
     }
 	
 	function generate() {

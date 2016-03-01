@@ -67,7 +67,7 @@ define([
 				data: JSON.stringify({
 					name: this.$('#name').val(),
 					email: this.$('#email').val(),
-					subject: this.quiz.get('name') + ' results',
+					subject: 'Rezultate Test '+this.quiz.get('name'),
 					html: this.$('.result-container-pdf').html(),
 					data: this.model
 				}), 

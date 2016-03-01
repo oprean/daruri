@@ -16,7 +16,7 @@
 
 <div class="result-container-pdf" style="display: none">
 	<p style="font-size: 10px">Acesta este darul tau spiritual:</p>
-	<table style="background-color: #CCCCCC">
+	<table style="background-color: #e5d3a1;width:500px">
 		<tr>
 			<td align="center" style="font-size: 20px">Darul<br /><%= result.name %></td>
 			<td align="center" valign="middle" style="font-size: 20px;width:50px"><%= result.value %></td>
@@ -26,16 +26,36 @@
 		</tr>
 	</table>
 	<p style="font-size: 10px">De asemenea, in mai mica masura esti inzestrat si cu urmatoarele daruri:</p>
-	<table class="score">
-		<% _.each(result.statistics, function(item) {
-			if (item.name != result.name) { %>
-		<tr>
-			<td style="width: 40px"></td> <td>Darul <%= item.name %> (<%= item.value %>)</td>
+	<table style="background-color: #e1deed;width:500px">
+		<tr>		
+			<td align="center" style="font-size: 15px">Darul<br /><%= result.statistics[1].name %></td>
+			<td align="center" valign="middle" style="font-size: 15px;width:50px"><%= result.statistics[1].value %></td>
+			<td style="font-size: 10px;width:300px;">
+				<%= result.statistics[1].description %>
+			</td>
 		</tr>
-		<% }}) %>
+	</table>
+	<span style="height:1pt;padding: 10;margin: 0;"></span>
+	<table style="background-color: #f3e8ee;width:500px">
+		<tr>		
+			<td align="center" style="font-size: 15px">Darul<br /><%= result.statistics[2].name %></td>
+			<td align="center" valign="middle" style="font-size: 15px;width:50px"><%= result.statistics[2].value %></td>
+			<td style="font-size: 10px;width:300px;">
+				<%= result.statistics[2].description %>
+			</td>
+		</tr>
+	</table>
+	<p style="font-size: 10px">Iar restul darurilor:</p>
+	<table class="score">
+		<% for(i=3;i<result.statistics.length;i++) { %>
+		<tr>
+			<td style="width: 40px"></td> <td>Darul <%= result.statistics[i].name %> (<%= result.statistics[i].value %>)</td>
+		</tr>
+		<% } %>
 	</table>
 	<br /><br />
-	<p align="right" style="font-size: 10px">Sa le folosesti cu intelepciune,<br /> Echipa</p>
+	<p align="right" style="font-size: 10px">Sa le folosesti cu intelepciune,<br /> 
+		<img src="http://oprean.ddns.net/quizzes/assets/img/vox-ms-logo.jpg" width="75" /></p>
 </div>
 
 <hr />
