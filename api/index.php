@@ -1,7 +1,7 @@
 <?php
 require_once '../php/bootstrap.php';
 
-R::setup( 'sqlite:'.ROOT_DIR.'/assets/data/quizzes.sqlite' );
+R::setup( 'sqlite:'.ROOT_DIR.'/data/quizzes.sqlite' );
 \Slim\Slim::registerAutoloader();
 $app = new \Slim\Slim();
 $app->config('debug', DEBUG_MODE);

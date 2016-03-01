@@ -16,7 +16,7 @@ $app->post('/mail', function () use ($app) {
 		$items->person = (string)$input->data->person;
 		$items->date = date('Y-m-d');
 		$items->data = json_encode($input->data);
-		$items->html = $input->html;
+		$items->html = $input->htmlMail;
 		$items->url = $input->url; 
 		R::store($items);
 	}

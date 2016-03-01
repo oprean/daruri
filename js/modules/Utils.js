@@ -48,7 +48,7 @@ define([
 		getJson : function(name) {
 			var quiz;
 			$.ajax({
-				url : 'assets/data/' + name + '.json',
+				url : 'data/' + name + '.json',
 				dataType: 'json',
 				async: false, 
 				success : function(data) {
