@@ -12,8 +12,11 @@ $app->post('/mail', function () use ($app) {
 	if (!R::findOne( 'results', ' result_id = ? ', [ $input->data->id ] )) {
 		$items = R::dispense('results'); 
 		$items->resultId = $input->data->id;
-	    $items->quizId = (string)$input->data->quiz_id; 
-		$items->person = (string)$input->data->person;
+	    $items->quizId = (string)$input->data->quiz_id;
+		$input->data->person = $input->name;
+		$input->data->email = $input->email;
+		$items->person = $input->data->person;
+		$items->email = $input->data->email;
 		$items->date = date('Y-m-d');
 		$items->data = json_encode($input->data);
 		$items->html = $input->htmlMail;
