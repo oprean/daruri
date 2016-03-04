@@ -24,7 +24,6 @@ define([
 	  appRoutes: {
 	    '': 'home',
 	    'home': 'home',
-	    'login': 'login',
 	    'admin': 'admin',
 	    'static/:template': 'static',
 	  	'quiz/:name/:q': 'quiz',

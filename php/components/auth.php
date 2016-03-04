@@ -6,6 +6,7 @@ class TokenAuth extends \Slim\Middleware {
 	private $_public_uri = array(
 		'/',
 		'/login',
+		'/logout',
 		'/results'
 	);
 	
@@ -21,7 +22,7 @@ class TokenAuth extends \Slim\Middleware {
 
 	private function _isPublicUri($uri) {
 		foreach ($this->_public_uri as $public_uri) {
-			if(strpos($uri, $public_uri)!==false)
+			if(strpos($public_uri, $uri)!==false)
 				return true;
 		}
 		return false;
@@ -40,14 +41,13 @@ class TokenAuth extends \Slim\Middleware {
     /**
      * Call
      */
-    public function call() {	
+    public function call() {
 		if (!$this->_isPublicUri($this->app->request->getResourceUri())) {
-	        $authToken = $this->app->request->headers->get('Authorization');
-	        if (!empty($authToken) && $this->authenticate($authToken)) {
-	            User::keepTokenAlive($authToken);
+	        if (!empty($_SESSION['user']['token']) && $this->authenticate($_SESSION['user']['token'])) {
+	            User::keepTokenAlive($_SESSION['user']['token']);
 	            $this->next->call();
 	        } else {
-				$this->deny_access();
+				$this->app->redirect('login');
 	        }
 		} else {
             $this->next->call();

@@ -10,12 +10,11 @@ define([
   'views/QuestionView',
   'views/ResultView',
   'views/GroupsView',
-  'views/LoginView',
   'views/sandbox/GeolocationView',
   'views/sandbox/QRCodeView',
   'views/sandbox/SurfaceView',
 ], function($, _, Backbone, Marionette, 
-	HomeView, AdminView, StaticView, QuizView, QuestionView, ResultView, GroupsView, LoginView, GeolocationView, QRCodeView, SurfaceView){
+	HomeView, AdminView, StaticView, QuizView, QuestionView, ResultView, GroupsView, GeolocationView, QRCodeView, SurfaceView){
 	var Controller = Marionette.Controller.extend({
 	  initialize: function() {
 	  },

@@ -20,7 +20,7 @@ define([
 				footerRegion: "#footer-container",
 			});
 
-			this.headerRegion.show(new HeaderView({quizzes: this.quizzes}));
+			//this.headerRegion.show(new HeaderView({quizzes: this.quizzes}));
 			this.footerRegion.show(new FooterView());
 		}
 	});
