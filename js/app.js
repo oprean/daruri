@@ -18,6 +18,10 @@ define([
 				headerRegion : "#header-container",
 				mainRegion: "#main-container",
 				footerRegion: "#footer-container",
+				modalsRegion: {
+					selector: '#modals-container',
+					regionClass: Backbone.Marionette.Modals
+				}
 			});
 
 			//this.headerRegion.show(new HeaderView({quizzes: this.quizzes}));

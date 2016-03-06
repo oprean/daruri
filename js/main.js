@@ -1,5 +1,5 @@
 require.config({
-	//urlArgs: new Date().getTime().toString(),
+	urlArgs: new Date().getTime().toString(),
 	"paths":{
 		"jquery" : "lib/jquery-2.1.3.min",
  		"jquery.bootstrap": "lib/bootstrap.min",
@@ -13,7 +13,11 @@ require.config({
 		"backbone":"lib/backbone-min",
 		"backbone.marionette":"lib/backbone.marionette.min",
 		"backbone.localStorage":"lib/backbone.localStorage.min",
-		"backbone.validation":"lib/backbone-validation-min",		
+		"backbone.validation":"lib/backbone-validation-min",	
+		
+		"backbone.modal" : "lib/backbone.modal",
+		"backbone.marionette.modals" : "lib/backbone.marionette.modals",
+			
 		"backgrid" : "lib/backgrid.min",
 		
 		"moment":"lib/moment.min",

@@ -13,9 +13,10 @@
 	<div id="header-container">
 		<?php echo $header ?>
 	</div>
-	<div class="container" id="main-container">
+	<div class="container <?php echo isset($fluid)?'fluid':'' ?>" id="main-container">
 		<?php echo $content ?> 
 	</div>
+	<div id="modals-container"></div>
 	<div id="footer-container" class="hidden-xs"> </div>
 </body>
 </html>

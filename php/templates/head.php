@@ -16,6 +16,9 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/animate.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.custom.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/backbone.modal.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/backbone.modal.theme.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/backgrid.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 	<?php if (isset($jsapp) && $jsapp == true) { ?>
 	<script type="text/javascript" data-main="<?php echo DEBUG_MODE?'js':'dist'?>/main" src="js/lib/require.min.js"></script>
