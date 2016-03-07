@@ -14,6 +14,7 @@ define([
 		initialize : function() {
 			this.realModel = this.model;
 			this.model = this.realModel.clone();
+			console.log(this.model);
 		},
 		
 		templateHelpers : function() {
