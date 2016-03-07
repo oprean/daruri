@@ -7,35 +7,31 @@
 <div class="row">
 <div class="col-md-5">
   <div class="form-group">
-    <label for="unassigned" class="control-label">Unassigned users</label>
-	 <select class="form-control input-sm" name="unassigned" multiple="multiple" size="10">
-	    <option>text1</option>
-	    <option>text2</option>
-	    <option>text3</option>
-	    <option>text4</option>
-	    <option>text5</option>
+    <label for="unassigned" class="control-label">Unassigned</label>
+	 <select class="form-control input-sm" name="unassigned" id="unassigned" multiple="multiple" size="10">
+	 	<% _.each(unassigned, function(user){ %>
+	 		<option value="<%= user.id%>"><%= user.username %></option>	
+	 	<% }) %>
 	 </select>
     <span class="help-block"></span>
   </div>
  </div>
 <div class="col-md-2 text-center">
 	<br /><br />
-	<button title="Save changes" type="button" class="btn-cancel btn btn-default btn-sm">
+	<button title="Assign" type="button" data-action="assign" class="btn-update btn btn-default btn-sm">
 		<i class="fa fa-arrow-right"></i>
 	</button>
-	<button title="Save changes" type="button" class="btn-cancel btn btn-default btn-sm">
+	<button title="Unassign" type="button" data-action="unassign" class="btn-update btn btn-default btn-sm">
 		<i class="fa fa-arrow-left"></i>
 	</button>
 </div>
 <div class="col-md-5">
 <div class="form-group">
-    <label for="assigned" class="control-label">Assigned users</label>
-	 <select class="form-control input-sm" name="assigned" multiple="multiple" size="10">
-	    <option>text1</option>
-	    <option>text2</option>
-	    <option>text3</option>
-	    <option>text4</option>
-	    <option>text5</option>
+    <label for="assigned" class="control-label">Assigned</label>
+	 <select class="form-control input-sm" name="assigned" id="assigned" multiple="multiple" size="10">
+	 	<% _.each(assigned, function(user){ %>
+	 		<option value="<%= user.id%>"><%= user.username %></option>	
+	 	<% }) %>
 	 </select>
 	<span class="help-block"></span>
   </div>
@@ -44,6 +40,5 @@
 </form>
 </div>
 <div class="bbm-modal__bottombar">
-	<button title="Save changes" type="button" class="btn-cancel btn btn-default btn-sm">Cancel</button>
-	<button title="Save changes" type="button" class="btn-submit btn btn-primary btn-sm">Save</button>
+	<button title="Save changes" type="button" class="btn-submit btn btn-primary btn-sm">Ok</button>
 </div>

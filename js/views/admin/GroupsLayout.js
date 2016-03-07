@@ -9,7 +9,7 @@ define([
   'modules/Utils',
   'modules/Constants',
   'modules/Events',
-], function($, _, Backbone, Marionette, Groups, GroupsDetailsView, groupsTpl, Utils, Constants, vent){
+], function($, _, Backbone, Marionette, Groups, GroupDetailsView, groupsTpl, Utils, Constants, vent){
 	var GroupsLayout = Backbone.Marionette.LayoutView.extend({
 		template : _.template(groupsTpl),
 		regions : {
@@ -28,13 +28,22 @@ define([
 			});
 		},
 		
+		events : {
+			'click .btn-add': 'addGroup'
+		},
+		
+		addGroup : function() {
+			var group = new GroupView({model:this.model});
+				vent.trigger('showModal', groupDetails);
+		},
+		
 		initGroupsGrid: function(groups) {
 			var GroupRow = Backgrid.Row.extend({
 			  events: {
 			    click: 'view',
 			  },
 			  view: function() {
-			    var groupDetails = new GroupsDetailsView({model:this.model});
+			    var groupDetails = new GroupDetailsView({model:this.model});
 				vent.trigger('showModal', groupDetails);
 			  }
 			});
@@ -54,6 +63,14 @@ define([
 			  	return this;
 			  }			
 			});
+				
+			Backgrid.UsersCell = Backgrid.Cell.extend({
+			  className: "users-cell",			  
+			  render : function() {
+			  	this.$el.html(this.model.get('sharedUser').length);
+			  	return this;
+			  }			
+			});
 						
 			var columns = [
 			  {
@@ -69,6 +86,13 @@ define([
 			    editable: false,
 			    sortable: false,
 			    cell: "string",
+			  },
+			  {
+			    name: "sharedUser",
+			    label: "Users",
+			    editable: false,
+			    sortable: false,
+			    cell: "users",
 			  },
 			  /*{
 			    name: "actions",

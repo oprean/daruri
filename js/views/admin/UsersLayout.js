@@ -39,6 +39,18 @@ define([
 			  }
 			});
 		
+			Backgrid.GroupsCell = Backgrid.Cell.extend({
+			  className: "groups-cell",			  
+			  render : function() {
+			  	var names = new Array;
+			  	_.each(this.model.get('sharedGroup'), function(group){
+			  		names.push(group.name);
+			  	});
+			  	this.$el.html(names.join(','));
+			  	return this;
+			  }			
+			});
+		
 			Backgrid.ActionsCell = Backgrid.Cell.extend({
 			  className: "actions-cell",
 			  events : {
@@ -69,6 +81,13 @@ define([
 			    editable: false,
 			    sortable: false,
 			    cell: "string",
+			  },
+			  {
+			    name: "sharedGroup",
+			    label: "Member of",
+			    editable: false,
+			    sortable: false,
+			    cell: "groups",
 			  },
 			  /*{
 			    name: "actions",

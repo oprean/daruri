@@ -20,7 +20,6 @@ define([
 	},
 	
 	initialize : function(options) {
-		console.log(options);
 		switch(options.section) {
 			case 'users':
 				this.mainView = new UsersLayout();			
