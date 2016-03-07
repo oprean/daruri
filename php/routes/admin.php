@@ -52,7 +52,6 @@ $app->get('/group/:id', function ($id) use ($app) {
 });
 
 $app->get('/group/:id/details', function ($id) use ($app) {
-    	
     $group = R::findOne(GROUP_BEAN, 'id=?', array($id));
 	$assigned = $group->sharedUserList;
 	foreach ($assigned as $user) $uids[] = $user->id;
@@ -60,8 +59,7 @@ $app->get('/group/:id/details', function ($id) use ($app) {
 		$unassigned = R::findAll( USER_BEAN);
 	} else {
 		$unassigned = R::find( USER_BEAN, ' id NOT IN ('.R::genSlots( $uids ).')', $uids );		
-	}
-
+	}    	
     if ($group) {
         $app->response()->header('Content-Type', 'application/json');
         echo json_encode(array(

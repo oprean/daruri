@@ -3,12 +3,14 @@ define([
   'underscore',
   'backbone',
   'backbone.marionette',
+  'models/User',
   'collections/Users',
-  'views/admin/UserDetails',
+  'views/admin/UserView',
   'text!templates/admin/users-layout.html',
   'modules/Utils',
   'modules/Constants',
-], function($, _, Backbone, Marionette, Users, UserDetails, usersTpl, Utils, Constants){
+  'modules/Events',
+], function($, _, Backbone, Marionette, User, Users, UserView, usersTpl, Utils, Constants, vent){
 	var UsersLayout = Backbone.Marionette.LayoutView.extend({
 		template : _.template(usersTpl),
 		regions : {
@@ -27,14 +29,24 @@ define([
 			});
 		},
 		
+		events : {
+			'click .btn-add': 'addUser'
+		},
+		
+		addUser : function() {
+			this.model = new User();
+			var userView = new UserView({model:this.model});
+			vent.trigger('showModal', userView);
+		},
+		
 		initUsersGrid: function(users) {
 			var UserRow = Backgrid.Row.extend({
 			  events: {
 			    click: 'preview',
 			  },
 			  preview: function() {
-			    var userDetails = new UserDetails({model:this.model});
-			    self.showChildView('preview', userDetails);
+			    var userView = new UserView({model:this.model});
+			    self.showChildView('preview', userView);
 			    vent.trigger('product.selected', this.model);
 			  }
 			});

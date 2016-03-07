@@ -3,10 +3,10 @@ define([
   'underscore',
   'backbone',
   'modules/Constants',
-  'text!templates/admin/group.html',
+  'text!templates/admin/group-members.html',
   'backbone.modal',
 ], function($, _, Backbone, Constants, groupTpl){
-	var GroupDetailsView = Backbone.Modal.extend({
+	var GroupMembersView = Backbone.Modal.extend({
 		template: _.template(groupTpl),
 		submitEl: '.btn-submit',
 		cancelEl: '.btn-cancel',
@@ -99,5 +99,5 @@ define([
 		}				
 	});
 
-	return GroupDetailsView;
+	return GroupMembersView;
 });

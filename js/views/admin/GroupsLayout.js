@@ -3,13 +3,15 @@ define([
   'underscore',
   'backbone',
   'backbone.marionette',
+  'models/Group',
   'collections/Groups',
-  'views/admin/GroupDetails',
+'views/admin/GroupView',
+  'views/admin/GroupMembersView',
   'text!templates/admin/groups-layout.html',
   'modules/Utils',
   'modules/Constants',
   'modules/Events',
-], function($, _, Backbone, Marionette, Groups, GroupDetailsView, groupsTpl, Utils, Constants, vent){
+], function($, _, Backbone, Marionette, Group, Groups, GroupView, GroupMembersView, groupsTpl, Utils, Constants, vent){
 	var GroupsLayout = Backbone.Marionette.LayoutView.extend({
 		template : _.template(groupsTpl),
 		regions : {
@@ -33,8 +35,9 @@ define([
 		},
 		
 		addGroup : function() {
-			var group = new GroupView({model:this.model});
-				vent.trigger('showModal', groupDetails);
+			this.model = new Group();
+			var groupView = new GroupView({model:this.model});
+			vent.trigger('showModal', groupView);
 		},
 		
 		initGroupsGrid: function(groups) {
@@ -43,8 +46,8 @@ define([
 			    click: 'view',
 			  },
 			  view: function() {
-			    var groupDetails = new GroupDetailsView({model:this.model});
-				vent.trigger('showModal', groupDetails);
+			    var groupMembersView = new GroupMembersView({model:this.model});
+				vent.trigger('showModal', groupMembersView);
 			  }
 			});
 		

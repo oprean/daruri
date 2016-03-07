@@ -1,21 +1,28 @@
 <div class="bbm-modal__topbar">
  	<button type="button" class="close btn-cancel" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	<h3 class="bbm-modal__title">Group:<%= name %></h3>
+	<h3 class="bbm-modal__title">User:<%= username %></h3>
 </div>
 <div class="bbm-modal__section">
 <form class="form-horizontal">
 <div class="row">
 <div class="col-md-12">
   <div class="form-group">
-    <label for="unassigned" class="control-label">Name</label>
-	 <input type="text" name="name" id="name" class="form-control input-sm" value="<%= name %>"/>
+    <label for="username" class="control-label">Username</label>
+	 <input type="text" name="username" id="username" class="form-control input-sm" value="<%= username %>"/>
     <span class="help-block"></span>
   </div>
  </div>
 <div class="col-md-12">
   <div class="form-group">
-    <label for="unassigned" class="control-label">Description</label>
-	 <input type="text" name="description" id="description" class="form-control input-sm" value="<%= description %>"/>
+    <label for="password" class="control-label">Password</label>
+	 <input type="text" name="password" id="password" class="form-control input-sm" value="<%= password %>"/>
+    <span class="help-block"></span>
+  </div>
+ </div>
+<div class="col-md-12">
+  <div class="form-group">
+    <label for="email" class="control-label">Description</label>
+	 <input type="text" name="email" id="email" class="form-control input-sm" value="<%= email %>"/>
     <span class="help-block"></span>
   </div>
  </div>
