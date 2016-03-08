@@ -71,6 +71,43 @@ $app->get('/group/:id/details', function ($id) use ($app) {
     }	
 });
 
+$app->delete('/group/:id', function ($id) use ($app) {
+	$group = R::findOne(GROUP_BEAN, 'id=?', array($id));
+	R::trash($group);
+});
+
+$app->post('/group', function () use ($app) {
+	$post = json_decode($app->request()->getBody());
+
+	$group = R::dispense(GROUP_BEAN);
+	$group->name = $post->name;
+	$group->description = $post->description;
+	
+	R::store($group);
+    if ($group) {
+        $app->response()->header('Content-Type', 'application/json');
+        echo json_encode($group->export());
+    } else {
+        $app->response()->status(404);
+    }
+});
+
+$app->put('/group', function () use ($app) {
+	$post = json_decode($app->request()->getBody());
+	
+	$group = R::findOne(GROUP_BEAN, 'id=?', array($post->id));	
+	$group->name = $post->name;
+	$group->description = $post->description;
+	R::store($group);
+	
+    if ($group) {
+        $app->response()->header('Content-Type', 'application/json');
+        echo json_encode($group->export());
+    } else {
+        $app->response()->status(404);
+    }
+});
+
 $app->post('/group/:id/update', function ($id) use ($app) {
 	$post = $app->request()->post();
 	if (!empty($post['uids'])) {

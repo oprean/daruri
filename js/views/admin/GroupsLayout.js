@@ -28,6 +28,13 @@ define([
 					self.initGroupsGrid(collection);
 				}
 			});
+			this.listenTo(vent, 'admin.groups.grid.refresh', function(){
+				self.groups.fetch({
+					success: function(collection){
+						self.initGroupsGrid(collection);
+					}
+				});
+			});
 		},
 		
 		events : {
@@ -41,12 +48,13 @@ define([
 		},
 		
 		initGroupsGrid: function(groups) {
+			var self = this;
 			var GroupRow = Backgrid.Row.extend({
 			  events: {
-			    click: 'view',
+			    //click: 'view',
 			  },
 			  view: function() {
-			    var groupMembersView = new GroupMembersView({model:this.model});
+			    var groupMembersView = new GroupMembersView({model:self.model});
 				vent.trigger('showModal', groupMembersView);
 			  }
 			});
@@ -54,15 +62,35 @@ define([
 			Backgrid.ActionsCell = Backgrid.Cell.extend({
 			  className: "actions-cell",
 			  events : {
-			  	'click .del' : 'delete'
+			  	'click .del-group' : 'delete',
+			  	'click .members-group' : 'members',
+			  	'click .edit-group' : 'edit'
 			  },
 			  
 			  delete : function() {
-			  	this.model.destroy();
+				if (confirm('Are you sure?')) {
+			  		this.model.destroy();					
+				}
+			  },
+			  
+			  members : function() {
+			    var groupMembersView = new GroupMembersView({model:this.model});
+				vent.trigger('showModal', groupMembersView);
+			  },
+			  
+			  edit : function() {
+				var groupView = new GroupView({model:this.model});
+				vent.trigger('showModal', groupView);
 			  },
 			  
 			  render : function() {
-			  	this.$el.html('<button type="button" title="Delete item" class="del icon-btn pull-right"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>');
+			  	this.$el.html(
+			  		'<div class="text-center">'+
+			  		' <button type="button" title="Update members" class="members-group btn btn-xs btn-primary"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button> '+
+			  		' <button type="button" title="Edit group" class="edit-group btn btn-xs btn-success"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>'+
+					' <button type="button" title="Delete group" class="del-group btn btn-xs btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button> '+
+			  		'</div>'
+			  		);
 			  	return this;
 			  }			
 			});
@@ -70,7 +98,8 @@ define([
 			Backgrid.UsersCell = Backgrid.Cell.extend({
 			  className: "users-cell",			  
 			  render : function() {
-			  	this.$el.html(this.model.get('sharedUser').length);
+			  	var usersCnt = (this.model.get('sharedUser') == undefined)?0:this.model.get('sharedUser').length;
+			  	this.$el.html(usersCnt);
 			  	return this;
 			  }			
 			});
@@ -97,13 +126,13 @@ define([
 			    sortable: false,
 			    cell: "users",
 			  },
-			  /*{
+			  {
 			    name: "actions",
 			    label: "",
 			    editable: false,
 			    sortable: false,
 			    cell: "actions",
-			  },*/
+			  },
 			];
 			
 			this.backgridView = new Backgrid.Grid({

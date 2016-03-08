@@ -4,8 +4,9 @@ define([
   'backbone',
   'modules/Constants',
   'text!templates/admin/group-members.html',
+  'modules/Events',
   'backbone.modal',
-], function($, _, Backbone, Constants, groupTpl){
+], function($, _, Backbone, Constants, groupTpl, vent){
 	var GroupMembersView = Backbone.Modal.extend({
 		template: _.template(groupTpl),
 		submitEl: '.btn-submit',
@@ -68,34 +69,9 @@ define([
 				});
 		    };
 		},
-		
-		templateHelpers : function() {
-			return {
-				//woodTypes : Constants.woodTypes 
-			};
-		},
-		
-		onShow : function() {
-			Backbone.Validation.bind(this);
-		},
-
-		fillModel : function(model) {
-			model.set({
-				wood : $('#wood').val(),
-				image : $('#image').val(),
-				title : $('#title').val(),
-				width : $('#width').val(),
-				height : $('#height').val(),
-			});
-		},
-		
-		beforeSubmit : function() {
-			this.fillModel(this.model);
-			return this.model.isValid(true);
-		},
-		
+					
 		submit: function() {
-			this.fillModel(this.realModel);
+			vent.trigger('admin.groups.grid.refresh');
 		}				
 	});
 

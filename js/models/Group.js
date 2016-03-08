@@ -4,6 +4,7 @@ define([
   'backbone',
 ], function($, _, Backbone){
 	var Group = Backbone.Model.extend({
+		urlRoot: 'api/group',
 		defaults : {
 			id: null,
 			name: null,

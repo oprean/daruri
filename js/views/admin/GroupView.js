@@ -4,8 +4,9 @@ define([
   'backbone',
   'modules/Constants',
   'text!templates/admin/group.html',
+  'modules/Events',
   'backbone.modal',
-], function($, _, Backbone, Constants, groupTpl){
+], function($, _, Backbone, Constants, groupTpl, vent){
 	var GroupView = Backbone.Modal.extend({
 		template: _.template(groupTpl),
 		submitEl: '.btn-submit',
@@ -35,6 +36,8 @@ define([
 		
 		submit: function() {
 			this.fillModel(this.realModel);
+			this.model.save();
+			vent.trigger('admin.groups.grid.refresh');
 		}				
 	});
 
