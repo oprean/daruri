@@ -4,8 +4,9 @@ define([
   'backbone',
   'modules/Constants',
   'text!templates/admin/user.html',
+  'modules/Events',
   'backbone.modal',
-], function($, _, Backbone, Constants, userTpl){
+], function($, _, Backbone, Constants, userTpl, vent){
 	var UserView = Backbone.Modal.extend({
 		template: _.template(userTpl),
 		submitEl: '.btn-submit',
@@ -38,6 +39,12 @@ define([
 		
 		submit: function() {
 			this.fillModel(this.realModel);
+			console.log('submit');
+			this.model.save(null, {
+				success: function(model) {
+					vent.trigger('admin.users.grid.refresh');					
+				},
+			});
 		}				
 	});
 

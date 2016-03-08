@@ -27,6 +27,14 @@ define([
 					self.initUsersGrid(collection);
 				}
 			});
+			
+			this.listenTo(vent, 'admin.users.grid.refresh', function(){
+				self.users.fetch({
+					success: function(collection){
+						self.initUsersGrid(collection);
+					}
+				});
+			});
 		},
 		
 		events : {
@@ -40,9 +48,10 @@ define([
 		},
 		
 		initUsersGrid: function(users) {
+			var self = this;
 			var UserRow = Backgrid.Row.extend({
 			  events: {
-			    click: 'preview',
+			    //click: 'preview',
 			  },
 			  preview: function() {
 			    var userView = new UserView({model:this.model});
@@ -66,15 +75,28 @@ define([
 			Backgrid.ActionsCell = Backgrid.Cell.extend({
 			  className: "actions-cell",
 			  events : {
-			  	'click .del' : 'delete'
+			  	'click .del-user' : 'delete',
+			  	'click .edit-user' : 'edit'
 			  },
 			  
 			  delete : function() {
-			  	this.model.destroy();
+				if (confirm('Are you sure?')) {
+			  		this.model.destroy();					
+				}
+			  },
+			  	  
+			  edit : function() {
+				var userView = new UserView({model:this.model});
+				vent.trigger('showModal', userView);
 			  },
 			  
 			  render : function() {
-			  	this.$el.html('<button type="button" title="Delete item" class="del icon-btn pull-right"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>');
+			  	this.$el.html(
+			  		'<div class="text-center">'+
+			  		' <button type="button" title="Edit group" class="edit-user btn btn-xs btn-success"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>'+
+					' <button type="button" title="Delete group" class="del-user btn btn-xs btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button> '+
+			  		'</div>'
+			  		);
 			  	return this;
 			  }			
 			});
@@ -101,13 +123,13 @@ define([
 			    sortable: false,
 			    cell: "groups",
 			  },
-			  /*{
+			  {
 			    name: "actions",
 			    label: "",
 			    editable: false,
 			    sortable: false,
 			    cell: "actions",
-			  },*/
+			  },
 			];
 			
 			this.backgridView = new Backgrid.Grid({

@@ -36,8 +36,11 @@ define([
 		
 		submit: function() {
 			this.fillModel(this.realModel);
-			this.model.save();
-			vent.trigger('admin.groups.grid.refresh');
+			this.model.save(null, {
+				success: function(model) {
+					vent.trigger('admin.groups.grid.refresh');					
+				},
+			});
 		}				
 	});
 

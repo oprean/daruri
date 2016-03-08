@@ -27,7 +27,7 @@ define([
 			this.realModel = this.model;
 			this.model = this.realModel.clone();
 			console.log(this.model);
-			$.get('api/group/'+this.model.id+'/details', function(data) {
+			$.get('api/group/'+this.model.id+'/members', function(data) {
 				self.model.set({
 					assigned: data.assigned,
 					unassigned: data.unassigned
@@ -53,7 +53,7 @@ define([
 				$.ajax({
 					type: "POST",
 					dataType: "json",
-					url: 'api/group/'+this.model.id+'/update',
+					url: 'api/group/'+this.model.id+'/members',
 					beforeSend: function() {
 						self.$('.tts_status').html('talking ...');
 					}, 
