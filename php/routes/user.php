@@ -24,6 +24,7 @@ $app->post('/user', function () use ($app) {
 	$user->username = $post->username;
 	$user->email = $post->email;
 	$user->password = md5($post->password);
+	$user->is_admin = $post->is_admin;
 	
 	R::store($user);
     if ($user) {
@@ -41,6 +42,7 @@ $app->put('/user/:id', function ($id) use ($app) {
 	$user->username = $post->username;
 	$user->email = $post->email;
 	$user->password = md5($post->password);
+	$user->is_admin = $post->is_admin;
 	
 	R::store($user);
 	

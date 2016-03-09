@@ -1,9 +1,12 @@
-<p><h1 class="text-center">Bateria de teste - Vox Domini</h1></p>
+<p><h1 class="text-center"></h1></p>
+<div class="col-md-3"></div>
+<div class="col-md-3"><img src="assets/img/logo.png" class="img-responsive" /></div>
+<div class="col-md-3">
 <form class="form-horizontal" method="post">
   <div class="form-group <?php echo isset($error)?'has-error':''?>">
     <label for="username" class="col-sm-2 control-label">Nume</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="username" name="username" placeholder="Email">
+      <input type="text" class="form-control" id="username" name="username" placeholder="Username">
     </div>
   </div>
   <div class="form-group <?php echo isset($error)?'has-error':''?>">
@@ -19,3 +22,5 @@
     </div>
   </div>
 </form>
+</div>
+<div class="col-md-3"></div>

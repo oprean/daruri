@@ -4,29 +4,26 @@
 </div>
 <div class="bbm-modal__section">
 <form class="form-horizontal">
-<div class="row">
-<div class="col-md-12">
   <div class="form-group">
     <label for="username" class="control-label">Username</label>
 	 <input type="text" name="username" id="username" class="form-control input-sm" value="<%= username %>"/>
     <span class="help-block"></span>
   </div>
- </div>
-<div class="col-md-12">
   <div class="form-group">
     <label for="password" class="control-label">Password</label>
 	 <input type="password" name="password" id="password" class="form-control input-sm" value="<%= password %>"/>
     <span class="help-block"></span>
   </div>
- </div>
-<div class="col-md-12">
   <div class="form-group">
     <label for="email" class="control-label">Email</label>
 	 <input type="text" name="email" id="email" class="form-control input-sm" value="<%= email %>"/>
     <span class="help-block"></span>
   </div>
- </div>
- </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" name="is_admin" id="is_admin" <%= (is_admin==true)?'checked':'' %> > Is Admin
+    </label>
+  </div>
 </form>
 </div>
 <div class="bbm-modal__bottombar">

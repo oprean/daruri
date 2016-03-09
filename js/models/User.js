@@ -9,6 +9,7 @@ define([
 			username: null,
 			password: null,
 			email: null,
+			is_admin: null,
 		}
 	});
 

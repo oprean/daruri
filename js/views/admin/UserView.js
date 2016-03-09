@@ -29,6 +29,7 @@ define([
 				username : $('#username').val(),
 				password : $('#password').val(),
 				email : $('#email').val(),
+				is_admin : $('#is_admin').is(":checked"),
 			});
 		},
 		
