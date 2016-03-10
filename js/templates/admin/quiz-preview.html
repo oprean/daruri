@@ -3,7 +3,28 @@
 	<h3 class="bbm-modal__title">Quiz: <%= name %></h3>
 </div>
 <div class="bbm-modal__section">
-	quiz preview
+	<div style="overflow-y: auto;height: 300px;">
+		<strong>Description</strong>
+		<div><%= description %></div>
+		<strong>Options</strong>
+		<ul>
+			<% _.each(data.options, function(option){ %>
+				<li><%= option.text %></li>
+			<% }) %>
+		</ul>
+		<strong>Groups</strong>
+		<ul>
+			<% _.each(data.groups, function(option){ %>
+				<li><%= option.name %></li>
+			<% }) %>
+		</ul>
+		<strong>Questions</strong>
+		<ul>
+			<% _.each(data.questions, function(option){ %>
+				<li><%= option.text %></li>
+			<% }) %>
+		</ul>
+	</div>
 </div>
 <div class="bbm-modal__bottombar">
 	<button title="Discard changes" type="button" class="btn-cancel btn btn-default btn-sm">Cancel</button>

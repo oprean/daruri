@@ -13,7 +13,8 @@ define([
 		cancelEl: '.btn-cancel',
 
 		initialize : function() {
-			var self = this;		
+			var self = this;
+			this.model.set({data: JSON.parse(this.model.get('data'))});
 			this.realModel = this.model;
 			this.model = this.realModel.clone();		
 		},
