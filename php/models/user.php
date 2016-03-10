@@ -1,8 +1,4 @@
 <?php
-
-define('USER_BEAN', 'user');
-define('GROUP_BEAN', 'group');
-
 class User {
 	private $_bean;
 	

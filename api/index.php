@@ -15,6 +15,7 @@ require_once(ROOT_DIR.'/php/routes/info.php');
 //require_once(ROOT_DIR.'/php/routes/admin.php');
 require_once(ROOT_DIR.'/php/routes/group.php');
 require_once(ROOT_DIR.'/php/routes/user.php');
+require_once(ROOT_DIR.'/php/routes/quiz.php');
 
 $app->run();
 R::close();

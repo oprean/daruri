@@ -56,7 +56,6 @@ define([
 			  preview: function() {
 			    var userView = new UserView({model:this.model});
 			    self.showChildView('preview', userView);
-			    vent.trigger('product.selected', this.model);
 			  }
 			});
 		

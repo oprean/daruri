@@ -5,10 +5,11 @@ define([
   'backbone.marionette',
   'views/admin/UsersLayout',
   'views/admin/GroupsLayout',
+  'views/admin/QuizzesLayout',
   'text!templates/admin/main-layout.html',
   'modules/Constants',
   'modules/Utils'
-], function($, _, Backbone, Marionette, UsersLayout, GroupsLayout, adminLayoutTpl, Constants, Utils){
+], function($, _, Backbone, Marionette, UsersLayout, GroupsLayout, QuizzesLayout, adminLayoutTpl, Constants, Utils){
   var AdminLayout = Backbone.Marionette.LayoutView.extend({
 	template : _.template(adminLayoutTpl),
 	regions : {
@@ -26,6 +27,9 @@ define([
 				break;
 			case 'groups':
 				this.mainView = new GroupsLayout();			
+				break;
+			case 'quizzes':
+				this.mainView = new QuizzesLayout();			
 				break;
 			default:
 				this.mainView = new UsersLayout();
