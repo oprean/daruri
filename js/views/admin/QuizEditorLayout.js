@@ -6,7 +6,7 @@ define([
   'models/User',
   'collections/Users',
   'views/admin/UserView',
-  'text!templates/admin/users-layout.html',
+  'text!templates/admin/quiz-editor-layout.html',
   'modules/Utils',
   'modules/Constants',
   'modules/Events',
