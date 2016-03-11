@@ -5,6 +5,7 @@ define([
   'backbone.marionette',
   'views/HomeView',
   'views/admin/AdminLayout',
+  'views/quiz-editor/QuizEditorLayout',
   'views/StaticView',
   'views/QuizView',
   'views/QuestionView',
@@ -15,7 +16,7 @@ define([
   'views/sandbox/SurfaceView',
   'modules/Events'
 ], function($, _, Backbone, Marionette, 
-	HomeView, AdminLayout, StaticView, QuizView, QuestionView, ResultView, GroupsView, GeolocationView, QRCodeView, SurfaceView, vent){
+	HomeView, AdminLayout, QuizEditorLayout, StaticView, QuizView, QuestionView, ResultView, GroupsView, GeolocationView, QRCodeView, SurfaceView, vent){
 	var Controller = Marionette.Controller.extend({
 	  initialize: function() {
 		this.listenTo(vent, 'showModal', function(modalView){
@@ -62,6 +63,11 @@ define([
 				});
 	  	}
 		app.mainRegion.show(view);
+	  },
+	  
+	  quizEditor: function(quizId) {
+	  	console.log('quizEditor ' + quizId);
+	  	app.mainRegion.show(new QuizEditorLayout({quizId:quizId}));
 	  },
 	  
 	  test: function(feature) {

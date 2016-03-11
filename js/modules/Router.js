@@ -25,6 +25,7 @@ define([
 	    '': 'home',
 	    'home': 'home',
 	    'admin(/:section)': 'admin',
+	    'admin/quiz(/:id)/edit': 'quizEditor',
 	    'static/:template': 'static',
 	  	'quiz/:name/:q': 'quiz',
 	  	'test/:feature': 'test'

@@ -6,6 +6,7 @@ define([
 	var QuizDB = Backbone.Model.extend({
 		urlRoot: 'api/quiz', 
 		defaults : {
+			id: null,
 			name: null,
 			description: null,
 			type: null,

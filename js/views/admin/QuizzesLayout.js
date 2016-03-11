@@ -89,6 +89,7 @@ define([
 			  		'<div class="text-center">'+
 			  		' <button type="button" title="Preview quiz" class="preview-quiz btn btn-xs btn-primary"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button>'+
 			  		' <button type="button" title="Edit quiz" class="edit-quiz btn btn-xs btn-success"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>'+
+			  		//' <a href="#admin/quiz/'+this.model.id+'/edit" title="Edit quiz" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>'+
 					' <button type="button" title="Delete quiz" class="del-quiz btn btn-xs btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button> '+
 			  		'</div>'
 			  		);
