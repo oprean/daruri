@@ -15,4 +15,5 @@ define([
 	"moment",
 	"jquery.qrcode",
 	"text",
+	"polyglot",
 ], function() { });

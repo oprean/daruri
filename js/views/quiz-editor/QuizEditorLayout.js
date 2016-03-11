@@ -14,9 +14,9 @@ define([
 	var QuizEditorLayout = Backbone.Marionette.LayoutView.extend({
 		template : _.template(usersTpl),
 		regions : {
-			grid : '.grid',
-			preview : '.preview',
-			paginator : '.paginator'
+			options : '.options-container',
+			groups : '.groups-container',
+			questions : '.questions-container',
 		},
 		
 		initialize : function(options) {

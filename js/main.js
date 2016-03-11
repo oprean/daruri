@@ -22,7 +22,10 @@ require.config({
 		
 		"moment":"lib/moment.min",
 		"jquery.qrcode":"lib/jquery.qrcode-0.12.0.min",
+		
 		"text":"lib/text",
+		"i18n":"lib/i18n",
+		"polyglot":"lib/polyglot.min",
 	},
 	
 	"shim":{
@@ -70,9 +73,14 @@ require([
 	require([ 
 	  'app',
 	  'modules/Router',
-	], function ( App, Router ) {
+	  'i18n!nls/labels',
+	], function ( App, Router, translations ) {
 		app = new App();
 		app.router = new Router();
+		app.locale = window.navigator.userLanguage || window.navigator.language;
+		console.log('lang: ' + app.locale);
+		console.log(translations);
+		window.polyglot = new Polyglot({phrases: translations});
 		if( ! Backbone.History.started) Backbone.history.start();
 		app.start(); 
 	}); 
